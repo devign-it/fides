@@ -1,0 +1,68 @@
+.projects--container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: calc(100% + #{$s-main} / 2);
+    margin-left: -$s-main / 4;
+    margin-top: $s-main / 3;
+
+    @media screen and (min-width: $tablet-breakpoint) {
+        width: calc(100% + #{$s-main} * 2);
+        margin-left: -$s-main;
+        margin-top: $s-main;
+    }
+}
+// Custom colored slider settings
+
+.swiper-container.white .project-item--description__text {
+    color: $c-white;
+    p a {
+        color: $c-white;
+
+        &:after,
+        &:before {
+            background-color: $c-white;
+        }
+    }
+}
+.swiper-container.black .project-item--description__text {
+    color: $c-black;
+    p a {
+        color: $c-black;
+
+        &:after,
+        &:before {
+            background-color: $c-black;
+        }
+    }
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+    .swiper-container.white .project-item--description__text {
+        background-color: $c-black;
+        color: $c-white;
+
+        p a {
+            color: $c-white;
+
+            &:after,
+            &:before {
+                background-color: $c-white;
+            }
+        }
+    }
+
+    .swiper-container.black .project-item--description__text {
+        background-color: $c-white;
+        color: $c-black;
+
+        p a {
+            color: $c-black;
+
+            &:after,
+            &:before {
+                background-color: $c-black;
+            }
+        }
+    }
+}

@@ -1,0 +1,178 @@
+$fontPath: "../assets/fonts/";
+
+@font-face {
+    font-family: "AmerigoBT-BoldA";
+    src: url("#{$fontPath}AmerigoBT-BoldA.eot");
+    src: url("#{$fontPath}AmerigoBT-BoldA.woff2") format("woff2"),
+        url("#{$fontPath}AmerigoBT-BoldA.woff") format("woff"),
+        url("#{$fontPath}AmerigoBT-BoldA.ttf") format("truetype"),
+        url("#{$fontPath}AmerigoBT-BoldA.svg#AmerigoBT-BoldA") format("svg"),
+        url("#{$fontPath}AmerigoBT-BoldA.eot?#iefix") format("embedded-opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+/* Copyright (c) 2014-2016 by Vyacheslav Kirilenko, Gayane Bagdasaryan. All rights reserved. */
+@font-face {
+    font-family: "Formular";
+    src: url("#{$fontPath}formular-regular.eot");
+    src: url("#{$fontPath}formular-regular.eot?#iefix") format("embedded-opentype"),
+        url("#{$fontPath}formular-regular.woff2") format("woff2"),
+        url("#{$fontPath}formular-regular.woff") format("woff"),
+        url("#{$fontPath}formular-regular.ttf") format("truetype"),
+        url("#{$fontPath}formular-regular.svg#Formular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+$font--sans: "Formular", "Helvetica", sans-serif;
+$font--serif: "AmerigoBT-BoldA", "Georgia", serif;
+// Fallback to system font incase of bad loading, thanks to @wooorm
+html {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans,
+        Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+// Custom Adjustments
+
+body {
+    text-rendering: geometricPrecision;
+    font-family: $font--sans;
+
+    blockquote,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-variant-ligatures: discretionary-ligatures;
+        font-family: $font--serif;
+        text-align: left;
+        hyphens: none;
+    }
+
+    h1 {
+        @include margin-top(0);
+        font-size: 15vw;
+        line-height: 0.95;
+
+        span {
+            padding: 10px 0;
+            font-size: 3rem;
+        }
+        @media screen and (min-width: $tablet-breakpoint) {
+            font-size: 7.5vw;
+        }
+    }
+
+    li a,
+    p,
+    p a {
+        font-size: 1.24rem;
+        @include line-height(1.5);
+
+        &:last-child {
+            @include margin-bottom(0);
+        }
+        @media screen and (min-width: $tablet-breakpoint) {
+            @include line-height(1.75);
+            font-size: ms(1);
+        }
+    }
+
+    p {
+        @include margin-bottom(1);
+        &:last-child {
+            @include margin-bottom(0);
+        }
+    }
+
+    h3 {
+        font-size: ms(2);
+        @include margin-bottom(1);
+        @include margin-top(2);
+        @media screen and (min-width: $tablet-breakpoint) {
+            font-size: ms(3);
+            @include margin-bottom(2);
+            @include margin-top(3);
+        }
+    }
+
+    h2 {
+        font-size: ms(1);
+        font-family: $font--sans;
+        @include line-height(1.5);
+        @media screen and (min-width: $tablet-breakpoint) {
+            font-size: ms(2);
+            @include line-height(2.5);
+        }
+    }
+    .main-navigation h2 {
+        font-size: 1.24rem;
+        @media screen and (min-width: $tablet-breakpoint) {
+            font-size: ms(1);
+        }
+        @media screen and (min-width: $desktop-breakpoint) {
+            font-size: ms(2);
+        }
+    }
+    blockquote {
+        font-size: ms(1);
+        font-family: $font--sans;
+        @include line-height(1.5);
+        @media screen and (min-width: $tablet-breakpoint) {
+            font-size: ms(2);
+            @include line-height(2.5);
+        }
+        @media screen and (min-width: $desktop-breakpoint) {
+            font-size: ms(3);
+            @include line-height(4);
+        }
+    }
+
+    .item--name {
+        font-size: ms(1);
+        font-family: $font--sans;
+        margin-top: $s-main / 3;
+        @include margin-bottom(1);
+        @include line-height(1.25);
+        @media screen and (min-width: $tablet-breakpoint) {
+            font-size: ms(1);
+        }
+        @media screen and (min-width: $desktop-breakpoint) {
+            font-size: ms(2);
+            @include margin-bottom(2);
+        }
+    }
+
+    .item--title {
+        font-size: ms(1.5);
+        @include margin-top(0);
+        @include margin-bottom(1.5);
+        @include line-height(2);
+        @media screen and (min-width: $tablet-breakpoint) {
+            font-size: ms(2);
+            @include line-height(2.25);
+        }
+        @media screen and (min-width: $desktop-breakpoint) {
+            font-size: ms(3);
+            @include line-height(3.25);
+        }
+    }
+
+    .resume--item__year {
+        font-size: ms(1);
+        font-family: $font--serif;
+        @media screen and (min-width: $tablet-breakpoint) {
+            @include line-height(1.75);
+            font-size: ms(2);
+        }
+    }
+
+    li {
+        @include margin-bottom(0.5);
+    }
+}
+
+.blurryboy {
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+}

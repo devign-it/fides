@@ -1,0 +1,68 @@
+.main-container {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-color: $c-black;
+    color: $c-white;
+    padding: $s-main / 4 $s-main / 4 0 $s-main / 4;
+
+    @media screen and (min-width: $tablet-breakpoint) {
+        padding: $s-main / 2 $s-main / 2 0 $s-main / 2;
+    }
+    @media screen and (min-width: $desktop-breakpoint) {
+        padding: $s-main $s-main 0 $s-main;
+    }
+
+    .main-container--text-container {
+        text-align: left;
+        hyphens: auto;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        section {
+            &.isActive {
+                // TODO Create slide in Animation
+            }
+        }
+
+        .text-container--projects {
+            p {
+                margin-top: $s-main / 2;
+            }
+            .text-container__links {
+                margin: 0;
+                padding: 0;
+                columns: 2;
+                column-gap: $s-main / 2;
+                list-style: none;
+                width: fit-content;
+            }
+        }
+    }
+
+    .main-container--button {
+        background-color: $c-black;
+        width: $s-main / 2;
+        height: $s-main;
+        position: absolute;
+        bottom: $s-main / 2;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+
+        a,
+        span {
+            text-decoration: none;
+            color: $c-white;
+            //transform: rotate(90deg);
+            margin: 0 auto;
+            line-height: initial;
+        }
+    }
+    @media screen and (min-width: $desktop-breakpoint) {
+        margin-top: 0;
+    }
+}

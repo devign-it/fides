@@ -1,0 +1,262 @@
+$c-black: #000000;
+$c-white: #ffffff;
+$c-contrast: $c-blue;
+$c-contrast_two: $c-blue;
+$s-cursor: $s-main / 2; // Cursor
+
+.cursor-on {
+  @media screen and (min-width: $desktop-breakpoint) {
+    cursor: none;
+
+    * {
+      cursor: none;
+    }
+  }
+
+  .cursor {
+    position: fixed;
+    z-index: 20;
+    pointer-events: none;
+    top: -$s-cursor / 2;
+    left: -$s-cursor / 2;
+    display: none;
+    @media screen and (min-width: $desktop-breakpoint) {
+      display: block;
+    }
+
+    > span {
+      display: block;
+      width: $s-cursor;
+      height: $s-cursor;
+      border-radius: $s-cursor;
+      background: $c-black;
+      color: $c-white;
+      transition: transform 180ms $t-smooth_one;
+      transform: scale(1);
+
+      &.off {
+        transform: scale(0);
+      }
+
+      &.link {
+        transform: scale(1.1);
+        background: transparent;
+
+        &.external {
+          position: relative;
+
+          &:after {
+            content: "↗";
+            display: block;
+            white-space: pre;
+            color: $c-white;
+            font-weight: 100;
+            font-size: 2rem;
+            text-align: center;
+            width: 100%;
+            line-height: 1;
+            padding-top: 12px;
+          }
+        }
+
+        &.disabled {
+          &:after {
+            content: url("../assets/images/icon-lock.svg");
+            position: absolute;
+            left: 14.5px;
+            top: 8.5px;
+          }
+        }
+
+        &.cross,
+        &.next,
+        &.prev {
+          background: $c-black;
+        }
+      }
+
+      &.light {
+        background: $c-white;
+
+        &.link {
+          background: $c-blue;
+
+          &.external {
+            background: $c-white;
+
+            &:after {
+              color: $c-black;
+            }
+          }
+
+          &.disabled {
+            background: red;
+          }
+        }
+
+        &.mail {
+          background: $c-black;
+          border: none;
+        }
+      }
+
+      &.scroll {
+        background-color: $c-blue;
+      }
+
+      &.border {
+        background-color: transparent;
+        border: 3px solid $c-black;
+        transform: scale(0.9);
+
+        &-white {
+          border-color: $c-white;
+        }
+      }
+
+      &.mail {
+        background: $c-black;
+      }
+
+      &.click,
+      &.cross,
+      &.nav,
+      &.new,
+      &.next,
+      &.play,
+      &.prev,
+      &.relol {
+        transform: scale(1.2);
+      }
+
+      &.slide-info {
+        transform: scale(0.95);
+      }
+
+      &.click:after,
+      &.cross:after,
+      &.mail:after,
+      &.nav:after,
+      &.new:after,
+      &.next-img:after,
+      &.next:after,
+      &.play:after,
+      &.prev-img:after,
+      &.prev:after,
+      &.relol:after,
+      &.scroll:after,
+      &.slide-info:after {
+        display: block;
+        content: "";
+        white-space: pre;
+        font-size: ms(1);
+        text-align: center;
+        width: 100%;
+        line-height: 1;
+        padding-top: calc((#{$s-cursor} / 2) - 7px); // = cursor / 2 - font-size / 2
+        color: $c-white;
+        position: relative;
+      }
+
+      &.play.pause:after,
+      &.play:after {
+        content: "play";
+
+        &:active {
+          .cursor > span {
+            transform: scale(1.2);
+          }
+
+          .cursor.scroll > span {
+            transform: scale(1);
+          }
+        }
+      }
+
+      &.next:after,
+      &.prev:after {
+        padding-top: 6px;
+      }
+
+      &.play:after {
+        content: "pause";
+      }
+
+      &.play.pause:after {
+        content: "play";
+      }
+
+      &.click:after {
+        content: "click\A click";
+      }
+
+      &.next:after {
+        content: "next\A project";
+
+        &-img {
+          content: 'next\A image';
+        }
+      }
+
+      &.prev:after {
+        content: "prev\A project";
+
+        &-img {
+          content: 'prev\A image';
+        }
+      }
+
+      &.cross:after {
+        content: "x";
+      }
+
+      &.scroll:after {
+        content: "↓";
+        padding-top: calc((#{$s-cursor} / 2) - 14px); // = cursor / 2 - font-size
+      }
+
+      &.relol:after {
+        content: "click\A me"; // = cursor / 2 - font-size
+        padding-top: calc((#{$s-cursor} / 2) - 5px);
+      }
+
+      &.new:after {
+        content: "new\A new";
+      }
+
+      &.mail:after {
+        content: 'Hi';
+        font-size: 18px;
+        padding-top: calc((#{$s-cursor} / 2) - 10px); // = cursor / 2 - font-size
+      }
+
+      &.slide-info:after {
+        content: 'i';
+        color: $c-black;
+        font-size: 24px;
+        padding-top: calc((#{$s-cursor} / 2) - 12px); // = cursor / 2 - font-size
+      }
+
+      &.nav:after {
+        content: '+';
+        color: $c-black;
+        padding-top: calc((#{$s-cursor} / 2) - 15px); // = cursor / 2 - font-size
+      }
+    }
+  }
+
+  &:active .cursor > span {
+    transform: scale(0.95);
+
+    &.link {
+      transform: scale(1);
+    }
+
+    &.click,
+    &.new,
+    &.play,
+    &.relol &.slide-info {
+      transform: scale(1.1);
+    }
+  }
+}

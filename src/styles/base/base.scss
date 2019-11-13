@@ -1,0 +1,50 @@
+html {
+    box-sizing: border-box;
+    border-collapse: collapse;
+    line-height: 1;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: $c-black;
+}
+
+* {
+    border-collapse: inherit;
+}
+
+*,
+:after,
+:before {
+    box-sizing: inherit;
+}
+
+:not(body) {
+    background-position: 50%;
+    background-size: cover;
+}
+
+::selection {
+    color: $c-white;
+    background: $c-black;
+}
+main {
+    ::selection {
+        color: $c-black;
+        background: $c-white;
+    }
+}
+
+body.light-mode {
+    background-color: #fff;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+body.dark-mode {
+    // background-color: #1a1919;
+    // color: #999;
+
+    background-color: rgba($c-white, 0.2);
+
+    .header--container {
+        background-color: $c-black;
+        color: $c-white;
+    }
+}

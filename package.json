@@ -1,0 +1,69 @@
+{
+  "name": "devignit_resume",
+  "version": "1.0.0",
+  "description": "Digital resume for summer 2018",
+  "author": "Daan van der Zwaag - daan@devign.it",
+  "license": "MIT",
+  "homepage": "https://resume.devign.it",
+  "keywords": [
+    "gatsby",
+    "contentful"
+  ],
+  "main": "n/a",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:danoszz/devign_resume.git"
+  },
+  "scripts": {
+    "dev": "gatsby develop",
+    "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gatsby build",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix *.js bin/*.js",
+    "setup": "node ./bin/setup.js",
+    "heroku-postbuild": "gatsby build",
+    "cleanup-repository": "rimraf bin contentful && yarn remove contentful-import chalk inquirer rimraf "
+  },
+  "dependencies": {
+    "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
+    "@contentful/rich-text-react-renderer": "^13.4.0",
+    "animejs": "^3.1.0",
+    "gatsby-cli": "^2.8.10",
+    "gatsby-image": "^2.2.32",
+    "gatsby-plugin-dark-mode": "^1.1.0",
+    "gatsby-plugin-react-helmet": "^3.1.14",
+    "gatsby-plugin-sass": "^2.1.21",
+    "gatsby-plugin-sharp": "^2.2.38",
+    "gatsby-plugin-typescript": "^2.1.17",
+    "gatsby-plugin-use-dark-mode": "^1.1.2",
+    "gatsby-source-contentful": "^2.1.57",
+    "gatsby-source-filesystem": "^2.1.36",
+    "gatsby-transformer-remark": "^2.6.34",
+    "gatsby-transformer-sharp": "^2.3.4",
+    "gsap": "^3.0.1",
+    "jquery": "^3.4.1",
+    "lodash": "^4.17.15",
+    "node-sass": "^4.13.0",
+    "npm-check-updates": "^3.2.1",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-helmet": "^5.2.1",
+    "sharp": "^0.23.2",
+    "styled-components": "^4.4.1",
+    "swiper": "^5.2.0",
+    "typescript": "^3.7.2",
+    "use-dark-mode": "^2.3.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "contentful-import": "^7.6.1",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.6.0",
+    "eslint-plugin-react": "^7.16.0",
+    "gatsby": "^2.17.12",
+    "gh-pages": "^2.1.1",
+    "prettier": "^1.19.1",
+    "yargs-parser": "^16.1.0"
+  }
+}

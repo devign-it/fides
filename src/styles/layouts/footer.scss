@@ -1,0 +1,31 @@
+footer {
+	padding: $s-main / 4;
+	background-color: $c-black;
+	color: $c-white;
+	margin-bottom: 0;
+	@media screen and (min-width: $tablet-breakpoint) {
+		padding: $s-main / 2;
+	}
+
+	.text-container__links {
+		margin: 0;
+		padding: 0;
+		columns: 2;
+		column-gap: $s-main / 2;
+		list-style: none;
+		width: fit-content;
+		max-width: $s-main * 8;
+
+	}
+
+
+	.center {
+		.text-container__links {
+			margin-left: 0;
+			margin-right: 0;
+		}
+		h3 {
+			text-align: center;
+		}
+	}
+}

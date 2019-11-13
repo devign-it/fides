@@ -1,0 +1,76 @@
+// Inline link styling
+
+$background-color: $c-black;
+$link-color: $c-white;
+$link-color-active: lighten($c-black, 90%);
+
+$link-underline-color: $link-color;
+$link-underline-color-active: $link-color-active;
+
+$link-underline-width: 3px;
+$link-underline-offset: 4px;
+
+a:not(.main-navigation),
+li a,
+p:not(.author) a,
+.link.doPopup {
+    color: $link-color;
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    text-decoration-color: $link-color;
+    display: inline;
+    position: relative;
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        background-color: $c-white;
+        opacity: 0.2;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        background-color: $c-white;
+        opacity: 1;
+        transition: all $delay--total / 2 $t-smooth_one;
+        transform: scale3d(0, 1, 1);
+        transform-origin: left center;
+    }
+    &:after,
+    &:before {
+        bottom: -$link-underline-offset / 2;
+        height: $link-underline-width / 2;
+        @media screen and (min-width: $tablet-breakpoint) {
+            bottom: -$link-underline-offset;
+            height: $link-underline-width;
+        }
+    }
+    &:focus,
+    &:hover {
+        $color: $link-underline-color-active;
+        color: $link-color-active;
+        text-decoration-color: $link-underline-color-active;
+        &:after {
+            transform: scale3d(1, 1, 1);
+        }
+        // background-image: linear-gradient( to top, transparent, transparent $offset, $color $offset, $color ($offset + $weight), transparent ($offset + $weight));
+    }
+    &.disabled {
+        color: $link-color-active;
+    }
+    &:active,
+    &:hover {
+        outline: 0;
+    }
+}
+p a {
+    &:after {
+        bottom: $link-underline-offset;
+    }
+}
+.text-container--links {
+    margin-top: $s-main;
+}

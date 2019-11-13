@@ -1,0 +1,12 @@
+{
+  "name": "resume.devign.it",
+  "description": "Resume website with GatsbyJS and Contentful",
+  "keywords": [
+    "contentful",
+    "gatsby",
+    "static",
+    "ssg"
+  ],
+  "repository": "git@github.com:danoszz/devign_resume.git",
+  "success_url": "/"
+}

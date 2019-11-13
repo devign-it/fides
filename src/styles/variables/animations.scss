@@ -1,0 +1,17 @@
+// Breakpoints
+// -----------
+
+$transition--smooth: cubic-bezier(0.86, 0, 0.07, 1);
+$ratio: 1.65;
+$delay__main: 1860ms;
+$delay__1: 165ms;
+$delay--total: $delay__1 * ($ratio * 2);
+$fadeinBottom: $delay--total $transition--smooth fadeInBottom forwards;
+
+$t-smooth_one: cubic-bezier(0.86, 0, 0.24, 1);
+$t-smooth_two: cubic-bezier(0.43, 0, 0.12, 0.5);
+$ratio: 1.68;
+$delay__main: 168ms;
+$delay__1: $delay__main * 2;
+$delay--total: $delay__1 * 5;
+$fadeinBottom: $delay--total $t-smooth_one fadeInBottom forwards;

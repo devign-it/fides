@@ -1,0 +1,56 @@
+
+.popup {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+  .popup-item {
+    pointer-events: none;
+    display: block;
+    position: fixed;
+    right: $s-main;
+    top: $s-main;
+    height: calc(100vh - #{$s-main} * 2);
+    z-index: 1;
+    opacity: 0;
+    transition: transform $delay--total / 2 $t-smooth_two, opacity $delay--total / 2 $t-smooth_two;
+    transform: translate3d(0, 1.5rem, 0) rotateX(10deg) rotateY(-15deg) rotateZ(5deg);
+    &.active {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) rotateZ(0);
+    }
+
+    &.item__handstand {
+        right: $s-main * 4;
+        top: 0;
+    }
+    &.item__nfc {
+        top: $s-main;
+    }
+    &.item__devign {
+
+      height: $s-main / 2;
+        right: $s-main / 2;
+        top: $s-main / 2;
+          &.active {
+        transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) rotateZ(0);
+      }
+
+    }
+  }
+}
+
+.about--picture {
+  img {
+    transition: transform $delay--total / 2 $t-smooth_two, opacity $delay--total / 2 $t-smooth_two;
+  }
+  &:hover {
+    img {
+      transform: translate3d(0, 1.5rem, 0) rotateX(10deg) rotateY(-15deg) rotateZ(5deg);
+    }
+  
+  } 
+}
