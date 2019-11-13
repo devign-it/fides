@@ -81,7 +81,7 @@ class Navigation extends React.Component {
     render() {
         return (
             <NavigationContainer ref={this.nav} role="navigation" className="main-navigation isOpen">
-                <NavigationItem text="Projects" to="/" />
+                <NavigationItem text="Projects" to="/projects" />
                 <NavigationItem text="About" to="/about/" />
                 <NavigationItem text="Resume" to="/resume/" />
                 <NavigationItem text="Blog" to="/blog/" />

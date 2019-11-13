@@ -43,7 +43,7 @@ export const pageQuery = graphql`
         contentfulProjectPost(slug: { eq: $slug }) {
             title
             featuredImage {
-                fluid(maxWidth: 1180) {
+                fluid(maxWidth: 1280) {
                     ...GatsbyContentfulFluid_noBase64
                 }
             }

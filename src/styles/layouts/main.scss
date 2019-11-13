@@ -4,14 +4,14 @@
     width: 100%;
     background-color: $c-black;
     color: $c-white;
-    padding: $s-main / 4 $s-main / 4 0 $s-main / 4;
+    // padding: $s-main / 4 $s-main / 4 0 $s-main / 4;
 
-    @media screen and (min-width: $tablet-breakpoint) {
-        padding: $s-main / 2 $s-main / 2 0 $s-main / 2;
-    }
-    @media screen and (min-width: $desktop-breakpoint) {
-        padding: $s-main $s-main 0 $s-main;
-    }
+    // @media screen and (min-width: $tablet-breakpoint) {
+    //     padding: $s-main / 3 $s-main / 3 0 $s-main / 3;
+    // }
+    // @media screen and (min-width: $desktop-breakpoint) {
+    //     padding: $s-main / 2 $s-main / 2 0 $s-main / 2;
+    // }
 
     .main-container--text-container {
         text-align: left;
