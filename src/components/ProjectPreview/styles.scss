@@ -1,5 +1,8 @@
 @import "../../styles/variables/variables";
 
+.project-list {
+    perspective: 100vw;
+}
 .project-post--preview {
     width: 100%;
     height: auto;
@@ -9,6 +12,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: rgba($c-white, 0.5);
+    min-height: 100vh;
 
     @media screen and (min-width: $tablet-breakpoint) {
         flex-direction: row;

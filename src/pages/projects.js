@@ -29,7 +29,7 @@ class ProjectIndex extends React.Component {
                         <section className="project-list">
                             {posts.map(({ node }) => {
                                 return (
-                                    <article key={node.slug}>
+                                    <article className="project-item--wrapper" key={node.slug}>
                                         <ProjectPreview project={node} />
                                     </article>
                                 );
