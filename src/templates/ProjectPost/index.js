@@ -72,26 +72,28 @@ export default class ProjectPostTemplate extends React.Component {
                             </article>
                         </section>
                         <section className="content--body">
-                            {post.showcaseImages.map(({ node }, i) => (
-                                <div className="body--showcase-item">
-                                    <Img
-                                        key={i}
-                                        className="showcase-item-image"
-                                        alt={post.showcaseImages.description}
-                                        fluid={post.showcaseImages[i].fluid}
-                                    />
-                                    {post.showcaseImages[i].title && post.showcaseImages[i].description ? (
-                                        <div className="showcase-item--description">
-                                            <h4>{post.showcaseImages[i].title}</h4>
-                                            <p className="project-item--description small--text">
-                                                {post.showcaseImages[i].description}
-                                            </p>
-                                        </div>
-                                    ) : (
-                                        ``
-                                    )}
-                                </div>
-                            ))}
+                            {post.showcaseImages
+                                ? post.showcaseImages.map(({ node }, i) => (
+                                      <div className="body--showcase-item">
+                                          <Img
+                                              key={i}
+                                              className="showcase-item-image"
+                                              alt={post.showcaseImages.description}
+                                              fluid={post.showcaseImages[i].fluid}
+                                          />
+                                          {post.showcaseImages[i].title && post.showcaseImages[i].description ? (
+                                              <div className="showcase-item--description">
+                                                  <h4>{post.showcaseImages[i].title}</h4>
+                                                  <p className="project-item--description small--text">
+                                                      {post.showcaseImages[i].description}
+                                                  </p>
+                                              </div>
+                                          ) : (
+                                              ``
+                                          )}
+                                      </div>
+                                  ))
+                                : ``}
                         </section>
                     </div>
                 </div>
