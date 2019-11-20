@@ -17,7 +17,7 @@ class Layout extends React.Component {
             <>
                 <Helmet title={siteTitle} />
                 <PageContent>
-                    {this.props.showNav ? <Navigation /> : ``}
+                    {this.props.showNav ? <Navigation isSticky={true} /> : ``}
                     {this.props.children}
                 </PageContent>
             </>

@@ -80,11 +80,15 @@ class Navigation extends React.Component {
 
     render() {
         return (
-            <nav ref={this.nav} role="navigation" className="main-navigation isOpen">
+            <nav
+                ref={this.nav}
+                role="navigation"
+                className="main-navigation isOpen"
+                style={{ position: this.props.isSticky ? "sticky" : "relative" }}
+            >
                 <NavigationItem text="Projects" to="/projects" />
                 <NavigationItem text="About" to="/about/" />
                 <NavigationItem text="Resume" to="/resume/" />
-                <NavigationItem text="Blog" to="/blog/" />
             </nav>
         );
     }
