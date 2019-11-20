@@ -1,0 +1,47 @@
+@import "../../styles/variables/variables";
+
+.main-navigation--item {
+    flex-basis: 0;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: $magicNumber;
+    border-right: 3px solid $c-white;
+    overflow: hidden;
+
+    @media screen and (min-width: $tablet-breakpoint) {
+        height: $heightNavigation;
+        padding: 0;
+        background-color: inherit;
+        border-right: 3px solid $c-white;
+    }
+
+    h2 {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) rotateZ(0);
+        transform-style: preserve-3d;
+
+        a {
+            text-decoration: none;
+            color: $c-white;
+        }
+    }
+
+    &:after,
+    &:before {
+        content: none;
+    }
+
+    &:last-child {
+        border-right: 0;
+    }
+
+    &.isActive {
+        background-color: $c-white;
+        color: $c-black;
+    }
+}

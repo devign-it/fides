@@ -1,6 +1,6 @@
 import React from "react";
 import NavigationItem from "../NavigationItem";
-import NavigationContainer, { DemoWrapper } from "./styling";
+import styles from "./styles.scss";
 
 class Navigation extends React.Component {
     // constructor() {
@@ -80,12 +80,12 @@ class Navigation extends React.Component {
 
     render() {
         return (
-            <NavigationContainer ref={this.nav} role="navigation" className="main-navigation isOpen">
+            <nav ref={this.nav} role="navigation" className="main-navigation isOpen">
                 <NavigationItem text="Projects" to="/projects" />
                 <NavigationItem text="About" to="/about/" />
                 <NavigationItem text="Resume" to="/resume/" />
                 <NavigationItem text="Blog" to="/blog/" />
-            </NavigationContainer>
+            </nav>
         );
     }
 }
