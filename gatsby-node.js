@@ -48,17 +48,8 @@ exports.createPages = ({ graphql, actions }) => {
                 const blogPosts = result.data.allContentfulBlogPost.edges;
                 const projectTags = result.data.allContentfulProjectTags.edges;
 
-                // const tagSet = new Set();
-
                 // Create project pages
                 projectPosts.forEach((post, index) => {
-                    // Get tags for tags pages.
-                    // if (post.node.categoryTags) {
-                    //     post.node.categoryTags.category.forEach((tag) => {
-                    //         tagSet.add(tag);
-                    //     });
-                    // }
-
                     createPage({
                         path: `/projects/${post.node.slug}/`,
                         component: projectPost,

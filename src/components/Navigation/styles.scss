@@ -58,7 +58,7 @@
     @keyframes menuCollapse__in__mobile {
         0% {
             width: 100vw;
-            margin-left: calc(-$magicNumber / 4);
+            margin-left: calc(-#{$magicNumber} / 4);
         }
         100% {
             width: 100%;
@@ -135,19 +135,19 @@
                 }
 
                 &:nth-child(1) h2 {
-                    animation-delay: calc(#{$delay--total} / 6 + $delay--total / 4);
+                    animation-delay: calc(#{$delay--total} / 6 + #{$delay--total} / 4);
                 }
 
                 &:nth-child(2) h2 {
-                    animation-delay: calc(#{$delay--total} / 6 + $delay--total / 5);
+                    animation-delay: calc(#{$delay--total} / 6 + #{$delay--total} / 5);
                 }
 
                 &:nth-child(3) h2 {
-                    animation-delay: calc(#{$delay--total} / 6 + $delay--total / 6);
+                    animation-delay: calc(#{$delay--total} / 6 + #{$delay--total} / 6);
                 }
 
                 &:nth-child(4) h2 {
-                    animation-delay: calc(#{$delay--total} / 6 + $delay--total / 6);
+                    animation-delay: calc(#{$delay--total} / 6 + #{$delay--total} / 6);
                 }
             }
         }
