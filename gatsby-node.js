@@ -26,9 +26,6 @@ exports.createPages = ({ graphql, actions }) => {
                                 node {
                                     title
                                     slug
-                                    categoryTags {
-                                        category
-                                    }
                                 }
                             }
                         }
@@ -36,6 +33,7 @@ exports.createPages = ({ graphql, actions }) => {
                             edges {
                                 node {
                                     category
+                                    slug
                                 }
                             }
                         }
@@ -48,9 +46,9 @@ exports.createPages = ({ graphql, actions }) => {
 
                 const projectPosts = result.data.allContentfulProjectPosts.edges;
                 const blogPosts = result.data.allContentfulBlogPost.edges;
-                // const projectTags = result.data.allContentfulBlogPost.edges;
+                const projectTags = result.data.allContentfulProjectTags.edges;
 
-                const tagSet = new Set();
+                // const tagSet = new Set();
 
                 // Create project pages
                 projectPosts.forEach((post, index) => {
@@ -82,7 +80,7 @@ exports.createPages = ({ graphql, actions }) => {
                 });
 
                 // Create tags pages.
-                tagSet.forEach((post, index) => {
+                projectTags.forEach((post, index) => {
                     createPage({
                         path: `/tags/${post.node.slug}/`,
                         component: tagPage,
