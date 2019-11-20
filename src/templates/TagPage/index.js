@@ -16,8 +16,17 @@ export default class TagPageTemplate extends React.Component {
     }
 }
 
-export const pageQuery = graphql`
-    query ProjectTagBySlug($slug: String!) {
+// export const TagPostPageQuery = graphql`
+//     query ProjectTagBySlug($slug: String!) {
+//         contentfulProjectTags(slug: { eq: $slug }) {
+//             category
+//             slug
+//         }
+//     }
+// `;
+
+export const TagPostPageQuery = graphql`
+    query ProjectTagBySlug($slug: String) {
         contentfulProjectTags(slug: { eq: $slug }) {
             category
             slug
