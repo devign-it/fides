@@ -6,31 +6,33 @@ import anime from "animejs/lib/anime.es.js";
 import "./styles.scss";
 
 const ProjectPreview = ({ project }) => {
-    const [ref, inView] = useInView({
-        rootMargin: "0px 0px",
-        triggerOnce: true,
-        threshold: 0.1,
-    });
+    // CODE BELOW SHOULD BE FIXED
 
-    let thisItem = document.querySelector(`.review-wrapper__${project.slug}`);
+    // const [ref, inView] = useInView({
+    //     rootMargin: "0px 0px",
+    //     triggerOnce: true,
+    //     threshold: 0.1,
+    // });
 
-    let animationZoomIn = anime({
-        targets: thisItem,
-        scale: [0.9, 1],
-        opacity: [0.5, 1],
-        duration: 640,
-        loop: false,
-        autoplay: false,
-        easing: "easeOutQuint",
-    });
+    // let thisItem = document.querySelector(`.review-wrapper__${project.slug}`);
 
-    if (inView) {
-        animationZoomIn.play();
-        console.log("inview", thisItem);
-    } else if (!inView) {
-        console.log("outofview", thisItem);
-        animationZoomIn.reverse();
-    }
+    // let animationZoomIn = anime({
+    //     targets: thisItem,
+    //     scale: [0.9, 1],
+    //     opacity: [0.5, 1],
+    //     duration: 640,
+    //     loop: false,
+    //     autoplay: false,
+    //     easing: "easeOutQuint",
+    // });
+
+    // if (inView) {
+    //     animationZoomIn.play();
+    //     console.log("inview", thisItem);
+    // } else if (!inView) {
+    //     console.log("outofview", thisItem);
+    //     animationZoomIn.reverse();
+    // }
 
     // thisItem.addEventListener(
     //     "mouseenter",
@@ -46,12 +48,13 @@ const ProjectPreview = ({ project }) => {
     //     false,
     // );
 
-    console.log(thisItem);
+    // console.log(thisItem);
 
     return (
         <>
             <Link to={`/projects/${project.slug}`}>
-                <div ref={ref} className={`review-wrapper__${project.slug}`}>
+                {/* <div ref={ref} className={`review-wrapper__${project.slug}`}> */}
+                <div className={`review-wrapper__${project.slug}`}>
                     <article
                         className={`project-post--preview project-post--preview__${project.slug}`}
                         style={{ backgroundColor: project.color }}
