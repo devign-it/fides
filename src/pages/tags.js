@@ -19,6 +19,7 @@ class TagIndex extends React.Component {
                 <div className="tag-container">
                     {tags.map(({ node }) => {
                         let tag = node.category;
+
                         return (
                             <Link key={tag} style={{ textDecoration: "none" }} to={`/tags/${_.kebabCase(tag)}`}>
                                 <div className="tag-item">#{tag}</div>

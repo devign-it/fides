@@ -82,27 +82,15 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
     flex-wrap: wrap;
 
     .head--title {
-        // width: $widthRightCol;
         margin-left: $magicNumber / 2;
         width: 100%;
-        margin-bottom: $magicNumber * 2;
+        h1 {
+            margin-bottom: $magicNumber;
+        }
     }
     .head--tags {
         width: 100%;
-        .tags--wrapper {
-            display: flex;
-        }
-        .categoryTag {
-            display: inline-flex;
-            padding: $magicNumber / 8 $magicNumber / 4;
-            margin-right: $magicNumber / 4;
-            border: 1px solid $c-white;
-            p {
-                margin: 0;
-                line-height: 1;
-                font-size: 1rem;
-            }
-        }
+        margin-bottom: $magicNumber * 2;
     }
     .head--sidebar {
         width: $widthLeftCol;

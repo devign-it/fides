@@ -4,6 +4,9 @@ import Helmet from "react-helmet";
 import get from "lodash/get";
 import Img from "gatsby-image";
 import Layout from "../../components/Layout";
+import TagsList from "../../components/TagsList";
+import Navigation from "../../components/Navigation";
+
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 import "./styles.scss";
@@ -47,13 +50,7 @@ export default class ProjectPostTemplate extends React.Component {
                                 <h1 className="section-headline">{post.title}</h1>
                             </div>
                             <div className="head--tags">
-                                <div className="tags--wrapper">
-                                    {post.categoryTags.map(({ node }, i) => (
-                                        <span className="categoryTag">
-                                            <p>{post.categoryTags[i].category}</p>
-                                        </span>
-                                    ))}
-                                </div>
+                                <TagsList tagSource={post.categoryTags} />
                             </div>
                             <aside className="head--sidebar">
                                 <div className="sidebar--sticky-content">
@@ -97,6 +94,7 @@ export default class ProjectPostTemplate extends React.Component {
                         </section>
                     </div>
                 </div>
+                <Navigation isSticky={false} />
             </Layout>
         );
     }
@@ -123,6 +121,7 @@ export const ProjectPostQuery = graphql`
             }
             categoryTags {
                 category
+                slug
             }
             showcaseImages {
                 title

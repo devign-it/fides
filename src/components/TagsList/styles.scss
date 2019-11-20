@@ -1,0 +1,24 @@
+@import "../../styles/variables/variables";
+
+.tags--wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: $magicNumber / 2;
+}
+.categoryTag {
+    display: inline-flex;
+    padding: $magicNumber / 8 $magicNumber / 4;
+    margin: 0 $magicNumber / 4 $magicNumber / 4 0;
+    border: 1px solid $c-white;
+    opacity: 0.25;
+    justify-content: center;
+    align-items: center;
+    p {
+        margin: 0;
+        line-height: 1;
+        font-size: 1rem;
+    }
+    &:hover {
+        opacity: 1;
+    }
+}

@@ -10,7 +10,15 @@ $link-underline-color-active: $link-color-active;
 $link-underline-width: 2px;
 $link-underline-offset: 6px;
 
-a:not(.main-navigation),
+a {
+    color: $link-color;
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    text-decoration-color: $link-color;
+    display: inline;
+    margin-bottom: initial;
+}
+
 li a,
 p:not(.author) a,
 .link.doPopup {
