@@ -1,15 +1,11 @@
-# 🌞 Resume 2019 build w/ Gatsby.js
+# Academic resume 2020 build w/ Gatsby.js
 
 Transition to a dynamic website with the SSR Gatsby. Learning React.js, Serverless deployments and CI. Still the old portfolio, just with new content and fire elements.
 
-## Timeline
-
-See current progress at [issues](https://github.com/danoszz/devign_resume/issues) page.
-
 ## Get started
 
-- You'll need [Node](https://nodejs.org/) (which includes NPM).
-- Install Gulp using `npm install -g gulp`. This installs Gulp globally and is needed later.
+-   You'll need [Node](https://nodejs.org/) (which includes NPM).
+-   Install Gulp using `npm install -g gulp`. This installs Gulp globally and is needed later.
 
 ### Local setup
 
@@ -21,11 +17,11 @@ git clone https://github.com/danoszz/devign_resume && cd devign_resume && npm i
 
 Based on the [Gatsby Contentful Starter](https://github.com/contentful-userland/gatsby-contentful-starter)
 
-- Run project locally: `yarn run dev`
+-   Run project locally: `yarn run dev`
 
-- Run a production build into ./public: `yarn run build`
+-   Run a production build into ./public: `yarn run build`
 
-- Removes all dependencies, scripts and data from the installation script: `yarn run cleanup-repository`
+-   Removes all dependencies, scripts and data from the installation script: `yarn run cleanup-repository`
 
 ### License
 
