@@ -12,8 +12,7 @@ export const HeaderContainer = styled.header`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    perspective: 100vh;
+    // perspective: 100vh;
 
     .author,
     .quote {
@@ -55,7 +54,7 @@ export const HeaderContainer = styled.header`
     }
 
     @media screen and (min-width: ${breakpoints.desktop}) {
-        padding: $s-main;
+        padding: $magicNumber;
     }
 `;
 
@@ -79,11 +78,10 @@ class AnimatedQuote extends React.Component {
             anime({
                 targets: ".quote",
                 easing: "easeOutQuint",
-                duration: 750,
-                // translateX: 900,
-                rotationY: yPos * -10,
-                rotationX: xPos * 20,
-                // rotation: Math.sqrt(Math.pow(xPos, 4) + Math.pow(yPos, 2)) * 5,
+                duration: 240,
+                rotationZ: xPos * -10,
+                rotationX: yPos * 20,
+                // rotation: Math.sqrt(Math.pow(yPos, 4) + Math.pow(xPos, 2)) * 5,
                 skewY: Math.pow(xPos, 2) * -5,
                 skewX: Math.pow(yPos, 2) * -20,
             });
