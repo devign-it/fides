@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import Img from "gatsby-image";
 import { useInView } from "react-intersection-observer";
 import anime from "animejs/lib/anime.es.js";
-import styles from "./styles.scss";
+import "./styles.scss";
 
 const ProjectPreview = ({ project }) => {
     const [ref, inView] = useInView({

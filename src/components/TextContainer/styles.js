@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { breakpoints, colors, sizes, easings, delays, vars } from "../../config/variable";
+import { sizes } from "../../config/variable";
 
 export const Container = styled.ul`
     margin: 0;

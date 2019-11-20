@@ -1,11 +1,12 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import Helmet from "react-helmet";
 import get from "lodash/get";
 import Img from "gatsby-image";
 import Layout from "../../components/Layout";
-import styles from "./styles.scss";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
+import "./styles.scss";
 
 export default class ProjectPostTemplate extends React.Component {
     render() {
@@ -56,7 +57,12 @@ export default class ProjectPostTemplate extends React.Component {
                             </div>
                             <aside className="head--sidebar">
                                 <div className="sidebar--sticky-content">
-                                    <a className="link-button__inline" href={`${post.linkUrl}`} target="_blank">
+                                    <a
+                                        className="link-button__inline"
+                                        href={`${post.linkUrl}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         {post.linkText}
                                     </a>
                                 </div>
@@ -94,7 +100,7 @@ export default class ProjectPostTemplate extends React.Component {
     }
 }
 
-export const pageQuery = graphql`
+export const ProjectPostQuery = graphql`
     query ProjectPostBySlug($slug: String!) {
         contentfulProjectPosts(slug: { eq: $slug }) {
             title

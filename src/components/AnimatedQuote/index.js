@@ -2,7 +2,7 @@ import React from "react";
 import anime from "animejs/lib/anime.es.js";
 import styled from "styled-components";
 import { breakpoints, colors, sizes } from "../../config/variable";
-import DarkModeToggle from "../DarkModeToggle";
+// import DarkModeToggle from "../DarkModeToggle";
 
 export const HeaderContainer = styled.header`
     min-height: 100vh;
@@ -67,7 +67,7 @@ class AnimatedQuote extends React.Component {
 
     componentDidMount() {
         const header = this.quoteContainer.current;
-        const quote = this.animatedQuote.current;
+        // const quote = this.animatedQuote.current;
 
         header.addEventListener("mousemove", (event) => {
             let xPos = event.clientX / window.innerWidth + 0.05 / 2;

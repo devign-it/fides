@@ -1,7 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
-import Layout from "../components/layout";
-import get from "lodash/get";
+import Layout from "../components/Layout";
 
 import TextContainer from "../components/TextContainer";
 import { Heading, Paragraph } from "../components/Typography";
@@ -27,30 +25,22 @@ const RootIndex = ({ data, location }) => {
                     />
 
                     <Paragraph>
-                        The past five years have been a combination of technology, humans
-                        and design. Connecting development, design, data and
-                        entrepreneurship to create digital products and services. Solving
-                        complex problems with design is always the common thread. Whether
-                        it’s experience, service, graphic or interactive design.
-                        Previously worked at Van Lennep in Amsterdam as their digital
-                        project manager and creative developer. This while finishing the
-                        bachelor of Communication and Multimedia Design. Previously
-                        freelance under my agency devign.it while studying in Amsterdam,
-                        Seville and Aarhus. My interests vary from health/biotech, the
-                        ethics of technology, working out handstands, to being partly a
-                        cyborg. Right now I am looking for a next step in the tech scene
-                        in Tel Aviv. One thing is certain: it will be something in between
-                        humans and computers.
+                        The past five years have been a combination of technology, humans and design. Connecting
+                        development, design, data and entrepreneurship to create digital products and services. Solving
+                        complex problems with design is always the common thread. Whether it’s experience, service,
+                        graphic or interactive design. Previously worked at Van Lennep in Amsterdam as their digital
+                        project manager and creative developer. This while finishing the bachelor of Communication and
+                        Multimedia Design. Previously freelance under my agency devign.it while studying in Amsterdam,
+                        Seville and Aarhus. My interests vary from health/biotech, the ethics of technology, working out
+                        handstands, to being partly a cyborg. Right now I am looking for a next step in the tech scene
+                        in Tel Aviv. One thing is certain: it will be something in between humans and computers.
                     </Paragraph>
 
                     <Heading type="h6">Keep in touch</Heading>
 
                     <TextContainer>
                         <li>
-                            <a
-                                className="link external mail"
-                                href="mailto:daan@devign.it"
-                            >
+                            <a className="link external mail" href="mailto:daan@devign.it">
                                 Email
                             </a>
                         </li>
@@ -64,6 +54,7 @@ const RootIndex = ({ data, location }) => {
                                 className="link external"
                                 target="_blank"
                                 href="https://www.linkedin.com/in/daanvanderzwaag/"
+                                rel="noopener noreferrer"
                             >
                                 LinkedIn
                             </a>
@@ -73,6 +64,7 @@ const RootIndex = ({ data, location }) => {
                                 className="link external"
                                 target="_blank"
                                 href="https://codepen.io/danoszz/"
+                                rel="noopener noreferrer"
                             >
                                 Codepen
                             </a>
@@ -82,6 +74,7 @@ const RootIndex = ({ data, location }) => {
                                 className="link external"
                                 target="_blank"
                                 href="https://github.com/danoszz"
+                                rel="noopener noreferrer"
                             >
                                 Github
                             </a>
@@ -91,6 +84,7 @@ const RootIndex = ({ data, location }) => {
                                 className="link external"
                                 target="_blank"
                                 href="https://www.behance.net/daanvanderzwaag"
+                                rel="noopener noreferrer"
                             >
                                 Behance
                             </a>

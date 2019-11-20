@@ -1,12 +1,8 @@
 import React from "react";
-import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import get from "lodash/get";
 
 import "../styles/styles.scss";
 import "../styles/layouts/about.scss";
-
-import AboutImage from "../components/AboutImage";
 
 import styled from "styled-components";
 
@@ -77,21 +73,31 @@ export default class pageResume extends React.Component {
                         <h3>Resume</h3>
                         <p>
                             Call it a resume or milestone timeline. See what kept me busy the past years. Or directly
-                            <a href="../assets/files/daanvanderzwaag-resume_summer2018.pdf">download</a>
+                            <a rel="noopener noreferrer" href="../assets/files/daanvanderzwaag-resume_summer2018.pdf">
+                                download
+                            </a>
                             my resume as a PDF.
                         </p>
                         <ResumeItem>
                             <span className="resume--item__year">2018</span>
                             <p>
-                                UX Engineer at <a href="https://dav.network">DAV Foundation</a> in Tel Aviv creating
-                                decentralized transportation applications.
+                                UX Engineer at{" "}
+                                <a rel="noopener noreferrer" href="https://dav.network">
+                                    DAV Foundation
+                                </a>{" "}
+                                in Tel Aviv creating decentralized transportation applications.
                             </p>
                         </ResumeItem>
                         <ResumeItem>
                             <span className="resume--item__year">2018</span>
                             <p>
                                 Digital project manager and creative developer at{" "}
-                                <a className="link external" target="_blank" href="https://www.vanlennep.eu/">
+                                <a
+                                    rel="noopener noreferrer"
+                                    className="link external"
+                                    target="_blank"
+                                    href="https://www.vanlennep.eu/"
+                                >
                                     Van Lennep
                                 </a>
                                 .
@@ -117,6 +123,7 @@ export default class pageResume extends React.Component {
                                 <a
                                     className="link external"
                                     target="_blank"
+                                    rel="noopener noreferrer"
                                     href="https://thenextweb.com/conference/t500"
                                 >
                                     T500
@@ -143,7 +150,12 @@ export default class pageResume extends React.Component {
                             <span className="resume--item__year">2016</span>
                             <p>
                                 Did an awesome internship as a Frontend Developer a{" "}
-                                <a className="link external" target="_blank" href="https://www.lucasenmallee.nl/">
+                                <a
+                                    rel="noopener noreferrer"
+                                    className="link external"
+                                    target="_blank"
+                                    href="https://www.lucasenmallee.nl/"
+                                >
                                     Lucas & Mallee
                                 </a>
                                 , Amsterdam.
@@ -153,7 +165,12 @@ export default class pageResume extends React.Component {
                             <span className="resume--item__year">2016</span>
                             <p>
                                 Launched
-                                <a className="link external" target="_blank" href="http://madebyrens.com/">
+                                <a
+                                    rel="noopener noreferrer"
+                                    className="link external"
+                                    target="_blank"
+                                    href="http://madebyrens.com/"
+                                >
                                     Made By Rens
                                 </a>
                                 with Studio& and won some awards.
@@ -171,6 +188,7 @@ export default class pageResume extends React.Component {
                             <span className="resume--item__year">2015</span>
                             <p>
                                 <a
+                                    rel="noopener noreferrer"
                                     className="link external"
                                     target="_blank"
                                     href="https://www.youtube.com/watch?v=WcaEJHYkhCg"

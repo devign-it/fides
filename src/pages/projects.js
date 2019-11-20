@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import get from "lodash/get";
 import Helmet from "react-helmet";
 
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 import ProjectsRoll from "../components/ProjectsRoll";
 
 class ProjectIndex extends React.Component {

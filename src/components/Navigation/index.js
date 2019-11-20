@@ -1,6 +1,6 @@
 import React from "react";
 import NavigationItem from "../NavigationItem";
-import styles from "./styles.scss";
+import "./styles.scss";
 
 class Navigation extends React.Component {
     // constructor() {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import styles from "./styles.scss";
+import "./styles.scss";
 
 const NavigationItem = ({ text, to }) => (
     <div className="main-navigation--item">

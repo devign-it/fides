@@ -1,10 +1,9 @@
 import React from "react";
 import ProjectPreview from "../ProjectPreview";
-import styles from "./styles.scss"
+import "./styles.scss";
 
 class ProjectsRoll extends React.Component {
     render() {
-
         return (
             <section className="project-list">
                 {this.props.items.map(({ node }) => {

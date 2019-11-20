@@ -1,8 +1,8 @@
 import React from "react";
 import useDarkMode from "use-dark-mode";
 import styled from "styled-components";
-import { breakpoints, colors, sizes } from "../../config/variable";
-import { isDarkMode } from "../../config/helpers";
+import { colors, sizes } from "../../config/variable";
+// import { isDarkMode } from "../../config/helpers";
 
 export const ThemeToggle = styled.div`
     user-select: none;

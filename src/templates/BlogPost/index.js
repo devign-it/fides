@@ -38,7 +38,7 @@ export default class BlogPostTemplate extends React.Component {
     }
 }
 
-export const pageQuery = graphql`
+export const BlogPostPage = graphql`
     query BlogPostBySlug($slug: String!) {
         contentfulBlogPost(slug: { eq: $slug }) {
             title
