@@ -1,9 +1,9 @@
 .header--container {
-    // min-height: calc(100vh - #{$s-main} / 2);
+    // min-height: calc(100vh - #{$magicNumber} / 2);
     min-height: 100vh;
     background-color: $c-white;
     color: $c-black;
-    padding: $s-main / 4;
+    padding: $magicNumber / 4;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -34,15 +34,15 @@
         }
     }
     .quote {
-        margin-bottom: $s-main / 2;
+        margin-bottom: $magicNumber / 2;
     }
     @media screen and (min-width: $tablet-breakpoint) {
-        padding: $s-main / 2;
+        padding: $magicNumber / 2;
         .quote {
             margin-bottom: 0;
         }
     }
     @media screen and (min-width: $desktop-breakpoint) {
-        padding: $s-main;
+        padding: $magicNumber;
     }
 }

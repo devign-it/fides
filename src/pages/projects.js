@@ -1,24 +1,15 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import get from "lodash/get";
 import Helmet from "react-helmet";
 
 import Layout from "../components/layout";
-import ProjectPreview from "../components/ProjectPreview";
-// import LazyAnimation from "../components/LazyAnimation";
-// import { useInView } from "react-intersection-observer";
+import ProjectsRoll from "../components/ProjectsRoll";
 
 class ProjectIndex extends React.Component {
-    // componentDidMount() {
-
-    // }
     render() {
-        // const [ref, inView] = useInView({
-        //     rootMargin: "-100px 0px",
-        // });
-
         const siteTitle = get(this, "props.data.site.siteMetadata.title");
-        const posts = get(this, "props.data.allContentfulProjectPost.edges");
+        const posts = get(this, "props.data.allContentfulProjectPosts.edges");
 
         return (
             <Layout location={this.props.location}>
@@ -26,15 +17,7 @@ class ProjectIndex extends React.Component {
                     <Helmet title={siteTitle} />
                     <div className="wrapper">
                         <h2 className="section-headline">Recent Projects </h2>
-                        <section className="project-list">
-                            {posts.map(({ node }) => {
-                                return (
-                                    <article className="project-item--wrapper" key={node.slug}>
-                                        <ProjectPreview project={node} />
-                                    </article>
-                                );
-                            })}
-                        </section>
+                        <ProjectsRoll items={posts} />
                     </div>
                 </div>
             </Layout>
@@ -46,7 +29,7 @@ export default ProjectIndex;
 
 export const pageQuery = graphql`
     query ProjectIndexQuery {
-        allContentfulProjectPost {
+        allContentfulProjectPosts {
             edges {
                 node {
                     title

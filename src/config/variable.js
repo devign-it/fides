@@ -19,7 +19,7 @@ export const easings = {
 };
 
 export const sizes = {
-    magicNumber: "6rem",
+    magicNumber: "60px",
     columnWidthFlex: "100vw / 12",
 };
 

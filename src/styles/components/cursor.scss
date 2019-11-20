@@ -2,7 +2,7 @@ $c-black: #000000;
 $c-white: #ffffff;
 $c-contrast: $c-blue;
 $c-contrast_two: $c-blue;
-$s-cursor: $s-main / 2; // Cursor
+$s-cursor: $magicNumber / 2; // Cursor
 
 .cursor-on {
   @media screen and (min-width: $desktop-breakpoint) {

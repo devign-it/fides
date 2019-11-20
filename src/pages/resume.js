@@ -16,9 +16,9 @@ import styled from "styled-components";
 
 const ResumeItem = styled.div`
     /*
-      max-width: $s-main * 8;    
+      max-width: $magicNumber * 8;    
       @include margin-top(1);
-      margin-right: $s-main / 4;
+      margin-right: $magicNumber / 4;
       @media screen and (min-width: $tablet-breakpoint) {
     */
 
@@ -39,17 +39,17 @@ const ResumeItem = styled.div`
 
 const TextContainerResume = styled.section`
     h3 {
-        margin-top: $s-main / 2;
-        max-width: $s-main * 8;
+        margin-top: $magicNumber / 2;
+        max-width: $magicNumber * 8;
         margin-left: auto;
         margin-right: auto;
         @media screen and (min-width: $tablet-breakpoint) {
-            margin-top: $s-main;
+            margin-top: $magicNumber;
         }
     }
 
     h3 + p {
-        margin-bottom: $s-main / 2;
+        margin-bottom: $magicNumber / 2;
     }
 `;
 
@@ -59,7 +59,7 @@ const ContainerCol = styled.div`
         blockquote,
         h2,
         p {
-            max-width: $s-main * 8;
+            max-width: $magicNumber * 8;
             margin-left: auto;
             margin-right: auto;
         }

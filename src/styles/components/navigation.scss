@@ -13,7 +13,7 @@
 //     // border-color: $c-white;
 
 //     @media screen and (min-width: $tablet-breakpoint) {
-//         top: $s-main / 2;
+//         top: $magicNumber / 2;
 //         // border: 3px solid $c-white;
 //         margin: 0;
 //         width: 100%;
@@ -25,13 +25,13 @@
 //         justify-content: center;
 //         align-items: center;
 //         overflow: hidden;
-//         height: $s-main / 1.5;
+//         height: $magicNumber / 1.5;
 //         background-color: $c-black;
 //         // border-right: 1.5px solid $c-white;
 //         // border-color: $c-white;
 
 //         @media screen and (min-width: $tablet-breakpoint) {
-//             height: $s-main;
+//             height: $magicNumber;
 //             padding: 0;
 //             background-color: inherit;
 //             // border-right: 3px solid $c-white;
@@ -84,16 +84,16 @@
 //         }
 //         100% {
 //             width: 100vw;
-//             margin-left: -$s-main / 4;
+//             margin-left: -$magicNumber / 4;
 //         }
 //     }
 
 //     @keyframes menuItemCollapse__out__mobile {
 //         0% {
-//             height: $s-main / 1.5;
+//             height: $magicNumber / 1.5;
 //         }
 //         100% {
-//             height: $s-main / 2;
+//             height: $magicNumber / 2;
 //         }
 //     }
 
@@ -103,7 +103,7 @@
 //     @keyframes menuCollapse__in__mobile {
 //         0% {
 //             width: 100vw;
-//             margin-left: -$s-main / 4;
+//             margin-left: -$magicNumber / 4;
 //         }
 //         100% {
 //             width: 100%;
@@ -113,10 +113,10 @@
 
 //     @keyframes menuItemCollapse__in__mobile {
 //         0% {
-//             height: $s-main / 2;
+//             height: $magicNumber / 2;
 //         }
 //         100% {
-//             height: $s-main / 1.5;
+//             height: $magicNumber / 1.5;
 //         }
 //     }
 
@@ -215,55 +215,55 @@
 
 // @keyframes menuCollapse__in {
 //     0% {
-//         top: $s-main / 2;
+//         top: $magicNumber / 2;
 //         width: inherit;
 //         height: inherit;
 //         border-radius: inherit;
 //     }
 
 //     25% {
-//         top: $s-main / 2;
+//         top: $magicNumber / 2;
 //         width: inherit;
 //         height: inherit;
 //         border-radius: inherit;
 //     }
 
 //     50% {
-//         top: $s-main / 2;
-//         height: $s-main;
-//         width: $s-main;
+//         top: $magicNumber / 2;
+//         height: $magicNumber;
+//         width: $magicNumber;
 //         overflow: hidden;
 //         border-radius: inherit;
 //     }
 
 //     65% {
-//         top: $s-main / 2;
-//         height: $s-main;
-//         width: $s-main;
+//         top: $magicNumber / 2;
+//         height: $magicNumber;
+//         width: $magicNumber;
 //         overflow: hidden;
 //     }
 
 //     75% {
-//         top: $s-main / 2;
-//         height: $s-main;
-//         width: $s-main;
+//         top: $magicNumber / 2;
+//         height: $magicNumber;
+//         width: $magicNumber;
 //         overflow: hidden;
 //         border-radius: 50%;
 //     }
 
 //     80% {
-//         top: $s-main / 2;
-//         height: $s-main;
-//         width: $s-main;
+//         top: $magicNumber / 2;
+//         height: $magicNumber;
+//         width: $magicNumber;
 //         margin: 0;
 //         border-radius: 50%;
 //     }
 
 //     100% {
-//         top: $s-main / 1.5;
-//         margin: $s-main / 4 $s-main / 4 $s-main / 4 0;
-//         height: $s-main / 2;
-//         width: $s-main / 2;
+//         top: $magicNumber / 1.5;
+//         margin: $magicNumber / 4 $magicNumber / 4 $magicNumber / 4 0;
+//         height: $magicNumber / 2;
+//         width: $magicNumber / 2;
 //         overflow: hidden;
 //         border-radius: 50%;
 //     }
@@ -318,56 +318,56 @@
 // // ANIMATE OUT
 // @keyframes menuCollapse__out {
 //     0% {
-//         top: $s-main / 1.5;
-//         height: $s-main / 2;
-//         width: $s-main / 2;
-//         margin: $s-main / 4 $s-main / 4 $s-main / 4 0;
+//         top: $magicNumber / 1.5;
+//         height: $magicNumber / 2;
+//         width: $magicNumber / 2;
+//         margin: $magicNumber / 4 $magicNumber / 4 $magicNumber / 4 0;
 //         overflow: hidden;
 //         border-radius: 50%;
 //     }
 
 //     20% {
-//         top: $s-main / 2;
-//         height: $s-main;
-//         width: $s-main;
+//         top: $magicNumber / 2;
+//         height: $magicNumber;
+//         width: $magicNumber;
 //         overflow: hidden;
 //         margin: 0;
 //         border-radius: 50%;
 //     }
 
 //     25% {
-//         top: $s-main / 2;
-//         height: $s-main;
-//         width: $s-main;
+//         top: $magicNumber / 2;
+//         height: $magicNumber;
+//         width: $magicNumber;
 //         overflow: hidden;
 //         border-radius: 50%;
 //     }
 
 //     45% {
-//         top: $s-main / 2;
-//         height: $s-main;
-//         width: $s-main;
+//         top: $magicNumber / 2;
+//         height: $magicNumber;
+//         width: $magicNumber;
 //         overflow: hidden;
 //         border-radius: inherit;
 //     }
 
 //     50% {
-//         top: $s-main / 2;
-//         height: $s-main;
-//         width: $s-main;
+//         top: $magicNumber / 2;
+//         height: $magicNumber;
+//         width: $magicNumber;
 //         overflow: hidden;
 //         border-radius: inherit;
 //     }
 
 //     75% {
-//         top: $s-main / 2;
+//         top: $magicNumber / 2;
 //         width: inherit;
 //         height: inherit;
 //         border-radius: inherit;
 //     }
 
 //     100% {
-//         top: $s-main / 2;
+//         top: $magicNumber / 2;
 //         width: inherit;
 //         height: inherit;
 //         border-radius: inherit;
@@ -396,13 +396,13 @@
 
 //     75% {
 //         opacity: 1;
-//         height: $s-main;
+//         height: $magicNumber;
 //         display: block;
 //     }
 
 //     100% {
 //         opacity: 1;
-//         height: $s-main;
+//         height: $magicNumber;
 //         display: block;
 //     }
 // }

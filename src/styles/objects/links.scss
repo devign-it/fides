@@ -7,8 +7,8 @@ $link-color-active: lighten($c-black, 90%);
 $link-underline-color: $link-color;
 $link-underline-color-active: $link-color-active;
 
-$link-underline-width: 3px;
-$link-underline-offset: 4px;
+$link-underline-width: 2px;
+$link-underline-offset: 6px;
 
 a:not(.main-navigation),
 li a,
@@ -72,5 +72,10 @@ p a {
     }
 }
 .text-container--links {
-    margin-top: $s-main;
+    margin-top: $magicNumber;
+}
+
+.link-button__inline {
+    font-size: 1rem;
+    text-transform: uppercase;
 }

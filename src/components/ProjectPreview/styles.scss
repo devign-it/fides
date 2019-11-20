@@ -2,56 +2,5 @@
 
 .project-list {
     perspective: 100vw;
-}
-.project-post--preview {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-wrap: no-wrap;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba($c-white, 0.5);
-    min-height: 100vh;
-
-    @media screen and (min-width: $tablet-breakpoint) {
-        flex-direction: row;
-        flex-wrap: wrap;
-        height: 100vh;
-
-        .info,
-        .image {
-            width: 50%;
-        }
-    }
-
-    .info {
-        width: 100%;
-        padding: 0 $s-main / 3;
-        @media screen and (min-width: $tablet-breakpoint) {
-            width: 50%;
-            padding: 0 $s-main / 2 0 $s-main;
-        }
-
-        .info--partner {
-            display: none;
-            margin-top: $s-main / 4;
-            font-size: 1rem;
-
-            span {
-                margin-right: 0.5rem;
-            }
-
-            a {
-                font-size: 1rem;
-            }
-        }
-    }
-
-    .image {
-        height: 100%;
-        .gatsby-image-wrapper {
-            height: 100%;
-        }
-    }
+    padding: $magicNumber / 2;
 }

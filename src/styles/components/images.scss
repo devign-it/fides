@@ -11,9 +11,9 @@
     pointer-events: none;
     display: block;
     position: fixed;
-    right: $s-main;
-    top: $s-main;
-    height: calc(100vh - #{$s-main} * 2);
+    right: $magicNumber;
+    top: $magicNumber;
+    height: calc(100vh - #{$magicNumber} * 2);
     z-index: 1;
     opacity: 0;
     transition: transform $delay--total / 2 $t-smooth_two, opacity $delay--total / 2 $t-smooth_two;
@@ -24,17 +24,17 @@
     }
 
     &.item__handstand {
-        right: $s-main * 4;
+        right: $magicNumber * 4;
         top: 0;
     }
     &.item__nfc {
-        top: $s-main;
+        top: $magicNumber;
     }
     &.item__devign {
 
-      height: $s-main / 2;
-        right: $s-main / 2;
-        top: $s-main / 2;
+      height: $magicNumber / 2;
+        right: $magicNumber / 2;
+        top: $magicNumber / 2;
           &.active {
         transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) rotateZ(0);
       }

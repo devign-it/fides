@@ -4,13 +4,13 @@
     width: 100%;
     background-color: $c-black;
     color: $c-white;
-    // padding: $s-main / 4 $s-main / 4 0 $s-main / 4;
+    // padding: $magicNumber / 4 $magicNumber / 4 0 $magicNumber / 4;
 
     // @media screen and (min-width: $tablet-breakpoint) {
-    //     padding: $s-main / 3 $s-main / 3 0 $s-main / 3;
+    //     padding: $magicNumber / 3 $magicNumber / 3 0 $magicNumber / 3;
     // }
     // @media screen and (min-width: $desktop-breakpoint) {
-    //     padding: $s-main / 2 $s-main / 2 0 $s-main / 2;
+    //     padding: $magicNumber / 2 $magicNumber / 2 0 $magicNumber / 2;
     // }
 
     .main-container--text-container {
@@ -28,13 +28,13 @@
 
         .text-container--projects {
             p {
-                margin-top: $s-main / 2;
+                margin-top: $magicNumber / 2;
             }
             .text-container__links {
                 margin: 0;
                 padding: 0;
                 columns: 2;
-                column-gap: $s-main / 2;
+                column-gap: $magicNumber / 2;
                 list-style: none;
                 width: fit-content;
             }
@@ -43,10 +43,10 @@
 
     .main-container--button {
         background-color: $c-black;
-        width: $s-main / 2;
-        height: $s-main;
+        width: $magicNumber / 2;
+        height: $magicNumber;
         position: absolute;
-        bottom: $s-main / 2;
+        bottom: $magicNumber / 2;
         right: 0;
         display: flex;
         justify-content: center;

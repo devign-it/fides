@@ -40,7 +40,7 @@ export const Heading = (props) => {
     return sizedHeading;
 };
 
-// max-width; $s-main * 8
+// max-width; $magicNumber * 8
 export const Paragraph = styled.p`
     max-width: calc(6rem * 8);
     margin-left: auto;

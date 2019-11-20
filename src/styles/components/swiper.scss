@@ -13,7 +13,7 @@
   @media screen and (min-width: $tablet-breakpoint) {
     flex-direction: column;
     height: 100%;
-    padding: $s-main / 2;
+    padding: $magicNumber / 2;
   }
   @media screen and (min-width: $desktop-breakpoint) {
   }
@@ -73,7 +73,7 @@
       transform: translateY(0);
       // position: relative;
       padding: 0;
-      margin-bottom: $s-main / 2;
+      margin-bottom: $magicNumber / 2;
       flex-direction: row;
     }
   }
@@ -85,8 +85,8 @@
     z-index: 10;
 
     &-fraction {
-      // bottom: $s-main / 4;
-      // left: $s-main / 2;
+      // bottom: $magicNumber / 4;
+      // left: $magicNumber / 2;
       font-size: 1.5rem;
       color: $c-black;
     }
@@ -118,28 +118,28 @@
 .swiper-button-next,
 .swiper-button-prev {
   position: static;
-  width: $s-main / 4;
-  height: $s-main / 4;
+  width: $magicNumber / 4;
+  height: $magicNumber / 4;
   z-index: 10;
   cursor: pointer;
-  background-size: $s-main / 4;
+  background-size: $magicNumber / 4;
   background-position: right bottom;
   background-repeat: no-repeat;
   background-image: url("../assets/images/icon-arrow_black.svg");
   @media screen and (min-width: $tablet-breakpoint) {
     position: absolute;
-    background-size: $s-main / 3;
-    width: $s-main / 2;
-    height: $s-main / 2;
+    background-size: $magicNumber / 3;
+    width: $magicNumber / 2;
+    height: $magicNumber / 2;
   }
 }
 // Settings homepage sliders
 .swiper-controls {
-  padding: 0 $s-main / 4;
+  padding: 0 $magicNumber / 4;
 
   .swiper-button-next {
     @media screen and (min-width: $tablet-breakpoint) {
-      right: $s-main / 2;
+      right: $magicNumber / 2;
     }
   }
 
@@ -147,7 +147,7 @@
     transform: rotate(-180deg);
     background-position: right top;
     @media screen and (min-width: $tablet-breakpoint) {
-      right: $s-main;
+      right: $magicNumber;
     }
   }
 
@@ -155,7 +155,7 @@
     display: none;
     @media screen and (min-width: $tablet-breakpoint) {
       display: block;
-      margin-left: $s-main / 2;
+      margin-left: $magicNumber / 2;
     }
   }
 }

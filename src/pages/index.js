@@ -3,23 +3,25 @@ import { graphql } from "gatsby";
 import get from "lodash/get";
 import Layout from "../components/Layout";
 import AnimatedQuote from "../components/AnimatedQuote";
+import ProjectsRoll from "../components/ProjectsRoll";
 
-import { ProjectsFeed, initializeSwiper } from "../components/ProjectsFeed";
+// import { ProjectsFeed, initializeSwiper } from "../components/ProjectsFeed";
 import "../styles/styles.scss";
 
 class RootIndex extends React.Component {
-    componentDidMount() {
-        initializeSwiper();
-    }
+    // componentDidMount() {
+    //     initializeSwiper();
+    // }
 
     render() {
-        const projects = get(this, "props.data.allContentfulProjects.edges");
+        const posts = get(this, "props.data.allContentfulProjectPosts.edges");
+
         return (
             <>
                 <AnimatedQuote>Shaping the digital world is what I like and do</AnimatedQuote>
-
-                <Layout location={this.props.location}>
-                    <ProjectsFeed feedSource={projects} />
+                <Layout showNav={true} location={this.props.location}>
+                    {/* <ProjectsFeed feedSource={projects} /> */}
+                    <ProjectsRoll items={posts} />
                 </Layout>
             </>
         );
@@ -28,26 +30,20 @@ class RootIndex extends React.Component {
 
 export default RootIndex;
 
-export const pageQuery = graphql`
-    query HomeQuery {
-        allContentfulProjects(limit: 10) {
+export const HomepageQuery = graphql`
+    query HomepageQuery {
+        allContentfulProjectPosts {
             edges {
                 node {
-                    title
-                    slug
                     client
                     color
-                    images {
+                    featuredImage {
                         fluid {
                             ...GatsbyContentfulFluid_noBase64
                         }
-                        description
                     }
-                    description {
-                        childMarkdownRemark {
-                            html
-                        }
-                    }
+                    slug
+                    title
                 }
             }
         }

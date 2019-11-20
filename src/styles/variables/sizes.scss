@@ -1,5 +1,8 @@
 // Sizes
 // -----
-$s-main: 6rem;
+
+$magicNumber: 60px;
+// $s-main: 6rem;
 $s-toggle: 40px;
-$column--width__flex: 100vw / 12;
+$s-maxWidthColum: 1440px;
+$heightNavigation: $magicNumber * 1.5;
