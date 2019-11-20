@@ -5,42 +5,9 @@ exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions;
 
     return new Promise((resolve, reject) => {
-        const blogPost = path.resolve("./src/templates/blog-post.js");
-        const projectPost = path.resolve("./src/templates/project-post.js");
-
-        resolve(
-            graphql(
-                `
-                    {
-                        allContentfulProjectPost {
-                            edges {
-                                node {
-                                    title
-                                    slug
-                                }
-                            }
-                        }
-                    }
-                `,
-            ).then((result) => {
-                if (result.errors) {
-                    console.log(result.errors);
-                    reject(result.errors);
-                }
-
-                const projectPosts = result.data.allContentfulProjectPost.edges;
-
-                projectPosts.forEach((post, index) => {
-                    createPage({
-                        path: `/projects/${post.node.slug}/`,
-                        component: projectPost,
-                        context: {
-                            slug: post.node.slug,
-                        },
-                    });
-                });
-            }),
-        );
+        const blogPost = path.resolve("./src/templates/BlogPost/index.js");
+        const projectPost = path.resolve("./src/templates/ProjectPost/index.js");
+        const tagPage = path.resolve(`./src/templates/TagPage/index.js`);
 
         resolve(
             graphql(
@@ -54,20 +21,71 @@ exports.createPages = ({ graphql, actions }) => {
                                 }
                             }
                         }
+                        allContentfulProjectPosts {
+                            edges {
+                                node {
+                                    title
+                                    slug
+                                    categoryTags {
+                                        category
+                                    }
+                                }
+                            }
+                        }
+                        allContentfulProjectTags {
+                            edges {
+                                node {
+                                    category
+                                }
+                            }
+                        }
                     }
                 `,
             ).then((result) => {
                 if (result.errors) {
-                    console.log(result.errors);
-                    reject(result.errors);
+                    throw result.errors;
                 }
 
+                const projectPosts = result.data.allContentfulProjectPosts.edges;
                 const blogPosts = result.data.allContentfulBlogPost.edges;
+                // const projectTags = result.data.allContentfulBlogPost.edges;
 
+                const tagSet = new Set();
+
+                // Create project pages
+                projectPosts.forEach((post, index) => {
+                    // Get tags for tags pages.
+                    // if (post.node.categoryTags) {
+                    //     post.node.categoryTags.category.forEach((tag) => {
+                    //         tagSet.add(tag);
+                    //     });
+                    // }
+
+                    createPage({
+                        path: `/projects/${post.node.slug}/`,
+                        component: projectPost,
+                        context: {
+                            slug: post.node.slug,
+                        },
+                    });
+                });
+
+                // Create blog pages
                 blogPosts.forEach((post, index) => {
                     createPage({
                         path: `/blog/${post.node.slug}/`,
                         component: blogPost,
+                        context: {
+                            slug: post.node.slug,
+                        },
+                    });
+                });
+
+                // Create tags pages.
+                tagSet.forEach((post, index) => {
+                    createPage({
+                        path: `/tags/${post.node.slug}/`,
+                        component: tagPage,
                         context: {
                             slug: post.node.slug,
                         },
