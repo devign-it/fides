@@ -21,11 +21,12 @@ exports.createPages = ({ graphql, actions }) => {
                                 }
                             }
                         }
-                        allContentfulProjectPosts {
+                        allContentfulProjectPosts(sort: { order: DESC, fields: year }) {
                             edges {
                                 node {
                                     title
                                     slug
+                                    year
                                 }
                             }
                         }
@@ -50,11 +51,16 @@ exports.createPages = ({ graphql, actions }) => {
 
                 // Create project pages
                 projectPosts.forEach((post, index) => {
+                    const previous = index === projectPosts.length - 1 ? null : projectPosts[index + 1].node;
+                    const next = index === 0 ? null : projectPosts[index - 1].node;
+
                     createPage({
                         path: `/projects/${post.node.slug}/`,
                         component: projectPost,
                         context: {
                             slug: post.node.slug,
+                            previous,
+                            next,
                         },
                     });
                 });
