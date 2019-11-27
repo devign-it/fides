@@ -10,12 +10,15 @@
     border-radius: inherit;
     position: sticky;
     height: $magicNumber;
-    top: $magicNumber / 2;
-    border: 3px solid $c-white;
+    top: $magicNumber / 4;
+    border: 2px solid $c-white;
     overflow: hidden;
-
+    background-color: $c-black;
+    left: $magicNumber / 4;
+    width: calc(100vw - (#{$magicNumber} / 2));
     @media screen and (min-width: $tablet-breakpoint) {
         top: $magicNumber / 2;
+        left: 0;
         border: 3px solid $c-white;
         margin: 0 $magicNumber / 2;
         margin-bottom: $magicNumber / 2;

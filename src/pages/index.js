@@ -18,9 +18,10 @@ class RootIndex extends React.Component {
 
         return (
             <>
-                <AnimatedQuote>Shaping the digital world is what I like and do</AnimatedQuote>
-                <Layout showNav={true} location={this.props.location}>
-                    {/* <ProjectsFeed feedSource={projects} /> */}
+                <AnimatedQuote>
+                    I want to challenge the most complex problems with human designed technology
+                </AnimatedQuote>
+                <Layout showNav={true} stickyNav={true} location={this.props.location}>
                     <ProjectsRoll items={posts} />
                 </Layout>
             </>
@@ -37,6 +38,8 @@ export const HomepageQuery = graphql`
                 node {
                     client
                     color
+                    darkText
+
                     featuredImage {
                         fluid {
                             ...GatsbyContentfulFluid_noBase64

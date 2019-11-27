@@ -1,0 +1,30 @@
+@import "../../styles/variables/variables";
+
+footer.page--footer {
+    background-color: $c-white;
+    min-height: 50vh;
+    margin: $magicNumber;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &.ghost {
+        border: 5px solid $c-white;
+        background-color: transparent;
+    }
+    &.dark {
+        background-color: $c-black;
+    }
+
+    .col__left,
+    .col__right {
+        display: flex;
+        flex-direction: column;
+    }
+    .col__left {
+    }
+    .col__right {
+        align-self: flex-end;
+        margin-bottom: -$magicNumber / 4;
+    }
+}

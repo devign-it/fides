@@ -86,9 +86,9 @@ class Navigation extends React.Component {
                 className="main-navigation isOpen"
                 style={{ position: this.props.isSticky ? "sticky" : "relative" }}
             >
-                <NavigationItem text="Projects" to="/projects" />
+                {this.props.showHome && <NavigationItem text="Home" to="/" />}
+                <NavigationItem text="Projects" to="/projects/" />
                 <NavigationItem text="About" to="/about/" />
-                <NavigationItem text="Resume" to="/resume/" />
             </nav>
         );
     }

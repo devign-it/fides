@@ -1,0 +1,24 @@
+@import "../../styles/variables/variables";
+
+.about-image--wrapper {
+    position: relative;
+    display: block;
+
+    .image--container {
+        width: 100%;
+        height: auto;
+        &.top--image {
+            display: none;
+            @media screen and (min-width: $tablet-breakpoint) {
+                display: initial;
+                z-index: 2;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+        &.bottom--image {
+            z-index: 1;
+        }
+    }
+}

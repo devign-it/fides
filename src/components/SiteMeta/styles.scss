@@ -1,0 +1,57 @@
+@import "../../styles/variables/variables";
+
+.information {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &.inverted {
+        mix-blend-mode: difference;
+        .subtitle {
+            color: $c-grey__dark;
+        }
+    }
+    &.column {
+        flex-direction: column;
+        height: 100%;
+    }
+    * {
+    }
+    .author,
+    .subtitle {
+        font-size: 24px;
+        margin: 0;
+    }
+    .subtitle {
+        color: $c-grey__medium;
+    }
+    @media screen and (min-width: $tablet-breakpoint) {
+        flex-direction: row;
+    }
+}
+
+.author,
+.quote {
+    margin: 0;
+    z-index: 9;
+}
+.author {
+    a {
+        color: $c-white;
+        text-decoration: none;
+        .name {
+            display: inline;
+        }
+        .jobtitle {
+            display: none;
+        }
+        &:hover {
+            .name {
+                display: none;
+            }
+            .jobtitle {
+                display: inline;
+            }
+        }
+    }
+}

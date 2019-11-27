@@ -1,17 +1,30 @@
 $fontPath: "../assets/fonts/";
 
+// @font-face {
+//     font-family: "AmerigoBT-BoldA";
+//     src: url("#{$fontPath}AmerigoBT-BoldA.eot");
+//     src: url("#{$fontPath}AmerigoBT-BoldA.woff2") format("woff2"),
+//         url("#{$fontPath}AmerigoBT-BoldA.woff") format("woff"),
+//         url("#{$fontPath}AmerigoBT-BoldA.ttf") format("truetype"),
+//         url("#{$fontPath}AmerigoBT-BoldA.svg#AmerigoBT-BoldA") format("svg"),
+//         url("#{$fontPath}AmerigoBT-BoldA.eot?#iefix") format("embedded-opentype");
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
 @font-face {
-    font-family: "AmerigoBT-BoldA";
-    src: url("#{$fontPath}AmerigoBT-BoldA.eot");
-    src: url("#{$fontPath}AmerigoBT-BoldA.woff2") format("woff2"),
-        url("#{$fontPath}AmerigoBT-BoldA.woff") format("woff"),
-        url("#{$fontPath}AmerigoBT-BoldA.ttf") format("truetype"),
-        url("#{$fontPath}AmerigoBT-BoldA.svg#AmerigoBT-BoldA") format("svg"),
-        url("#{$fontPath}AmerigoBT-BoldA.eot?#iefix") format("embedded-opentype");
+    font-family: "AmerigoBT-Medium";
+    src: url("#{$fontPath}AmerigoBT-Medium.eot");
+    src: url("#{$fontPath}AmerigoBT-Medium.woff") format("woff"),
+        url("#{$fontPath}AmerigoBT-Medium.ttf") format("truetype"),
+        url("#{$fontPath}AmerigoBT-Medium.svg#AmerigoBT-Medium") format("svg"),
+        url("#{$fontPath}AmerigoBT-Medium.eot?#iefix") format("embedded-opentype");
     font-weight: normal;
     font-style: normal;
 }
+
 /* Copyright (c) 2014-2016 by Vyacheslav Kirilenko, Gayane Bagdasaryan. All rights reserved. */
+
 @font-face {
     font-family: "Formular";
     src: url("#{$fontPath}formular-regular.eot");
@@ -34,6 +47,9 @@ html {
 body {
     text-rendering: geometricPrecision;
     font-family: $font--sans;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
 
     blockquote,
     h1,
@@ -44,36 +60,40 @@ body {
     h6 {
         font-variant-ligatures: discretionary-ligatures;
         font-family: $font--serif;
+        font-weight: initial;
         text-align: left;
         hyphens: none;
     }
 
     h1 {
         @include margin-top(0);
-        font-size: 15vw;
-        line-height: 0.95;
+        font-size: 12vw;
+        line-height: 1.05;
 
         span {
             padding: 10px 0;
             font-size: 3rem;
         }
         @media screen and (min-width: $tablet-breakpoint) {
-            font-size: 7.5vw;
+            font-size: 6.5vw;
         }
     }
 
     li a,
     p,
     p a {
-        font-size: 1.24rem;
-        @include line-height(1.5);
+        font-size: 20px;
+        line-height: 1.5;
+        // @include line-height(1.5);
 
         &:last-child {
-            @include margin-bottom(0);
+            margin-bottom: 0;
         }
+
         @media screen and (min-width: $tablet-breakpoint) {
-            @include line-height(1.75);
-            font-size: ms(1);
+            // @include line-height(1.75);
+            // font-size: ms(1);
+            font-size: 24px;
         }
     }
 
@@ -89,30 +109,28 @@ body {
         @include margin-bottom(1);
         @include margin-top(2);
         @media screen and (min-width: $tablet-breakpoint) {
-            font-size: ms(3);
-            @include margin-bottom(2);
-            @include margin-top(3);
+            // font-size: ms(3);
+            // @include margin-bottom(2);
+            // @include margin-top(3);
+            font-size: 40px;
         }
     }
 
     h2 {
-        font-size: ms(1);
-        // font-family: $font--sans;
-        @include line-height(1.5);
+        font-family: $font--sans;
+        font-weight: initial;
+        font-size: 24px;
         @media screen and (min-width: $tablet-breakpoint) {
-            font-size: ms(2);
-            @include line-height(2.5);
+            font-size: 40px;
         }
     }
-    .main-navigation h2 {
-        font-size: 1.24rem;
-        @media screen and (min-width: $tablet-breakpoint) {
-            font-size: ms(1);
-        }
-        @media screen and (min-width: $desktop-breakpoint) {
-            font-size: ms(2);
-        }
-    }
+    // .main-navigation h2 {
+    //     font-size: 1.24rem;
+
+    //     @media screen and (min-width: $desktop-breakpoint) {
+    //         font-size: 40px;
+    //     }
+    // }
     blockquote {
         font-size: ms(1);
         font-family: $font--sans;

@@ -3,13 +3,9 @@ import { Link } from "gatsby";
 import "./styles.scss";
 
 const NavigationItem = ({ text, to }) => (
-    <div className="main-navigation--item">
-        <h2>
-            <Link activeClassName={"isActive"} to={`${to}`}>
-                {text}
-            </Link>
-        </h2>
-    </div>
+    <Link className="main-navigation--item" activeClassName={"isActive"} to={`${to}`}>
+        <h2>{text}</h2>
+    </Link>
 );
 
 export default NavigationItem;

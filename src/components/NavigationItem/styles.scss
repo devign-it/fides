@@ -24,11 +24,17 @@
         text-align: center;
         transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) rotateZ(0);
         transform-style: preserve-3d;
-
+        font-size: 20px;
+        @media screen and (min-width: $tablet-breakpoint) {
+            font-size: 30px;
+        }
         a {
             text-decoration: none;
             color: $c-white;
         }
+    }
+    &:hover {
+        background-color: rgba($c-white, 0.1);
     }
 
     &:after,

@@ -1,0 +1,9 @@
+@import "../../styles/variables/variables";
+
+.social-link--wrapper {
+    display: flex;
+    flex-direction: column;
+    &.inverted {
+        mix-blend-mode: difference;
+    }
+}

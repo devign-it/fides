@@ -1,0 +1,12 @@
+@import "../../styles/variables/variables";
+
+.scroll--container {
+    max-height: 75vh;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+
+    .list--capabilities {
+        margin-top: $magicNumber / 2;
+    }
+}

@@ -19,7 +19,7 @@ export default ({ project }) => (
                 Check website
             </a>
         </div>
-        <div className="project-item--slider swiper-container black">
+        {/* <div className="project-item--slider swiper-container black">
             <div className="slider--items swiper-wrapper">
                 {project.images.map(({ node }, i) => (
                     <div className="swiper-slide">
@@ -44,6 +44,6 @@ export default ({ project }) => (
                 </div>
             </div>
             {appendSwiperControls()}
-        </div>
+        </div> */}
     </article>
 );

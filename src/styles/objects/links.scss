@@ -84,6 +84,20 @@ p a {
 }
 
 .link-button__inline {
-    font-size: 1rem;
+    font-size: 18px;
+    margin-bottom: $magicNumber / 4;
     text-transform: uppercase;
+
+    &.align-right {
+        text-align: right;
+    }
+    .icon {
+        margin-left: $magicNumber / 4;
+        width: $magicNumber / 4;
+        height: $magicNumber / 4;
+        img {
+            width: $magicNumber / 4;
+            height: auto;
+        }
+    }
 }

@@ -1,0 +1,25 @@
+@import "../../styles/variables/variables";
+
+.header--container {
+    min-height: 100vh;
+    background-color: $c-white;
+    color: $c-black;
+    padding: $magicNumber / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .quote {
+        margin-bottom: $magicNumber;
+    }
+
+    @media screen and (min-width: $tablet-breakpoint) {
+        .quote {
+            margin-bottom: $magicNumber / 2;
+        }
+    }
+
+    @media screen and (min-width: $desktop-breakpoint) {
+        padding: $magicNumber;
+    }
+}

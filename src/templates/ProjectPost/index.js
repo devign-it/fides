@@ -1,20 +1,24 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { Link, graphql } from "gatsby";
 import Helmet from "react-helmet";
 import get from "lodash/get";
 import Img from "gatsby-image";
 import Layout from "../../components/Layout";
 import TagsList from "../../components/TagsList";
 import Navigation from "../../components/Navigation";
-
+import PostNavigation from "../../components/PostNavigation";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 import "./styles.scss";
 
 export default class ProjectPostTemplate extends React.Component {
     render() {
+        const { next, previous } = this.props.pageContext;
         const post = get(this.props, "data.contentfulProjectPosts");
         const siteTitle = get(this.props, "data.site.siteMetadata.title");
+        // console.log("next", next);
+        // console.log("previous", previous);
+        console.log("this.props.pageContext", this.props.pageContext);
 
         return (
             <Layout showNav={false} location={this.props.location}>
@@ -65,13 +69,13 @@ export default class ProjectPostTemplate extends React.Component {
                                 </div>
                             </aside>
                             <article className="head--description">
-                                <div>{documentToReactComponents(post.extensiveDescription.json)}</div>
+                                {documentToReactComponents(post.extensiveDescription.json)}
                             </article>
                         </section>
                         <section className="content--body">
                             {post.showcaseImages
                                 ? post.showcaseImages.map(({ node }, i) => (
-                                      <div className="body--showcase-item">
+                                      <div className="body--showcase-item" key={post.showcaseImages[i].title}>
                                           <Img
                                               key={i}
                                               className="showcase-item-image"
@@ -94,6 +98,7 @@ export default class ProjectPostTemplate extends React.Component {
                         </section>
                     </div>
                 </div>
+                <PostNavigation subpath={"projects"} next={next} previous={previous} />
                 <Navigation isSticky={false} />
             </Layout>
         );

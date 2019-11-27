@@ -1,6 +1,77 @@
 @import "../../styles/variables/variables";
 
-.project-list {
-    perspective: 100vw;
-    padding: $magicNumber / 2;
+.preview-wrapper {
+    position: relative;
+    transition: clip-path 160ms ease-in-out;
+    @media screen and (min-width: $tablet-breakpoint) {
+        clip-path: inset(30px 30px 30px 30px);
+
+        &:hover {
+            clip-path: inset(0px);
+        }
+    }
+}
+.project-post--preview {
+    width: 100vw;
+    height: auto;
+    max-height: 75vh;
+    display: flex;
+    flex-wrap: no-wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba($c-white, 0.5);
+    padding: $magicNumber / 4 0 0 $magicNumber / 4;
+    transition: all 320ms $t-smooth_one;
+
+    @media screen and (min-width: $tablet-breakpoint) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 100vh;
+        padding: 0;
+        max-height: initial;
+        min-height: 100vh;
+    }
+
+    .info {
+        width: 100%;
+        padding: 0 $magicNumber / 3;
+
+        @media screen and (min-width: $tablet-breakpoint) {
+            width: 50%;
+            padding: 0 0 0 $magicNumber * 1.5;
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            transform: translateY(-50%);
+            top: 50%;
+        }
+
+        &.dark-text {
+            color: $c-black;
+        }
+
+        .info--partner {
+            display: none;
+            margin-top: $magicNumber / 4;
+            font-size: 1rem;
+
+            span {
+                margin-right: 0.5rem;
+            }
+
+            a {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .image {
+        height: 100%;
+        width: 100%;
+        .gatsby-image-wrapper {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
 }

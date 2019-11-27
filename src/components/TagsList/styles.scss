@@ -3,16 +3,23 @@
 .tags--wrapper {
     display: flex;
     flex-wrap: wrap;
-    margin: $magicNumber / 2;
+    margin: 0 $magicNumber / 2;
+    @media screen and (min-width: $tablet-breakpoint) {
+        margin: $magicNumber / 2;
+    }
 }
 .categoryTag {
     display: inline-flex;
-    padding: $magicNumber / 8 $magicNumber / 4;
-    margin: 0 $magicNumber / 4 $magicNumber / 4 0;
-    border: 1px solid $c-white;
+
     opacity: 0.25;
     justify-content: center;
     align-items: center;
+    padding: 0 $magicNumber / 8 $magicNumber / 4 0;
+
+    @media screen and (min-width: $tablet-breakpoint) {
+        margin: 0 $magicNumber / 4 $magicNumber / 4 0;
+        border: 1px solid $c-white;
+    }
     p {
         margin: 0;
         line-height: 1;

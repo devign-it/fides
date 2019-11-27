@@ -12,14 +12,10 @@ class ProjectIndex extends React.Component {
         const posts = get(this, "props.data.allContentfulProjectPosts.edges");
 
         return (
-            <Layout location={this.props.location}>
-                <div>
-                    <Helmet title={siteTitle} />
-                    <div className="wrapper">
-                        <h2 className="section-headline">Recent Projects </h2>
-                        <ProjectsRoll items={posts} />
-                    </div>
-                </div>
+            <Layout location={this.props.location} showNav={true} showHome={true} stickyNav={true}>
+                <Helmet title={siteTitle} />
+                {/* <h2 className="section-headline">Recent Projects </h2> */}
+                <ProjectsRoll items={posts} />
             </Layout>
         );
     }
@@ -39,11 +35,6 @@ export const pageQuery = graphql`
                     featuredImage {
                         fluid {
                             ...GatsbyContentfulFluid_noBase64
-                        }
-                    }
-                    description {
-                        childMarkdownRemark {
-                            html
                         }
                     }
                 }

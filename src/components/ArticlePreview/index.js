@@ -9,11 +9,11 @@ const ArticlePreview = ({ article }) => (
             <Link to={`/blog/${article.slug}`}>{article.title}</Link>
         </h3>
         <small>{article.publishDate}</small>
-        <p
+        {/* <p
             dangerouslySetInnerHTML={{
                 __html: article.description.childMarkdownRemark.html,
             }}
-        />
+        /> */}
     </div>
 );
 

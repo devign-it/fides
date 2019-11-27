@@ -1,62 +1,8 @@
 import React from "react";
 import anime from "animejs/lib/anime.es.js";
-import styled from "styled-components";
-import { breakpoints, colors, sizes } from "../../config/variable";
-// import DarkModeToggle from "../DarkModeToggle";
+import SiteMeta from "../../components/SiteMeta";
 
-export const HeaderContainer = styled.header`
-    min-height: 100vh;
-    background-color: ${colors.white};
-    color: black;
-    padding: calc(${sizes.magicNumber} / 4);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    // perspective: 100vh;
-
-    .author,
-    .quote {
-        margin: 0;
-        z-index: 9;
-    }
-
-    .author {
-        a {
-            color: black;
-            text-decoration: none;
-            .name {
-                display: inline;
-            }
-            .jobtitle {
-                display: none;
-            }
-            &:hover {
-                color: black;
-                .name {
-                    display: none;
-                }
-                .jobtitle {
-                    display: inline;
-                }
-            }
-        }
-    }
-
-    .quote {
-        margin-bottom: calc(8rem / 2);
-    }
-
-    @media screen and (min-width: ${breakpoints.tabletBreakpoint}) {
-        padding: calc(${sizes.magicNumber} / 2);
-        .quote {
-            margin-bottom: 0;
-        }
-    }
-
-    @media screen and (min-width: ${breakpoints.desktop}) {
-        padding: $magicNumber;
-    }
-`;
+import "./styles.scss";
 
 class AnimatedQuote extends React.Component {
     constructor(props) {
@@ -67,7 +13,6 @@ class AnimatedQuote extends React.Component {
 
     componentDidMount() {
         const header = this.quoteContainer.current;
-        // const quote = this.animatedQuote.current;
 
         header.addEventListener("mousemove", (event) => {
             let xPos = event.clientX / window.innerWidth + 0.05 / 2;
@@ -78,12 +23,12 @@ class AnimatedQuote extends React.Component {
             anime({
                 targets: ".quote",
                 easing: "easeOutQuint",
-                duration: 240,
-                rotationZ: xPos * -10,
-                rotationX: yPos * 20,
+                duration: 120,
+                // rotationZ: Math.sqrt(Math.pow(yPos, 4) + Math.pow(xPos, 2)) * 5,
+                // rotationX: Math.sqrt(Math.pow(xPos, 4) + Math.pow(yPos, 2)) * 5,
                 // rotation: Math.sqrt(Math.pow(yPos, 4) + Math.pow(xPos, 2)) * 5,
-                skewY: Math.pow(xPos, 2) * -5,
-                skewX: Math.pow(yPos, 2) * -20,
+                skewY: Math.pow(yPos, 2) * -3,
+                skewX: Math.pow(xPos, 2) * -6,
             });
 
             // moveTitle();
@@ -92,18 +37,13 @@ class AnimatedQuote extends React.Component {
 
     render() {
         return (
-            <HeaderContainer ref={this.quoteContainer} className="header--container">
-                <p className="author">
-                    <a className="doPopup mail" rel="item__portrait" href="mailto:daan@devign.it">
-                        <span className="name">Daan van der Zwaag</span>
-                        <span className="jobtitle">Design technologist</span>
-                    </a>
-                </p>
+            <header ref={this.quoteContainer} className="header--container">
+                <SiteMeta color="white" />
                 <h1 ref={this.animatedQuote} className="quote">
                     {this.props.children}
                 </h1>
                 {/* <DarkModeToggle /> */}
-            </HeaderContainer>
+            </header>
         );
     }
 }

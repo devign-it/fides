@@ -15,26 +15,34 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
     flex-direction: column;
     width: 100%;
     max-height: calc(100vh - ((#{$heightMetadatarow} / 2) + (#{$magicNumber} / 2)));
+    overflow: hidden;
 }
 
 .project--metadata {
-    display: flex;
+    // Fix responsiveness instead of hiding
+    display: none;
+
     flex-direction: row;
     background-color: $c-white;
-    height: $heightMetadatarow;
     color: $c-black;
-    margin: 0 $magicNumber / 2;
-    padding: 0 $magicNumber;
-    max-width: $s-maxWidthColum;
-    align-items: center;
-    align-self: stretch;
-    box-sizing: border-box;
-    transform: translateY(-$heightMetadatarow / 2);
+
+    margin: $magicNumber / 4;
+    padding: $magicNumber / 2 $magicNumber / 2 0 $magicNumber / 2;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    transform: none;
+
     .metadata--item {
-        flex-grow: 1;
-        flex-basis: 0;
-        padding: $magicNumber / 2 0 $magicNumber / 4 0;
+        min-height: $magicNumber * 1.5;
+        padding: 0;
+        width: 50%;
         margin-bottom: $magicNumber / 3;
+        flex-basis: auto;
+
+        &:last-child {
+            margin-bottom: $magicNumber / 3;
+        }
         h5 {
             margin: 0 0 $magicNumber / 12 0;
             font-family: $font--sans;
@@ -45,21 +53,22 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
             }
         }
     }
-    @media screen and (max-width: $tablet-breakpoint) {
-        margin: $magicNumber / 4;
-        padding: $magicNumber / 2;
-        flex-direction: row;
-        flex-wrap: wrap;
-        height: auto;
-        transform: none;
+
+    @media screen and (min-width: $tablet-breakpoint) {
+        display: flex;
+        height: $heightMetadatarow;
+        margin: 0 $magicNumber / 2;
+        padding: 0 $magicNumber;
+        max-width: $s-maxWidthColum;
+        align-items: center;
+        align-self: stretch;
+        transform: translateY(-$heightMetadatarow / 2);
+
         .metadata--item {
-            padding: 0;
-            width: 50%;
+            flex-grow: 1;
+            flex-basis: 0;
+            padding: $magicNumber / 2 0 $magicNumber / 4 0;
             margin-bottom: $magicNumber / 3;
-            flex-basis: auto;
-            &:last-child {
-                margin-bottom: 0;
-            }
         }
     }
     @media screen and (max-width: $small-phone-breakpoint) {
@@ -70,8 +79,11 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
 .project--content {
     display: flex;
     flex-direction: column;
-    padding: $magicNumber;
     max-width: $s-maxWidthColum;
+    width: 100%;
+    @media screen and (min-width: $tablet-breakpoint) {
+        padding: $magicNumber;
+    }
 }
 
 .content--head {
@@ -80,30 +92,51 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
     flex-basis: 0;
     align-items: stretch;
     flex-wrap: wrap;
-
     .head--title {
-        margin-left: $magicNumber / 2;
+        margin: $magicNumber $magicNumber 0 $magicNumber;
         width: 100%;
+
         h1 {
             margin-bottom: $magicNumber;
+        }
+        @media screen and (min-width: $tablet-breakpoint) {
+            margin-left: $magicNumber / 2;
         }
     }
     .head--tags {
         width: 100%;
-        margin-bottom: $magicNumber * 2;
+        padding: 0 $magicNumber / 2;
+        margin-bottom: $magicNumber;
+
+        @media screen and (min-width: $tablet-breakpoint) {
+            margin-bottom: $magicNumber * 2;
+
+            padding: $magicNumber / 2;
+        }
     }
     .head--sidebar {
-        width: $widthLeftCol;
-        padding: $magicNumber $magicNumber / 2 ($magicNumber / 2 + 8px) $magicNumber / 2;
         position: relative;
+        width: 100%;
+        order: 2;
+        @media screen and (min-width: $tablet-breakpoint) {
+            padding: $magicNumber / 2;
+            width: $widthLeftCol;
+            padding: $magicNumber $magicNumber / 2 ($magicNumber / 2 + 8px) $magicNumber / 2;
+        }
         .sidebar--sticky-content {
             position: sticky;
             top: $magicNumber / 2;
         }
     }
     .head--description {
-        width: $widthRightCol;
+        width: 100%;
         padding: $magicNumber / 2;
+        background-color: rgba($c-white, 0.1);
+
+        @media screen and (min-width: $tablet-breakpoint) {
+            width: $widthRightCol;
+            padding: $magicNumber / 2;
+        }
 
         h3:nth-child(1) {
             margin-top: 20px;

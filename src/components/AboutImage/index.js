@@ -1,14 +1,78 @@
 import React from "react";
-/* TODO: source from Img */
 import Img from "gatsby-image";
+import anime from "animejs/lib/anime.es.js";
 
-import { AboutPicture } from "./styles";
+import "./styles.scss";
 
-const AboutImage = ({ imageSource, textSource }) => (
-    <AboutPicture>
-        <Img src={imageSource} alt="Profile picture of Daan van der Zwaag" />
-        <blockquote>{textSource}</blockquote>
-    </AboutPicture>
-);
+class AboutImage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.imageWrapper = React.createRef();
+        this.bottomImage = React.createRef();
+        this.topImage = React.createRef();
+    }
+
+    componentDidMount() {
+        // imageWrapper.addEventListener("mousemove", (event) => {
+        //     let animationOpacity = anime({
+        //         targets: ".top--image",
+        //         opacity: [0.15, 0.85],
+        //         elasticity: 200,
+        //         duration: 2000,
+        //         easing: "easeOutQuint",
+        //         autoplay: false,
+        //     });
+
+        //     let xPos = event.clientX / window.innerWidth;
+
+        //     animationOpacity.seek(xPos * animationOpacity.duration);
+
+        //     console.log(xPos);
+
+        // });
+        function getScrollPercent() {
+            var h = document.documentElement,
+                b = document.body,
+                st = "scrollTop",
+                sh = "scrollHeight";
+            return ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100;
+        }
+
+        const imageWrapper = this.imageWrapper.current;
+        const tl = anime.timeline({ autoplay: false, targets: ".top--image", easing: "easeOutQuint" });
+
+        tl.add(
+            {
+                // rotateX: [10, 0],
+                // rotateY: [-15, 0],
+                // rotateZ: [5, 0],
+                // translateY: [60, 0],
+                opacity: [1, 0],
+                duration: 2000,
+            },
+
+            0,
+        );
+
+        // new AnimePlayer({ add: tl })
+
+        window.addEventListener("scroll", () => {
+            const percentage = getScrollPercent();
+            tl.seek(tl.duration * (percentage * 0.01));
+        });
+    }
+    render() {
+        return (
+            <div ref={this.imageWrapper} className="about-image--wrapper">
+                <div ref={this.topImage} className="image--container top--image">
+                    <Img fluid={this.props.topImage} />
+                </div>
+                <div ref={this.bottomImage} className="image--container bottom--image">
+                    <Img fluid={this.props.bottomImage} />
+                </div>
+            </div>
+        );
+    }
+}
 
 export default AboutImage;
