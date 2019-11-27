@@ -23,6 +23,11 @@ Based on the [Gatsby Contentful Starter](https://github.com/contentful-userland/
 
 -   Removes all dependencies, scripts and data from the installation script: `yarn run cleanup-repository`
 
-### License
+## To do
+
+-   Make page transitions w/ [this plugin](https://gatsby-plugin-transition-link.netlify.com/)
+-   Add custom cursor
+
+## License
 
 MIT
