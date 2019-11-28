@@ -2,12 +2,12 @@
 
 footer.page--footer {
     background-color: $c-white;
-    min-height: 50vh;
-    margin: $magicNumber;
+    margin: $magicNumber / 4 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
+    max-width: $s-maxWidthColumn;
+    position: relative;
     &.ghost {
         border: 5px solid $c-white;
         background-color: transparent;
@@ -21,10 +21,13 @@ footer.page--footer {
         display: flex;
         flex-direction: column;
     }
-    .col__left {
-    }
     .col__right {
-        align-self: flex-end;
         margin-bottom: -$magicNumber / 4;
+    }
+    @media screen and (min-width: $tablet-breakpoint) {
+        margin: $magicNumber / 2 0;
+        width: calc(100% - #{$magicNumber});
+        left: $magicNumber / 2;
+        min-height: 50vh;
     }
 }

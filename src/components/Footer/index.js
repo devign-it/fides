@@ -3,7 +3,7 @@ import "./styles.scss";
 import SiteMeta from "../SiteMeta";
 import SocialLinks from "../SocialLinks";
 
-const Footer = ({ mode }) => {
+const Footer = ({ mode, showInternalLinks }) => {
     let classNames = "page--footer";
     let darkMode = true;
 
@@ -21,7 +21,7 @@ const Footer = ({ mode }) => {
                 <SiteMeta darkMode={darkMode} direction="column" />
             </div>
             <div className="col__right">
-                <SocialLinks darkMode={darkMode} />
+                <SocialLinks darkMode={darkMode} enableInternal={showInternalLinks} />
             </div>
         </footer>
     );
