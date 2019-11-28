@@ -1,5 +1,8 @@
 @import "../../styles/variables/variables";
 
+$heightNav: calc((#{$magicNumber} * 1.5) - 6px);
+$delayIn: $delay--total;
+
 .main-navigation {
     display: flex;
     flex-direction: row;
@@ -16,100 +19,104 @@
     background-color: $c-black;
     left: $magicNumber / 4;
     width: calc(100vw - (#{$magicNumber} / 2));
+    box-sizing: content-box;
+
+    // &.isSticky {
+    //     animation: menuCollapse__out__mobile $delay--total / 2 $t-smooth_one 1 forwards;
+    //     .main-navigation--item {
+    //         animation: menuItemCollapse__out__mobile $delay--total / 2 $t-smooth_one 1 forwards;
+    //     }
+    // }
+    // &.isStatic {
+    //     animation: menuCollapse__in__mobile $delay--total / 2 $t-smooth_one 1 forwards;
+    //     .main-navigation--item {
+    //         animation: menuItemCollapse__in__mobile $delay--total / 2 $t-smooth_one 1 forwards;
+    //     }
+    // }
+
+    // @keyframes menuCollapse__out__mobile {
+    //     0% {
+    //         width: 100%;
+    //         margin-left: 0;
+    //     }
+    //     100% {
+    //         width: 100vw;
+    //         margin-left: calc(-#{$magicNumber} / 4);
+    //     }
+    // }
+
+    // @keyframes menuItemCollapse__out__mobile {
+    //     0% {
+    //         height: calc(#{$magicNumber} / 1.5);
+    //     }
+    //     100% {
+    //         height: calc(#{$magicNumber} / 2);
+    //     }
+    // }
+
+    // @keyframes menuCollapse__in__mobile {
+    //     0% {
+    //         width: 100vw;
+    //         margin-left: calc(-#{$magicNumber} / 4);
+    //     }
+    //     100% {
+    //         width: 100%;
+    //         margin-left: 0;
+    //     }
+    // }
+
+    // @keyframes menuItemCollapse__in__mobile {
+    //     0% {
+    //         height: calc(#{$magicNumber} / 2);
+    //     }
+    //     100% {
+    //         height: calc(#{$magicNumber} / 1.5);
+    //     }
+    // }
     @media screen and (min-width: $tablet-breakpoint) {
         top: $magicNumber / 2;
         left: 0;
         border: 3px solid $c-white;
-        margin: 0 $magicNumber / 2;
         margin-bottom: $magicNumber / 2;
-        height: $heightNavigation;
-    }
+        height: $heightNav;
+        background-color: transparent;
 
-    &.isSticky {
-        animation: menuCollapse__out__mobile $delay--total / 2 $t-smooth_one 1 both;
-        .main-navigation--item {
-            animation: menuItemCollapse__out__mobile $delay--total / 2 $t-smooth_one 1 both;
-        }
-    }
-    &.isStatic {
-        animation: menuCollapse__in__mobile $delay--total / 2 $t-smooth_one 1 both;
-        .main-navigation--item {
-            animation: menuItemCollapse__in__mobile $delay--total / 2 $t-smooth_one 1 both;
-        }
-    }
-
-    @keyframes menuCollapse__out__mobile {
-        0% {
-            width: 100%;
-            margin-left: 0;
-        }
-        100% {
-            width: 100vw;
-            margin-left: calc(-#{$magicNumber} / 4);
-        }
-    }
-
-    @keyframes menuItemCollapse__out__mobile {
-        0% {
-            height: calc(#{$magicNumber} / 1.5);
-        }
-        100% {
-            height: calc(#{$magicNumber} / 2);
-        }
-    }
-
-    @keyframes menuCollapse__in__mobile {
-        0% {
-            width: 100vw;
-            margin-left: calc(-#{$magicNumber} / 4);
-        }
-        100% {
-            width: 100%;
-            margin-left: 0;
-        }
-    }
-
-    @keyframes menuItemCollapse__in__mobile {
-        0% {
-            height: calc(#{$magicNumber} / 2);
-        }
-        100% {
-            height: calc(#{$magicNumber} / 1.5);
-        }
-    }
-
-    @media screen and (min-width: 48em) {
         &.isStatic {
-            animation: menuCollapse__out $delay--total $t-smooth_one 1 both;
+            animation: menuCollapse__out $delay--total $t-smooth_one 1 forwards;
 
             .main-navigation--item {
-                animation: menuItemCollapse__out $delay--total $t-smooth_one 1 both;
+                animation: menuItemCollapse__out $delay--total $t-smooth_one 1 forwards;
 
                 h2 {
-                    animation: menuItemTextCollapse__out $delay--total $t-smooth_one 1 both;
+                    animation: menuItemTextCollapse__out $delay--total $t-smooth_one 1 forwards;
+                    animation: menuItemTextCollapse__out $delay--total $t-smooth_one 1 forwards;
                 }
             }
         }
 
         &.isSticky {
-            animation: menuCollapse__in $delay--total $t-smooth_one 1 both;
-
+            animation: menuCollapse__in $delay--total $t-smooth_one 1 forwards;
+            animation-delay: $delay--total;
             .main-navigation--item {
-                animation: menuItemCollapse__in $delay--total $t-smooth_one 1 both;
+                animation: menuItemCollapse__in $delay--total $t-smooth_one 1 forwards;
+                animation-delay: $delay--total;
 
                 h2 {
-                    animation: menuItemTextCollapse__in $delay--total $t-smooth_one 1 both;
+                    animation: menuItemTextCollapse__in $delay--total $t-smooth_one 1 forwards;
                 }
             }
 
             &.isOpen {
-                animation: menuCollapse__out $delay--total $t-smooth_one 1 both;
+                animation: menuCollapse__out $delay--total $t-smooth_one 1 forwards;
+                animation-delay: $delay--total;
 
                 .main-navigation--item {
-                    animation: menuItemCollapse__out $delay--total $t-smooth_one 1 both;
+                    animation: menuItemCollapse__out $delay--total $t-smooth_one 1 forwards;
 
                     h2 {
-                        animation: menuItemTextCollapse__out $delay--total $t-smooth_one 1 both;
+                        animation: menuItemTextCollapse__out $delay--total $t-smooth_one 1 forwards;
+                        animation: menuItemTextCollapse__out $delay--total $t-smooth_one 1 forwards;
+
                         /* transform: translateX(-200%);*/
                     }
                 }
@@ -117,12 +124,14 @@
 
             &.isClosed {
                 animation: menuCollapse__in $delay--total $t-smooth_one 1 forwards;
+                animation-delay: $delay--total;
 
                 .main-navigation--item {
-                    animation: menuItemCollapse__in $delay--total $t-smooth_one 1 both;
+                    animation: menuItemCollapse__in $delay--total $t-smooth_one 1 forwards;
+                    animation-delay: $delay--total;
 
                     h2 {
-                        animation: menuItemTextCollapse__in $delay--total $t-smooth_one 1 both;
+                        animation: menuItemTextCollapse__in $delay--total $t-smooth_one 1 forwards;
                     }
                 }
             }
@@ -171,101 +180,103 @@
 // }
 
 @keyframes menuCollapse__in {
-    0% {
-        top: calc(#{$magicNumber} / 2);
-        width: inherit;
-        height: inherit;
-        border-radius: inherit;
-    }
+    // 0% {
+    //     // top: calc(#{$magicNumber} / 2);
+    //     width: inherit;
+    //     height: inherit;
+    //     border-radius: inherit;
+    // }
 
-    25% {
-        top: calc(#{$magicNumber} / 2);
-        width: inherit;
-        height: inherit;
-        border-radius: inherit;
-    }
+    // 25% {
+    //     // top: calc(#{$magicNumber} / 2);
+    //     width: inherit;
+    //     height: inherit;
+    //     border-radius: inherit;
+    // }
 
     50% {
         top: calc(#{$magicNumber} / 2);
-        height: calc(#{$magicNumber});
-        width: calc(#{$magicNumber});
+        height: $heightNav;
+        width: $heightNav;
         overflow: hidden;
         border-radius: inherit;
     }
 
     65% {
         top: calc(#{$magicNumber} / 2);
-        height: calc(#{$magicNumber});
-        width: calc(#{$magicNumber});
+        height: $heightNav;
+        width: $heightNav;
         overflow: hidden;
     }
 
     75% {
         top: calc(#{$magicNumber} / 2);
-        height: calc(#{$magicNumber});
-        width: calc(#{$magicNumber});
+        height: $heightNav;
+        width: $heightNav;
         overflow: hidden;
         border-radius: 50%;
     }
 
     80% {
         top: calc(#{$magicNumber} / 2);
-        height: calc(#{$magicNumber});
-        width: calc(#{$magicNumber});
-        margin: 0;
+        height: $heightNav;
+        width: $heightNav;
+        // margin: 0;
         border-radius: 50%;
     }
 
     100% {
         top: calc(#{$magicNumber} / 2);
         /* margin: calc(#{$magicNumber} / 4) calc(#{$magicNumber} / 4) calc(#{$magicNumber} / 4) 0; */
-        height: calc(#{$magicNumber} / 2);
-        width: calc(#{$magicNumber} / 2);
+        height: $heightNav;
+        width: $heightNav;
         overflow: hidden;
         border-radius: 50%;
     }
 }
 
 @keyframes menuItemCollapse__in {
-    0% {
-        opacity: 1;
-        display: block;
+    // 0% {
+    //     opacity: 1;
+    //     background-color: rgba($c-white, 0);
+    //     color: white;
+    //     display: block;
+    // }
+
+    // 25% {
+    //     opacity: 1;
+    //     background-color: rgba($c-white, 0);
+
+    //     display: block;
+    // }
+    // 0% {
+    // }
+    // 25% {
+    // }
+    10% {
+        border-width: 0px;
     }
 
     25% {
-        opacity: 1;
-        display: block;
-    }
-
-    50% {
-        opacity: 1;
-        border: 0;
-        display: block;
+        background-color: rgba($c-white, 0);
     }
 
     75% {
         opacity: 1;
+
         padding: 0;
-        border-width: 0;
         display: none;
     }
 
     100% {
         opacity: 0;
+        background-color: rgba($c-white, 0);
+
         padding: 0;
-        border-width: 0;
         display: none;
     }
 }
 @keyframes menuItemTextCollapse__in {
-    0% {
-        transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) rotateZ(0);
-    }
-
-    75% {
-        transform: translate3d(-50vw, 0, 0) rotateX(-6deg) rotateY(6deg) rotateZ(5deg);
-    }
-
     100% {
         transform: translate3d(-50vw, 0, 0) rotateX(-6deg) rotateY(6deg) rotateZ(5deg);
     }
@@ -274,8 +285,8 @@
 @keyframes menuCollapse__out {
     0% {
         top: calc(#{$magicNumber} / 1.5);
-        height: calc(#{$magicNumber} / 2 - 6px);
-        width: calc(#{$magicNumber} / 2);
+        height: $heightNav;
+        width: $heightNav;
         margin: calc(#{$magicNumber} / 4) calc(#{$magicNumber} / 4) calc(#{$magicNumber} / 4) 0;
         overflow: hidden;
         border-radius: 50%;
@@ -283,8 +294,8 @@
 
     20% {
         top: calc(#{$magicNumber} / 2);
-        height: calc(#{$magicNumber} - 6px);
-        width: calc(#{$magicNumber});
+        height: $heightNav;
+        width: $heightNav;
         overflow: hidden;
         margin: 0;
         border-radius: 50%;
@@ -292,41 +303,41 @@
 
     25% {
         top: calc(#{$magicNumber} / 2);
-        height: calc(#{$magicNumber} - 6px);
-        width: calc(#{$magicNumber});
+        height: $heightNav;
+        width: $heightNav;
         overflow: hidden;
         border-radius: 50%;
     }
 
     45% {
         top: calc(#{$magicNumber} / 2);
-        height: calc(#{$magicNumber} - 6px);
-        width: calc(#{$magicNumber});
+        height: $heightNav;
+        width: $heightNav;
         overflow: hidden;
         border-radius: inherit;
     }
 
     50% {
         top: calc(#{$magicNumber} / 2);
-        height: calc(#{$magicNumber} - 6px);
-        width: calc(#{$magicNumber});
+        height: $heightNav;
+        width: $heightNav;
         overflow: hidden;
         border-radius: inherit;
     }
 
-    75% {
-        top: calc(#{$magicNumber} / 2);
-        width: inherit;
-        height: calc(#{$magicNumber} - 6px);
-        border-radius: inherit;
-    }
+    // 75% {
+    //     top: calc(#{$magicNumber} / 2);
+    //     width: inherit;
+    //     height: $heightNav;
+    //     border-radius: inherit;
+    // }
 
-    100% {
-        top: calc(#{$magicNumber} / 2);
-        width: inherit;
-        height: calc(#{$magicNumber} - 6px);
-        border-radius: inherit;
-    }
+    // 100% {
+    //     top: calc(#{$magicNumber} / 2);
+    //     width: inherit;
+    //     height: $heightNav;
+    //     border-radius: inherit;
+    // }
 }
 @keyframes menuItemCollapse__out {
     0% {
@@ -351,13 +362,13 @@
 
     75% {
         opacity: 1;
-        height: calc(#{$magicNumber});
+        height: 100%;
         display: block;
     }
 
     100% {
         opacity: 1;
-        height: calc(#{$magicNumber});
+        height: 100%;
         display: block;
     }
 }
