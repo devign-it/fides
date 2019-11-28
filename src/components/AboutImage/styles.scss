@@ -3,10 +3,11 @@
 .about-image--wrapper {
     position: relative;
     display: block;
-
+    overflow: hidden;
     .image--container {
         width: 100%;
         height: auto;
+        position: relative;
         &.top--image {
             display: none;
             @media screen and (min-width: $tablet-breakpoint) {
@@ -15,10 +16,24 @@
                 position: absolute;
                 left: 0;
                 top: 0;
+                opacity: 1;
             }
         }
         &.bottom--image {
             z-index: 1;
+        }
+    }
+    .image--source {
+        position: absolute;
+        bottom: 0;
+        margin: $magicNumber / 2;
+        transform: translateY($magicNumber * 2) rotateX(15deg) rotateY(-10deg) rotateZ(5deg);
+        transition: transform $delay__main * 4 $t-smooth_one;
+        z-index: 2;
+    }
+    &:hover {
+        .image--source {
+            transform: translateY(0) rotateX(0) rotateY(0) rotateZ(0);
         }
     }
 }

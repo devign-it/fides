@@ -41,12 +41,18 @@ class AboutImage extends React.Component {
         const imageWrapper = this.imageWrapper.current;
         const tl = anime.timeline({ autoplay: false, targets: ".top--image", easing: "easeOutQuint" });
 
+        // let animationSkewIn = anime({
+        //     targets: ".about-image--wrapper",
+        //     rotateY: [-10],
+        //     rotateX: [20, 0],
+        //     rotateY: [5, 0],
+        //     duration: 6000,
+        //     easing: "easeOutQuint",
+        //     autoplay: true,
+        // });
+
         tl.add(
             {
-                // rotateX: [10, 0],
-                // rotateY: [-15, 0],
-                // rotateZ: [5, 0],
-                // translateY: [60, 0],
                 opacity: [1, 0],
                 duration: 2000,
             },
@@ -58,8 +64,21 @@ class AboutImage extends React.Component {
 
         window.addEventListener("scroll", () => {
             const percentage = getScrollPercent();
-            tl.seek(tl.duration * (percentage * 0.01));
+            tl.seek(tl.duration * (percentage * 0.02));
         });
+
+        // imageWrapper.onload = () => {
+        //     animationSkewIn.play();
+        // };
+
+        // imageWrapper.addEventListener("mousedown", () => {
+        //     // tl.seek(tl.duration * (percentage * 0.01));
+        //     // tl.seek(tl.duration * (percentage * 0.01));
+        //     tl.play();
+        // });
+        // imageWrapper.addEventListener("mouseup", () => {
+        //     tl.reverse();
+        // });
     }
     render() {
         return (
@@ -70,6 +89,9 @@ class AboutImage extends React.Component {
                 <div ref={this.bottomImage} className="image--container bottom--image">
                     <Img fluid={this.props.bottomImage} />
                 </div>
+                <p className="image--source">
+                    Photography by <a href="https://reinkooyman.com/">Rein Kooyman</a>
+                </p>
             </div>
         );
     }
