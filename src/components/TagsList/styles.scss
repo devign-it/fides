@@ -3,7 +3,7 @@
 .tags--wrapper {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 $magicNumber / 2;
+    margin: 0 25px;
     @media screen and (min-width: $tablet-breakpoint) {
         margin: $magicNumber / 2;
     }
@@ -18,6 +18,8 @@
 
     @media screen and (min-width: $tablet-breakpoint) {
         margin: 0 $magicNumber / 4 $magicNumber / 4 0;
+        padding: $magicNumber / 8 $magicNumber / 4;
+
         border: 1px solid $c-white;
     }
     p {
