@@ -6,6 +6,8 @@ import get from "lodash/get";
 import SocialLinks from "../components/SocialLinks";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import CapabilityScroll from "../components/CapabilityScroll";
+import ExperienceScroll from "../components/ExperienceScroll";
+
 import Footer from "../components/Footer";
 import ExternalLink from "../components/ExternalLink";
 
@@ -17,6 +19,10 @@ import AboutImage from "../components/AboutImage";
 class AboutIndex extends React.Component {
     render() {
         const aboutContent = get(this, "props.data.contentfulAbout");
+        const workExperience = get(this, "props.data.allContentfulWorkExperiences.edges");
+        const teachingExperience = get(this, "props.data.allContentfulTeachingExperiences.edges");
+        const educationExperience = get(this, "props.data.allContentfulEducationExperiences.edges");
+
         // console.log("image", aboutContent.image.fluid);
 
         return (
@@ -39,9 +45,42 @@ class AboutIndex extends React.Component {
                     <aside className="about--sidebar">
                         <div className="sidebar--sticky-content">
                             <div className="top--content">
-                                <ExternalLink URL="#" text="Download resume" internalPage={true} alignRight={true} />
+                                <div className="internal--links">
+                                    <ExternalLink
+                                        URL="../resume-daanvanderzwaag_summer2019.pdf"
+                                        text="Download resume"
+                                        internalPage={true}
+                                        alignRight={true}
+                                    />
+                                    <ExternalLink
+                                        URL="#"
+                                        text="Project: DAV Foundation"
+                                        internalPage={true}
+                                        alignRight={true}
+                                    />
+                                    <ExternalLink
+                                        URL="#"
+                                        text="Project: NFC Implant"
+                                        internalPage={true}
+                                        alignRight={true}
+                                    />
+                                </div>
+
+                                <div className="external--links">
+                                    <ExternalLink
+                                        URL="#"
+                                        text="Read Bachelor thesis"
+                                        internalPage={false}
+                                        alignRight={true}
+                                    />
+                                    <ExternalLink
+                                        URL="#"
+                                        text="Visit Devign.it website"
+                                        internalPage={false}
+                                        alignRight={true}
+                                    />
+                                </div>
                             </div>
-                            <SocialLinks />
                         </div>
                     </aside>
                     <section className="capabilities--wrapper">
@@ -53,7 +92,12 @@ class AboutIndex extends React.Component {
                         </div>
                     </section>
                 </div>
-                <Footer mode="light" />
+                <section className="experiences--wrapper">
+                    <ExperienceScroll dataSource={workExperience} name="Work" />
+                    <ExperienceScroll dataSource={teachingExperience} name="Teaching" />
+                    <ExperienceScroll dataSource={educationExperience} name="Education" />
+                </section>
+                <Footer mode="light" showInternalLinks={true} />
             </Layout>
         );
     }
@@ -79,6 +123,45 @@ export const pageQuery = graphql`
             }
             capabilitiesServices
             capabilitiesTechnologies
+        }
+        allContentfulWorkExperiences(sort: { fields: order, order: ASC }) {
+            edges {
+                node {
+                    period
+                    location
+                    description {
+                        json
+                    }
+                    companyName
+                    title
+                }
+            }
+        }
+        allContentfulTeachingExperiences(sort: { fields: order, order: ASC }) {
+            edges {
+                node {
+                    title
+                    headline
+                    description {
+                        json
+                    }
+                    period
+                    location
+                    companyName
+                }
+            }
+        }
+        allContentfulEducationExperiences(sort: { fields: order, order: ASC }) {
+            edges {
+                node {
+                    title
+                    location
+                    description {
+                        json
+                    }
+                    period
+                }
+            }
         }
     }
 `;
