@@ -3,7 +3,18 @@
 .social-link--wrapper {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
     &.inverted {
         mix-blend-mode: difference;
+    }
+    .internal--links,
+    .external--links {
+        display: flex;
+        flex-direction: column;
+    }
+    .external--links {
+        justify-self: flex-end;
     }
 }
