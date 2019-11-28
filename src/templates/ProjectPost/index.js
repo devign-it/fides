@@ -8,6 +8,7 @@ import TagsList from "../../components/TagsList";
 import Navigation from "../../components/Navigation";
 import PostNavigation from "../../components/PostNavigation";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import ExternalLink from "../../components/ExternalLink";
 
 import "./styles.scss";
 
@@ -21,7 +22,7 @@ export default class ProjectPostTemplate extends React.Component {
         console.log("this.props.pageContext", this.props.pageContext);
 
         return (
-            <Layout showNav={false} location={this.props.location}>
+            <Layout showNav={true} showGoBack={true} stickyNav={true} showHome={true} location={this.props.location}>
                 <div className="project--wrapper">
                     <Helmet title={`${post.client} | ${siteTitle}`} />
                     <header className="project--hero" style={{ backgroundColor: `${post.color}` }}>
@@ -58,14 +59,7 @@ export default class ProjectPostTemplate extends React.Component {
                             </div>
                             <aside className="head--sidebar">
                                 <div className="sidebar--sticky-content">
-                                    <a
-                                        className="link-button__inline"
-                                        href={`${post.linkUrl}`}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        {post.linkText}
-                                    </a>
+                                    <ExternalLink URL={post.linkUrl} text={post.linkText} alignRight={true} />
                                 </div>
                             </aside>
                             <article className="head--description">
@@ -99,7 +93,6 @@ export default class ProjectPostTemplate extends React.Component {
                     </div>
                 </div>
                 <PostNavigation subpath={"projects"} next={next} previous={previous} />
-                <Navigation isSticky={false} />
             </Layout>
         );
     }

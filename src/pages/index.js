@@ -21,7 +21,7 @@ class RootIndex extends React.Component {
                 <AnimatedQuote>
                     I want to challenge the most complex problems with human designed technology
                 </AnimatedQuote>
-                <Layout showNav={true} stickyNav={true} location={this.props.location}>
+                <Layout showNav={true} stickyNav={true} showResume={true} location={this.props.location}>
                     <ProjectsRoll items={posts} />
                 </Layout>
             </>

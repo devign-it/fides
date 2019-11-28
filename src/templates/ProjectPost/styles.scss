@@ -59,7 +59,7 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
         height: $heightMetadatarow;
         margin: 0 $magicNumber / 2;
         padding: 0 $magicNumber;
-        max-width: $s-maxWidthColum;
+        max-width: $s-maxWidthColumn;
         align-items: center;
         align-self: stretch;
         transform: translateY(-$heightMetadatarow / 2);
@@ -79,7 +79,7 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
 .project--content {
     display: flex;
     flex-direction: column;
-    max-width: $s-maxWidthColum;
+    max-width: $s-maxWidthColumn;
     width: 100%;
     @media screen and (min-width: $tablet-breakpoint) {
         padding: $magicNumber;
@@ -136,6 +136,7 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
         @media screen and (min-width: $tablet-breakpoint) {
             width: $widthRightCol;
             padding: $magicNumber / 2;
+            background: transparent;
         }
 
         h3:nth-child(1) {
@@ -145,16 +146,22 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
 }
 
 .content--body {
-    margin-top: $magicNumber * 2;
+    margin: $magicNumber * 2 0 0 0;
+
     .body--showcase-item {
         margin: $magicNumber 0 $magicNumber * 1.5 0;
         &:not(:first-child) {
             margin-top: 0;
         }
         .showcase-item--description {
-            width: 50%;
-            margin: $magicNumber;
-            padding: 0 0 $magicNumber / 2 $magicNumber / 2;
+            width: 100%;
+            padding: 0 $magicNumber / 2;
+            margin-top: $magicNumber / 2;
+            @media screen and (min-width: $tablet-breakpoint) {
+                width: 50%;
+                margin: $magicNumber;
+                padding: 0 0 $magicNumber / 2 $magicNumber / 2;
+            }
             h4 {
                 margin-bottom: 0.5rem;
                 font-family: $font--sans;
