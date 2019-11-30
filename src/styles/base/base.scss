@@ -32,19 +32,50 @@ main {
     }
 }
 
+// Theming
+
+body {
+    transition: background-color 360ms $t-smooth_one;
+}
+
 body.light-mode {
-    background-color: #fff;
-    color: #333;
-    transition: background-color 0.3s ease;
+    background-color: $c-grey__light;
+    color: $c-black;
+    height: 62px;
+
+    .header--container {
+        background-color: $c-grey__light;
+        color: $c-black;
+        .author a {
+            color: $c-black;
+        }
+    }
+    .main-container {
+        background-color: $c-white;
+        color: $c-black;
+    }
+    .main-navigation {
+        color: $c-black;
+        border-color: $c-black;
+        .main-navigation--item {
+            border-color: $c-black;
+            h2 {
+                color: $c-black;
+            }
+        }
+    }
 }
 body.dark-mode {
-    // background-color: #1a1919;
-    // color: #999;
+    // $c-black: $c-white;
+    // $c-white: $c-black;
 
     background-color: $c-black;
 
     .header--container {
         background-color: $c-black;
         color: $c-white;
+        .author a {
+            color: $c-white;
+        }
     }
 }
