@@ -8,19 +8,26 @@ $delayIn: $delay--total;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    margin: 0;
+    // margin: 0;
     z-index: 15;
     border-radius: inherit;
     position: sticky;
     height: $magicNumber;
-    top: $magicNumber / 4;
-    border: 2px solid $c-white;
+    // top: $magicNumber / 4;
+    // border: 2px solid $c-white;
     overflow: hidden;
     background-color: $c-black;
-    left: $magicNumber / 4;
-    width: calc(100vw - (#{$magicNumber} / 2));
+    // margin: 0 30px;
+
+    // left: $magicNumber / 4;
+    // width: calc(100vw - (#{$magicNumber} / 2));
     box-sizing: content-box;
 
+    margin: 0;
+    border: 0;
+    width: 100%;
+    top: 0;
+    border-bottom: 1px solid white;
     // &.isSticky {
     //     animation: menuCollapse__out__mobile $delay--total / 2 $t-smooth_one 1 forwards;
     //     .main-navigation--item {
@@ -74,13 +81,15 @@ $delayIn: $delay--total;
     //     }
     // }
     @media screen and (min-width: $tablet-breakpoint) {
+        // top: $magicNumber / 2;
+        // left: 0;
         top: $magicNumber / 2;
-        left: 0;
         border: 3px solid $c-white;
-        margin-bottom: $magicNumber / 2;
+        // margin-bottom: $magicNumber / 2;
         height: $heightNav;
         background-color: transparent;
-
+        width: initial;
+        margin: $magicNumber / 2;
         &.isStatic {
             animation: menuCollapse__out $delay--total $t-smooth_one 1 forwards;
 

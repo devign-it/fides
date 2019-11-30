@@ -86,13 +86,13 @@ class Navigation extends React.Component {
                 className="main-navigation isOpen"
                 style={{ position: this.props.isSticky ? "sticky" : "relative" }}
             >
-                {this.props.showGoBack && <NavigationItem text="⃪" to="/projects/" />}
+                {/* {this.props.showGoBack && <NavigationItem text="⃪" to="/projects/" />} */}
 
                 {this.props.showHome && <NavigationItem text="Home" to="/" />}
                 <NavigationItem text="Projects" to="/projects/" />
                 <NavigationItem text="About" to="/about/" />
                 {this.props.showResume && (
-                    <NavigationItem text="Resume" to="./resume-daanvanderzwaag_summer2019.pdf" isExternal={true} />
+                    <NavigationItem text="Resume" to="./resume-daanvanderzwaag_2019-2020.pdf" isExternal={true} />
                 )}
             </nav>
         );
