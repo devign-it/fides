@@ -25,18 +25,19 @@ export default ProjectIndex;
 
 export const pageQuery = graphql`
     query ProjectIndexQuery {
-        allContentfulProjectPosts {
+        allContentfulProjectPosts(sort: { fields: order, order: ASC }, limit: 5) {
             edges {
                 node {
-                    title
-                    slug
-                    color
                     client
+                    color
+                    darkText
                     featuredImage {
                         fluid {
                             ...GatsbyContentfulFluid_noBase64
                         }
                     }
+                    slug
+                    title
                 }
             }
         }

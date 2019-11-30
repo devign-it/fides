@@ -30,13 +30,12 @@ export default RootIndex;
 
 export const HomepageQuery = graphql`
     query HomepageQuery {
-        allContentfulProjectPosts {
+        allContentfulProjectPosts(sort: { fields: order, order: ASC }, limit: 5) {
             edges {
                 node {
                     client
                     color
                     darkText
-
                     featuredImage {
                         fluid {
                             ...GatsbyContentfulFluid_noBase64
