@@ -1,9 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout";
-import Img from "gatsby-image";
 import Helmet from "react-helmet";
 import get from "lodash/get";
-import SocialLinks from "../components/SocialLinks";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import CapabilityScroll from "../components/CapabilityScroll";
 import ExperienceScroll from "../components/ExperienceScroll";

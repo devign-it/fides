@@ -1,7 +1,7 @@
 import React from "react";
 import anime from "animejs/lib/anime.es.js";
 import SiteMeta from "../../components/SiteMeta";
-import DarkModeToggle from "../../components/DarkModeToggle";
+// import DarkModeToggle from "../../components/DarkModeToggle";
 import "./styles.scss";
 
 class AnimatedQuote extends React.Component {

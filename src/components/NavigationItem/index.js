@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
 import "./styles.scss";
-import ExternalLink from "../../components/ExternalLink";
 
 const NavigationItem = ({ text, to, isExternal }) => {
     return (

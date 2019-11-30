@@ -38,7 +38,7 @@ class AboutImage extends React.Component {
             return ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100;
         }
 
-        const imageWrapper = this.imageWrapper.current;
+        // const imageWrapper = this.imageWrapper.current;
         const tl = anime.timeline({ autoplay: false, targets: ".top--image", easing: "easeOutQuint" });
 
         // let animationSkewIn = anime({

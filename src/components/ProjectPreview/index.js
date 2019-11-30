@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
-import anime from "animejs/lib/anime.es.js";
 import "./styles.scss";
 import TagsList from "../TagsList";
 
