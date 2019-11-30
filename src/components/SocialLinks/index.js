@@ -8,13 +8,16 @@ const SocialLinks = ({ darkMode, enableInternal }) => {
     if (darkMode) {
         classNames += " inverted";
     }
+    if (!enableInternal) {
+        classNames += " justify-end";
+    }
     return (
         <>
             <div className={classNames}>
                 {enableInternal ? (
                     <div className="internal--links">
                         <ExternalLink
-                            URL="../resume-daanvanderzwaag_summer2019.pdf"
+                            URL="../resume-daanvanderzwaag_2019-2020.pdf"
                             text="Resume"
                             internalPage={true}
                             alignRight={true}
@@ -30,7 +33,7 @@ const SocialLinks = ({ darkMode, enableInternal }) => {
                         URL="https://www.linkedin.com/in/daanvanderzwaag/"
                         alignRight={true}
                     />
-                    <ExternalLink text="Instagram" URL="https://www.instagram.com/daanvanderzwaag/" alignRight={true} />
+                    <ExternalLink text="Instagram" URL="https://www.instagram.com/devign.it" alignRight={true} />
                 </div>
             </div>
         </>
