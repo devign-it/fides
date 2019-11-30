@@ -17,18 +17,18 @@ import "../templates/ProjectPost/styles.scss";
 import AboutImage from "../components/AboutImage";
 
 class AboutIndex extends React.Component {
-    componentDidMount() {}
+    componentDidMount() {
+        //  function checkDarkMode() {
+        //     if (document.body.classList.contains("dark-mode")) {
+        //         return true;
+        //     }
+        // };
+    }
     render() {
         const aboutContent = get(this, "props.data.contentfulAbout");
         const workExperience = get(this, "props.data.allContentfulWorkExperiences.edges");
         const teachingExperience = get(this, "props.data.allContentfulTeachingExperiences.edges");
         const educationExperience = get(this, "props.data.allContentfulEducationExperiences.edges");
-
-        // function checkDarkMode() {
-        //     if (document.body.classList.contains("dark-mode")) {
-        //         return true;
-        //     }
-        // }
 
         return (
             <Layout location={this.props.location} showNav={true} showHome={true}>
