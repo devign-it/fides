@@ -18,8 +18,6 @@ class AnimatedQuote extends React.Component {
             let xPos = event.clientX / window.innerWidth + 0.05 / 2;
             let yPos = event.clientY / window.innerHeight + 0.05 / 2;
 
-            console.log(xPos, yPos);
-
             anime({
                 targets: ".quote",
                 easing: "easeOutQuint",
