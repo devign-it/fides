@@ -8,10 +8,16 @@ footer.page--footer {
     justify-content: space-between;
     max-width: $s-maxWidthColumn;
     position: relative;
+    min-height: 50vh;
+    padding: $magicNumber / 2;
 
     &.ghost {
-        border: 3px solid $c-white;
+        border: 1px solid $c-white;
         background-color: transparent;
+        margin: 0 $magicNumber / 2 $magicNumber / 2 $magicNumber / 2;
+        @media screen and (min-width: $tablet-breakpoint) {
+            margin: 0 0 $magicNumber / 2 0;
+        }
     }
     &.dark {
         background-color: $c-black;
@@ -30,5 +36,9 @@ footer.page--footer {
         width: calc(100% - #{$magicNumber});
         left: $magicNumber / 2;
         min-height: 50vh;
+
+        &.ghost {
+            border: 3px solid $c-white;
+        }
     }
 }
