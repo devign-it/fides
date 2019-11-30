@@ -4,11 +4,14 @@ import Swiper from "swiper";
 
 class CapabilityScroll extends React.Component {
     componentDidMount() {
+        const amountSlides = this.props.dataSource.length;
+
         new Swiper(".swiper-container__vertical", {
             direction: "vertical",
             slidesPerView: "auto",
+            loopedSlides: amountSlides,
             grabCursor: true,
-            spaceBetween: 20,
+            loop: true,
             breakpoints: {
                 767: {
                     spaceBetween: 60,
