@@ -22,7 +22,7 @@ export default class ProjectPostTemplate extends React.Component {
         console.log("this.props.pageContext", this.props.pageContext);
 
         return (
-            <Layout showNav={true} stickyNav={false} showHome={true} location={this.props.location}>
+            <Layout showNav={true} stickyNav={true} showHome={true} location={this.props.location}>
                 <div className="project--wrapper">
                     <Helmet title={`${post.client} | ${siteTitle}`} />
                     <header className="project--hero" style={{ backgroundColor: `${post.color}` }}>
@@ -111,7 +111,7 @@ export const ProjectPostQuery = graphql`
             linkText
             linkUrl
             heroImage {
-                fluid(maxWidth: 1280) {
+                fluid(maxWidth: 1440) {
                     ...GatsbyContentfulFluid_noBase64
                 }
             }
