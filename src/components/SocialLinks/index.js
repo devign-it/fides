@@ -1,6 +1,8 @@
 import React from "react";
 import "./styles.scss";
 import ExternalLink from "../ExternalLink";
+import { Link } from "gatsby";
+import arrowIconDown from "../../assets/images/icon-arrow_small_down.svg";
 
 const SocialLinks = ({ darkMode, enableInternal }) => {
     let classNames = "social-link--wrapper";
@@ -22,7 +24,12 @@ const SocialLinks = ({ darkMode, enableInternal }) => {
                             internalPage={true}
                             alignRight={true}
                         />
-                        <ExternalLink URL="/projects/" text="Projects" internalPage={true} alignRight={true} />
+                        <Link className="link-button__inline external align-right" to="/projects">
+                            Projects
+                            <span className="icon">
+                                <img src={arrowIconDown} alt="Icon arrow pointing upwards" />
+                            </span>
+                        </Link>
                     </div>
                 ) : null}
                 <div className="external--links">
