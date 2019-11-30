@@ -5,20 +5,29 @@ import Layout from "../components/Layout";
 import AnimatedQuote from "../components/AnimatedQuote";
 import ProjectsRoll from "../components/ProjectsRoll";
 import Footer from "../components/Footer";
+import AboutPreview from "../components/AboutPreview";
 
 import "../styles/styles.scss";
 
 class RootIndex extends React.Component {
     render() {
         const posts = get(this, "props.data.allContentfulProjectPosts.edges");
+        const aboutContent = get(this, "props.data.contentfulAbout");
 
         return (
             <>
                 <AnimatedQuote>
-                    I want to challenge the most complex problems with human designed technology
+                    Untangling complex problems with human-designed technology is what I like and do
                 </AnimatedQuote>
-                <Layout showNav={true} stickyNav={true} showResume={true} location={this.props.location}>
+                <Layout
+                    showHome={true}
+                    showNav={true}
+                    stickyNav={true}
+                    showResume={false}
+                    location={this.props.location}
+                >
                     <ProjectsRoll items={posts} />
+                    <AboutPreview source={aboutContent} />
                     <Footer mode={"ghost"} showInternalLinks={false} />
                 </Layout>
             </>
@@ -30,6 +39,21 @@ export default RootIndex;
 
 export const HomepageQuery = graphql`
     query HomepageQuery {
+        contentfulAbout {
+            extensiveDescription {
+                json
+            }
+            topImage {
+                fluid {
+                    ...GatsbyContentfulFluid_noBase64
+                }
+            }
+            bottomImage {
+                fluid {
+                    ...GatsbyContentfulFluid_noBase64
+                }
+            }
+        }
         allContentfulProjectPosts(sort: { fields: order, order: ASC }, limit: 5) {
             edges {
                 node {
@@ -43,6 +67,10 @@ export const HomepageQuery = graphql`
                     }
                     slug
                     title
+                    categoryTags {
+                        category
+                        slug
+                    }
                 }
             }
         }
