@@ -16,7 +16,7 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
     siteMetadata: {
-        title: "Daan van der Zwaag → Design Technologist",
+        title: "Daan van der Zwaag | Portfolio 2020",
     },
     plugins: [
         "gatsby-transformer-remark",
@@ -39,8 +39,8 @@ module.exports = {
                 name: `Daan van der Zwaag - Portfolio 2020`,
                 short_name: `Daan van der Zwaag`,
                 start_url: `/`,
-                background_color: `#000`,
-                theme_color: `#fff`,
+                background_color: `#fff`,
+                theme_color: `#000`,
                 display: `standalone`,
                 icon: `src/assets/images/favicons/favicon.png`,
             },
