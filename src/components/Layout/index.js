@@ -9,7 +9,7 @@ const siteTitle = get(this, "props.data.site.siteMetadata.title");
 
 class Layout extends React.Component {
     componentDidMount() {
-        changeDocumentTitle();
+        // changeDocumentTitle();
     }
 
     render() {
