@@ -5,7 +5,7 @@ import get from "lodash/get";
 import Img from "gatsby-image";
 import Layout from "../../components/Layout";
 import TagsList from "../../components/TagsList";
-import Navigation from "../../components/Navigation";
+import Footer from "../../components/Footer";
 import PostNavigation from "../../components/PostNavigation";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import ExternalLink from "../../components/ExternalLink";
@@ -22,7 +22,7 @@ export default class ProjectPostTemplate extends React.Component {
         console.log("this.props.pageContext", this.props.pageContext);
 
         return (
-            <Layout showNav={true} showGoBack={true} stickyNav={true} showHome={true} location={this.props.location}>
+            <Layout showNav={true} stickyNav={false} showHome={true} location={this.props.location}>
                 <div className="project--wrapper">
                     <Helmet title={`${post.client} | ${siteTitle}`} />
                     <header className="project--hero" style={{ backgroundColor: `${post.color}` }}>
@@ -93,6 +93,7 @@ export default class ProjectPostTemplate extends React.Component {
                     </div>
                 </div>
                 <PostNavigation subpath={"projects"} next={next} previous={previous} />
+                <Footer mode={"ghost"} showInternalLinks={true} />
             </Layout>
         );
     }

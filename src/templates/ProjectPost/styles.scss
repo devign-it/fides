@@ -9,6 +9,11 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
     flex-direction: column;
     align-items: center;
     position: relative;
+    // margin-top: $magicNumber / 2;
+
+    @media screen and (min-width: $tablet-breakpoint) {
+        margin-top: $magicNumber;
+    }
 }
 .project--hero {
     display: flex;
@@ -93,19 +98,23 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
     align-items: stretch;
     flex-wrap: wrap;
     .head--title {
-        margin: $magicNumber $magicNumber 0 $magicNumber;
+        margin: $magicNumber / 2;
         width: 100%;
 
         h1 {
-            margin-bottom: $magicNumber;
+            margin-bottom: $magicNumber / 2;
         }
         @media screen and (min-width: $tablet-breakpoint) {
             margin-left: $magicNumber / 2;
+
+            h1 {
+                margin-bottom: $magicNumber;
+            }
         }
     }
     .head--tags {
         width: 100%;
-        padding: 0 $magicNumber / 2;
+        // padding: 0 $magicNumber / 2;
         margin-bottom: $magicNumber;
 
         @media screen and (min-width: $tablet-breakpoint) {
@@ -118,20 +127,35 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
         position: relative;
         width: 100%;
         order: 2;
-        @media screen and (min-width: $tablet-breakpoint) {
-            padding: $magicNumber / 2;
-            width: $widthLeftCol;
-            padding: $magicNumber $magicNumber / 2 ($magicNumber / 2 + 8px) $magicNumber / 2;
-        }
+        padding: $magicNumber / 2;
+        margin: $magicNumber / 2;
+        border: 1px solid $c-white;
+
         .sidebar--sticky-content {
-            position: sticky;
-            top: $magicNumber / 2;
+            position: relative;
+            mix-blend-mode: difference;
+            text-align: center;
+
+            // top: $magicNumber / 2;
+        }
+        @media screen and (min-width: $tablet-breakpoint) {
+            border: 0;
+            width: $widthLeftCol;
+            padding: $magicNumber $magicNumber / 2 ($magicNumber / 2 + 8px) $magicNumber;
+            margin: 0;
+
+            .sidebar--sticky-content {
+                position: sticky;
+                top: $magicNumber / 2;
+                text-align: left;
+            }
         }
     }
     .head--description {
         width: 100%;
         padding: $magicNumber / 2;
         background-color: rgba($c-white, 0.1);
+        padding-bottom: $magicNumber;
 
         @media screen and (min-width: $tablet-breakpoint) {
             width: $widthRightCol;
@@ -146,30 +170,46 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
 }
 
 .content--body {
-    margin: $magicNumber * 2 0 0 0;
+    margin-top: 0;
 
     .body--showcase-item {
-        margin: $magicNumber 0 $magicNumber * 1.5 0;
-        &:not(:first-child) {
+        margin: $magicNumber 0 $magicNumber 0;
+        &:first-child {
             margin-top: 0;
         }
         .showcase-item--description {
             width: 100%;
             padding: 0 $magicNumber / 2;
             margin-top: $magicNumber / 2;
+
+            h4 {
+                font-family: $font--sans;
+                text-transform: uppercase;
+                font-size: 15px;
+                margin-bottom: $magicNumber / 4;
+                line-height: 1.5;
+            }
+            p.small--text {
+                color: $c-grey__medium;
+            }
+
             @media screen and (min-width: $tablet-breakpoint) {
                 width: 50%;
                 margin: $magicNumber;
                 padding: 0 0 $magicNumber / 2 $magicNumber / 2;
+                h4 {
+                    font-size: 18px;
+                    margin-bottom: $magicNumber / 3;
+                }
             }
-            h4 {
-                margin-bottom: 0.5rem;
-                font-family: $font--sans;
-                text-transform: uppercase;
-                font-size: 1rem;
-            }
-            p.small--text {
-                color: $c-grey__medium;
+        }
+    }
+    @media screen and (min-width: $tablet-breakpoint) {
+        margin: $magicNumber * 2 0 0 0;
+        .body--showcase-item {
+            margin: $magicNumber 0 $magicNumber * 1.5 0;
+            &:not(:first-child) {
+                margin-top: 0;
             }
         }
     }
