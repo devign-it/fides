@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import Img from "gatsby-image";
 import anime from "animejs/lib/anime.es.js";
 import "./styles.scss";
+import TagsList from "../TagsList";
 
 const ProjectPreview = ({ project }) => {
     let darkText = project.darkText;
@@ -23,10 +24,13 @@ const ProjectPreview = ({ project }) => {
                     <div className={classInfo}>
                         <h4 className="item--name">{project.client}</h4>
                         <h3 className="item--title">{project.title}</h3>
-                        <span className="project-item--button">Check project</span>
+                        <div className="item--tags">
+                            <TagsList showTagsBlack={project.darkText} tagSource={project.categoryTags} />
+                        </div>
+                        {/* <span className="project-item--button">Check project</span> */}
                     </div>
                     <div className="image">
-                        <Img alt="" fluid={project.featuredImage.fluid} />
+                        <Img alt={project.featuredImage.description} fluid={project.featuredImage.fluid} />
                     </div>
                 </article>
             </div>

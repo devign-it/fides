@@ -2,12 +2,18 @@
 
 .preview-wrapper {
     position: relative;
-    transition: clip-path 160ms ease-in-out;
+    transition: clip-path 160ms $t-smooth_one;
     @media screen and (min-width: $tablet-breakpoint) {
         clip-path: inset(0 30px 0 30px);
 
         &:hover {
             clip-path: inset(0px);
+            .project-post--preview {
+                .info {
+                    // transform: translateX(#{$magicNumber / 2});
+                    margin-left: $magicNumber / 2;
+                }
+            }
         }
     }
 }
@@ -34,6 +40,7 @@
     }
 
     .info {
+        transition: all 160ms $t-smooth_one;
         width: 100%;
         padding: 0 $magicNumber / 3;
 
@@ -45,6 +52,10 @@
             left: 0;
             transform: translateY(-50%);
             top: 50%;
+        }
+
+        .item--tags {
+            margin-top: $magicNumber;
         }
 
         &.dark-text {
