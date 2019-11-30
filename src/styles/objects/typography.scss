@@ -105,9 +105,11 @@ body {
     }
 
     h3 {
-        font-size: ms(2);
-        @include margin-bottom(1);
-        @include margin-top(2);
+        // font-size: ms(2);
+        // @include margin-bottom(1);
+        // @include margin-top(2);
+        font-size: 36px;
+        line-height: 1.1;
         @media screen and (min-width: $tablet-breakpoint) {
             // font-size: ms(3);
             // @include margin-bottom(2);
