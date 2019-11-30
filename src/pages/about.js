@@ -52,20 +52,8 @@ class AboutIndex extends React.Component {
                             <div className="top--content">
                                 <div className="internal--links">
                                     <ExternalLink
-                                        URL="../resume-daanvanderzwaag_summer2019.pdf"
+                                        URL="../resume-daanvanderzwaag_2019-2020.pdf"
                                         text="Download resume"
-                                        internalPage={true}
-                                        alignRight={true}
-                                    />
-                                    <ExternalLink
-                                        URL="#"
-                                        text="Project: DAV Foundation"
-                                        internalPage={true}
-                                        alignRight={true}
-                                    />
-                                    <ExternalLink
-                                        URL="#"
-                                        text="Project: NFC Implant"
                                         internalPage={true}
                                         alignRight={true}
                                     />
