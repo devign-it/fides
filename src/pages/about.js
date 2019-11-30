@@ -24,11 +24,11 @@ class AboutIndex extends React.Component {
         const teachingExperience = get(this, "props.data.allContentfulTeachingExperiences.edges");
         const educationExperience = get(this, "props.data.allContentfulEducationExperiences.edges");
 
-        function checkDarkMode() {
-            if (document.body.classList.contains("dark-mode")) {
-                return true;
-            }
-        }
+        // function checkDarkMode() {
+        //     if (document.body.classList.contains("dark-mode")) {
+        //         return true;
+        //     }
+        // }
 
         return (
             <Layout location={this.props.location} showNav={true} showHome={true}>
@@ -102,7 +102,8 @@ class AboutIndex extends React.Component {
                     <ExperienceScroll dataSource={teachingExperience} name="Teaching" />
                     <ExperienceScroll dataSource={educationExperience} name="Education" />
                 </section>
-                <Footer mode={checkDarkMode() ? "light" : "dark"} showInternalLinks={true} />
+                {/* <Footer mode={checkDarkMode() ? "light" : "dark"} showInternalLinks={true} /> */}
+                <Footer mode={"light"} showInternalLinks={true} />
             </Layout>
         );
     }

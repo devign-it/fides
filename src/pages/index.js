@@ -6,14 +6,9 @@ import AnimatedQuote from "../components/AnimatedQuote";
 import ProjectsRoll from "../components/ProjectsRoll";
 import Footer from "../components/Footer";
 
-// import { ProjectsFeed, initializeSwiper } from "../components/ProjectsFeed";
 import "../styles/styles.scss";
 
 class RootIndex extends React.Component {
-    // componentDidMount() {
-    //     initializeSwiper();
-    // }
-
     render() {
         const posts = get(this, "props.data.allContentfulProjectPosts.edges");
 
