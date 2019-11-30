@@ -4,6 +4,7 @@ import get from "lodash/get";
 import Layout from "../components/Layout";
 import AnimatedQuote from "../components/AnimatedQuote";
 import ProjectsRoll from "../components/ProjectsRoll";
+import Footer from "../components/Footer";
 
 // import { ProjectsFeed, initializeSwiper } from "../components/ProjectsFeed";
 import "../styles/styles.scss";
@@ -23,6 +24,7 @@ class RootIndex extends React.Component {
                 </AnimatedQuote>
                 <Layout showNav={true} stickyNav={true} showResume={true} location={this.props.location}>
                     <ProjectsRoll items={posts} />
+                    <Footer mode={"ghost"} showInternalLinks={false} />
                 </Layout>
             </>
         );
