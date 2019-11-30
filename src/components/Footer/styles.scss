@@ -8,8 +8,9 @@ footer.page--footer {
     justify-content: space-between;
     max-width: $s-maxWidthColumn;
     position: relative;
+
     &.ghost {
-        border: 5px solid $c-white;
+        border: 3px solid $c-white;
         background-color: transparent;
     }
     &.dark {

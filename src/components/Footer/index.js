@@ -15,6 +15,12 @@ const Footer = ({ mode, showInternalLinks }) => {
         darkMode = false;
     }
 
+    // function checkDarkMode() {
+    //     if (document.body.classList.contains("dark-mode")) {
+    //         return true;
+    //     }
+    // }
+
     return (
         <footer className={classNames}>
             <div className="col__left">
