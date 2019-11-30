@@ -8,15 +8,14 @@
     margin: 0;
     z-index: 15;
     border-radius: inherit;
-    position: sticky;
     height: $magicNumber;
-    // border: 3px solid $c-white;
     overflow: hidden;
-    background-color: rgba($c-white, 0.1);
+    border: 1px solid $c-white;
+    margin: $magicNumber / 3;
 
     @media screen and (min-width: $tablet-breakpoint) {
-        // border: 3px solid $c-white;
-        margin: 0 $magicNumber / 2;
+        border: 3px solid $c-white;
+        margin: $magicNumber $magicNumber / 2;
         height: $heightNavigation;
         // transform: translateY($magicNumber / 2 + 3px);
     }

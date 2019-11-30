@@ -6,8 +6,8 @@ import "./styles.scss";
 const PostNavigation = ({ subpath, next, previous }) => {
     return (
         <div className="post--navigation">
-            {next && <NavigationItem text="Next project" to={`/${subpath}/${next.slug}`} />}
-            {previous && <NavigationItem text="Previous project" to={`/${subpath}/${previous.slug}`} />}
+            {previous && <NavigationItem text="Previous" to={`/${subpath}/${previous.slug}`} />}
+            {next && <NavigationItem text="Next" to={`/${subpath}/${next.slug}`} />}
         </div>
     );
 };
