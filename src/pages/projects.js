@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import get from "lodash/get";
 import Helmet from "react-helmet";
-
+import Footer from "../components/Footer";
 import Layout from "../components/Layout";
 import ProjectsRoll from "../components/ProjectsRoll";
 
@@ -14,8 +14,8 @@ class ProjectIndex extends React.Component {
         return (
             <Layout location={this.props.location} showNav={true} showHome={true} stickyNav={true}>
                 <Helmet title={siteTitle} />
-                {/* <h2 className="section-headline">Recent Projects </h2> */}
                 <ProjectsRoll items={posts} />
+                <Footer mode={"ghost"} showInternalLinks={false} />
             </Layout>
         );
     }
@@ -35,9 +35,14 @@ export const pageQuery = graphql`
                         fluid {
                             ...GatsbyContentfulFluid_noBase64
                         }
+                        description
                     }
                     slug
                     title
+                    categoryTags {
+                        category
+                        slug
+                    }
                 }
             }
         }
