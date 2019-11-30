@@ -84,9 +84,13 @@ p a {
 }
 
 .link-button__inline {
-    font-size: 18px;
+    font-size: 12px;
     margin-bottom: $magicNumber / 4;
     text-transform: uppercase;
+
+    @media screen and (min-width: $tablet-breakpoint) {
+        font-size: 18px;
+    }
 
     &.align-right {
         text-align: right;

@@ -11,7 +11,7 @@
     height: $magicNumber;
     overflow: hidden;
     border: 1px solid $c-white;
-    margin: $magicNumber / 3;
+    margin: $magicNumber / 2;
 
     @media screen and (min-width: $tablet-breakpoint) {
         border: 3px solid $c-white;

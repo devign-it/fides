@@ -1,3 +1,7 @@
+.project-list {
+    margin-bottom: $magicNumber;
+}
+
 .project-item--wrapper {
     perspective: 100vw;
 }
@@ -17,7 +21,6 @@
         margin-top: $magicNumber;
     }
 }
-// Custom colored slider settings
 
 .swiper-container.white .project-item--description__text {
     color: $c-white;

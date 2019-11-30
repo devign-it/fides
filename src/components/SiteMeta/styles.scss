@@ -19,7 +19,7 @@
     }
     .author,
     .subtitle {
-        font-size: 24px;
+        font-size: 18px;
         margin: 0;
     }
     .subtitle {
@@ -27,6 +27,10 @@
     }
     @media screen and (min-width: $tablet-breakpoint) {
         flex-direction: row;
+        .author,
+        .subtitle {
+            font-size: 24px;
+        }
     }
 }
 

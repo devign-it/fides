@@ -1,6 +1,8 @@
 @import "../../styles/variables/variables";
 
 .project-list {
-    margin-top: $magicNumber;
     position: relative;
+    @media screen and (min-width: $tablet-breakpoint) {
+        margin-top: $magicNumber;
+    }
 }

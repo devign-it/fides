@@ -3,7 +3,7 @@
 .social-link--wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     height: 100%;
 
     &.justify-end {
@@ -13,10 +13,22 @@
     &.inverted {
         mix-blend-mode: difference;
     }
-    .internal--links,
+    .internal--links {
+        display: none;
+    }
+    @media screen and (min-width: $tablet-breakpoint) {
+        justify-content: space-between;
+
+        .internal--links {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
     .external--links {
         display: flex;
         flex-direction: column;
+        // margin-top: $magicNumber / 4;
     }
     .external--links {
         justify-self: flex-end;

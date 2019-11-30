@@ -10,9 +10,11 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
     align-items: center;
     position: relative;
     // margin-top: $magicNumber / 2;
+    z-index: 20;
+    background-color: $c-black;
 
     @media screen and (min-width: $tablet-breakpoint) {
-        margin-top: $magicNumber;
+        margin-top: $magicNumber / 2;
     }
 }
 .project--hero {
@@ -26,17 +28,16 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
 .project--metadata {
     // Fix responsiveness instead of hiding
     display: none;
-
     flex-direction: row;
     background-color: $c-white;
     color: $c-black;
-
     margin: $magicNumber / 4;
     padding: $magicNumber / 2 $magicNumber / 2 0 $magicNumber / 2;
     flex-direction: row;
     flex-wrap: wrap;
     height: auto;
     transform: none;
+    z-index: 21;
 
     .metadata--item {
         min-height: $magicNumber * 1.5;
