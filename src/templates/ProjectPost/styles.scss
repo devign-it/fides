@@ -86,6 +86,7 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
     flex-direction: column;
     max-width: $s-maxWidthColumn;
     width: 100%;
+    position: relative;
     @media screen and (min-width: $tablet-breakpoint) {
         padding: $magicNumber;
     }
@@ -94,9 +95,10 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
 .content--head {
     display: flex;
     justify-content: center;
-    flex-basis: 0;
     align-items: stretch;
     flex-wrap: wrap;
+    height: 100%;
+
     .head--title {
         margin: $magicNumber / 2;
         width: 100%;
@@ -171,7 +173,8 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
 
 .content--body {
     margin-top: 0;
-
+    position: relative;
+    height: 100%;
     .body--showcase-item {
         margin: $magicNumber 0 $magicNumber 0;
         &:first-child {

@@ -27,7 +27,9 @@ $delayIn: $delay--total;
     border: 0;
     width: 100%;
     top: 0;
+    border-top: 1px solid white;
     border-bottom: 1px solid white;
+
     // &.isSticky {
     //     animation: menuCollapse__out__mobile $delay--total / 2 $t-smooth_one 1 forwards;
     //     .main-navigation--item {
