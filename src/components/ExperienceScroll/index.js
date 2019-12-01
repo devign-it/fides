@@ -7,13 +7,26 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 class ExperienceScroll extends React.Component {
     componentDidMount() {
         new Swiper(".swiper-container.horizontal", {
-            slidesPerView: "auto",
-            grabCursor: true,
-            spaceBetween: 60,
+            spaceBetween: 30,
             slideActiveClass: "slideIsActive",
+            slidesPerView: "auto",
+            centeredSlides: true,
+            slidesOffsetBefore: -40,
+
             pagination: {
                 el: ".swiper-pagination",
                 type: "progressbar",
+            },
+            breakpoints: {
+                // when window width is >= 320px
+                768: {
+                    slidesOffsetBefore: -60,
+                    slidesPerView: "auto",
+                    grabCursor: true,
+                    centeredSlides: true,
+                    spaceBetween: 60,
+                    slidesOffsetBefore: -60,
+                },
             },
         });
     }
@@ -33,7 +46,6 @@ class ExperienceScroll extends React.Component {
                                             {node.title} {node.companyName && ` - ${node.companyName}`}
                                         </h4>
                                         <div className="description">
-                                            {" "}
                                             {documentToReactComponents(node.description.json)}
                                         </div>
                                     </div>
