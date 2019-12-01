@@ -8,14 +8,18 @@ const AboutPreview = ({ source }) => {
     return (
         <div className="about-preview--wrapper">
             <div className="col__left">
-                <div className="introduction--text">{documentToReactComponents(source.extensiveDescription.json)}</div>
+                <div className="introduction--text">{documentToReactComponents(source.shortDescription.json)}</div>
                 <Link className="button__wide inverted" to="/about">
                     Read More
                 </Link>
             </div>
             <div className="col__right">
                 <div className="about-image--preview">
-                    <AboutImage topImage={source.topImage.fluid} bottomImage={source.bottomImage.fluid}></AboutImage>
+                    <AboutImage
+                        showTopImage={false}
+                        topImage={source.topImage.fluid}
+                        bottomImage={source.bottomImage.fluid}
+                    />
                 </div>
                 <a
                     className="button__wide"
