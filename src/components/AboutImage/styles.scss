@@ -4,10 +4,16 @@
     position: relative;
     display: block;
     overflow: hidden;
+    .images--container {
+        &.flipped {
+            transform: rotateY(180deg);
+        }
+    }
     .image--container {
         width: 100%;
         height: auto;
         position: relative;
+
         &.top--image {
             display: none;
             @media screen and (min-width: $tablet-breakpoint) {

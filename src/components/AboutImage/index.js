@@ -64,7 +64,7 @@ class AboutImage extends React.Component {
 
         window.addEventListener("scroll", () => {
             const percentage = getScrollPercent();
-            tl.seek(tl.duration * (percentage * 0.02));
+            tl.seek(tl.duration * (percentage * 0.03));
         });
 
         // imageWrapper.onload = () => {
@@ -83,11 +83,15 @@ class AboutImage extends React.Component {
     render() {
         return (
             <div ref={this.imageWrapper} className="about-image--wrapper">
-                <div ref={this.topImage} className="image--container top--image">
-                    <Img fluid={this.props.topImage} />
-                </div>
-                <div ref={this.bottomImage} className="image--container bottom--image">
-                    <Img fluid={this.props.bottomImage} />
+                <div className={this.props.flipped ? "images--container flipped" : "images--container"}>
+                    {this.props.showTopImage ? (
+                        <div ref={this.topImage} className="image--container top--image">
+                            <Img fluid={this.props.topImage} />
+                        </div>
+                    ) : null}
+                    <div ref={this.bottomImage} className="image--container bottom--image">
+                        <Img fluid={this.props.bottomImage} />
+                    </div>
                 </div>
                 <p className="image--source">
                     Photography by <a href="https://reinkooyman.com/">Rein Kooyman</a>
