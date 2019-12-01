@@ -4,10 +4,10 @@
     position: relative;
     transition: clip-path 160ms $t-smooth_one;
     @media screen and (min-width: $tablet-breakpoint) {
-        clip-path: inset(0 30px 0 30px);
+        // clip-path: inset(0 30px 0 30px);
 
         &:hover {
-            clip-path: inset(0px);
+            // clip-path: inset(0px);
             .project-post--preview {
                 .info {
                     // transform: translateX(#{$magicNumber / 2});
