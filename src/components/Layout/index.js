@@ -3,6 +3,9 @@ import get from "lodash/get";
 import PageContent from "../PageContent";
 import Navigation from "../Navigation";
 import Helmet from "react-helmet";
+import { Demo3 } from "../CustomCursor";
+import { CustomCursor } from "../CustomCursor";
+
 // import { changeDocumentTitle } from "../SiteTitle";
 
 const siteTitle = get(this, "props.data.site.siteMetadata.title");
@@ -10,6 +13,8 @@ const siteTitle = get(this, "props.data.site.siteMetadata.title");
 class Layout extends React.Component {
     componentDidMount() {
         // changeDocumentTitle();
+        // customCursorDemo3();
+        new Demo3();
     }
 
     render() {
@@ -26,6 +31,7 @@ class Layout extends React.Component {
                         />
                     )}
                     {this.props.children}
+                    <CustomCursor />
                 </PageContent>
             </>
         );
