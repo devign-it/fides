@@ -1,7 +1,9 @@
 // Breakpoints
 // -----------
 $small-phone-breakpoint: 22em; // if base-pixel = 16 -> $magicNumber * 5 = 350px ~~ 22em
+$mobile-breakpoint: 28em; // if base-pixel = 16 -> $magicNumber * 5 = 350px ~~ 22em
 $phablet-breakpoint: 35em; // if base-pixel = 16 -> $magicNumber * 8 = 560px ~~ 35em
 $tablet-breakpoint: 48em; // idc
+$desktop-small-breakpoint: 1028px; // idc
 $desktop-breakpoint: 64em; // ~
-$large-desktop-breakpoint: 80em; // aka compensate screen
+$desktop-large-breakpoint: 1440px; // aka compensate screen

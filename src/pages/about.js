@@ -37,6 +37,8 @@ class AboutIndex extends React.Component {
                     <div className="about--introduction">
                         <div className="introduction--image">
                             <AboutImage
+                                flipped={true}
+                                showTopImage={true}
                                 topImage={aboutContent.topImage.fluid}
                                 bottomImage={aboutContent.bottomImage.fluid}
                             ></AboutImage>

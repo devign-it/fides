@@ -40,7 +40,7 @@ export default RootIndex;
 export const HomepageQuery = graphql`
     query HomepageQuery {
         contentfulAbout {
-            extensiveDescription {
+            shortDescription {
                 json
             }
             topImage {

@@ -10,7 +10,9 @@ footer.page--footer {
     position: relative;
     min-height: 50vh;
     padding: $magicNumber / 2;
-
+    @media screen and (min-width: $desktop-large-breakpoint) {
+        margin: 0 auto;
+    }
     &.ghost {
         border: 1px solid $c-white;
         background-color: transparent;
