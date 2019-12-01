@@ -1,0 +1,40 @@
+@import "../../styles/variables/variables";
+
+body {
+    --color-text: #fff;
+    --color-bg: #171717;
+    --color-line: #292929;
+    --color-link: #ff0000;
+    --color-link-hover: #ff0000;
+    --color-info: #ff0000;
+    &,
+    a {
+        cursor: none;
+    }
+}
+
+.circle-cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 20;
+    mix-blend-mode: exclusion;
+
+    &--outer {
+        width: $magicNumber / 1.5;
+        height: $magicNumber / 1.5;
+        border: 1px solid $c-white;
+        z-index: 12000;
+        opacity: 0.2;
+    }
+    &--inner {
+        width: $magicNumber / 8;
+        height: $magicNumber / 8;
+        left: -$magicNumber / 16;
+        top: -$magicNumber / 16;
+        z-index: 11000;
+        background: $c-white;
+    }
+}
