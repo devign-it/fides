@@ -57,11 +57,11 @@ $textCollapse_out: $timeTextOut menuItemTextCollapse__out $delayTextOut $t-smoot
     margin: 0;
     border: 0;
     width: 100%;
-    top: 0;
+    top: -1px;
     border-top: 1px solid white;
     border-bottom: 1px solid white;
     clip: auto;
-    background-color: rgba($c-black, 0.5);
+    background-color: rgba($c-black, 0.2);
     left: 15px;
     right: 15px;
 
@@ -143,7 +143,6 @@ $textCollapse_out: $timeTextOut menuItemTextCollapse__out $delayTextOut $t-smoot
         top: $magicNumber / 2;
         border: 3px solid $c-white;
         height: $heightNav;
-        background-color: transparent;
         width: $widthNav_out;
         margin: $magicNumber / 2;
 
