@@ -27,6 +27,13 @@ module.exports = {
         "gatsby-plugin-use-dark-mode",
         "gatsby-plugin-offline",
         {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                // replace "UA-XXXXXXXXX-X" with your own Tracking ID
+                trackingId: "UA-59635505-3",
+            },
+        },
+        {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `assets`,
