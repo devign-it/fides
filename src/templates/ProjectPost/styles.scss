@@ -37,7 +37,7 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
     flex-wrap: wrap;
     height: auto;
     transform: none;
-    z-index: 21;
+    // z-index: 21;
 
     .metadata--item {
         min-height: $magicNumber * 1.5;

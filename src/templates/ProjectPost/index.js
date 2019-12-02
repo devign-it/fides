@@ -9,7 +9,7 @@ import Footer from "../../components/Footer";
 import PostNavigation from "../../components/PostNavigation";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import ExternalLink from "../../components/ExternalLink";
-
+import MediaItems from "../../components/MediaItems";
 import "./styles.scss";
 
 export default class ProjectPostTemplate extends React.Component {
@@ -20,6 +20,8 @@ export default class ProjectPostTemplate extends React.Component {
         // console.log("next", next);
         // console.log("previous", previous);
         console.log("this.props.pageContext", this.props.pageContext);
+
+        // let sourceMedia = post.showcaseImages;
 
         return (
             <Layout showNav={true} stickyNav={true} showHome={true} location={this.props.location}>
@@ -83,12 +85,11 @@ export default class ProjectPostTemplate extends React.Component {
                                                       {post.showcaseImages[i].description}
                                                   </p>
                                               </div>
-                                          ) : (
-                                              ``
-                                          )}
+                                          ) : null}
                                       </div>
                                   ))
                                 : ``}
+                            {post.showcaseMedia && <MediaItems source={post.showcaseMedia} />}
                         </section>
                     </div>
                 </div>
@@ -129,6 +130,25 @@ export const ProjectPostQuery = graphql`
                     ...GatsbyContentfulFluid_noBase64
                 }
             }
+            showcaseMedia {
+                media {
+                    file {
+                        contentType
+                        url
+                    }
+                    fluid {
+                        ...GatsbyContentfulFluid_noBase64
+                    }
+                }
+                isVideo
+                needFrameDesktop
+                title
+                mediaDescription {
+                    json
+                }
+            }
         }
     }
 `;
+
+//                     ...GatsbyContentfulFluid_noBase64

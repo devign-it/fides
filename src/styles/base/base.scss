@@ -2,8 +2,9 @@ html {
     box-sizing: border-box;
     border-collapse: collapse;
     line-height: 1;
-    -moz-osx-font-smoothing: grayscale;
     background-color: $c-black;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: subpixel-antialiased;
 }
 
 * {
