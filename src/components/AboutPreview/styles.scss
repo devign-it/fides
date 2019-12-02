@@ -27,22 +27,18 @@
             p,
             p a {
                 font-size: 20px;
-
-                @media screen and (min-width: $mobile-breakpoint) {
-                    font-size: 28px;
-                }
+                line-height: 1.6;
                 @media screen and (min-width: $tablet-breakpoint) {
-                    font-size: 30px;
+                    font-size: calc(20px + 1vw);
                 }
                 @media screen and (min-width: $desktop-small-breakpoint) {
-                    font-size: 2.5vw;
+                    // font grows 1px for every 100px of viewport width
+                    font-size: calc(24px + 1vw);
                 }
-                @media screen and (min-width: $desktop-breakpoint) {
-                    font-size: 3vw;
+                @media screen and (min-width: $desktop-large-breakpoint) {
+                    // font grows 1px for every 100px of viewport width
+                    font-size: calc(28px + 1vw);
                 }
-                // @media screen and (min-width: $desktop-large-breakpoint) {
-                //     font-size: 4vw;
-                // }
             }
             a {
                 color: inherit;
