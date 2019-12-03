@@ -19,8 +19,6 @@ export default class ProjectPostTemplate extends React.Component {
         const siteTitle = get(this.props, "data.site.siteMetadata.title");
         // console.log("next", next);
         // console.log("previous", previous);
-        console.log("this.props.pageContext", this.props.pageContext);
-
         // let sourceMedia = post.showcaseImages;
 
         return (
@@ -102,6 +100,11 @@ export default class ProjectPostTemplate extends React.Component {
 
 export const ProjectPostQuery = graphql`
     query ProjectPostBySlug($slug: String!) {
+        site {
+            siteMetadata {
+                title
+            }
+        }
         contentfulProjectPosts(slug: { eq: $slug }) {
             title
             client
