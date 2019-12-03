@@ -22,7 +22,7 @@ const MediaItems = ({ source }) => {
                             </video>
                         </div>
                     ) : (
-                        <div className="image--wrapper">
+                        <div className={source[i].needFrameDesktop ? "image--wrapper hasFrame" : "image--wrapper"}>
                             <Img
                                 key={i}
                                 className="showcase-item-image"
@@ -31,7 +31,7 @@ const MediaItems = ({ source }) => {
                             />
                         </div>
                     )}
-                    {source[i].title && source[i].description ? (
+                    {source[i].title && source[i].extensiveDiscription ? (
                         <div className="showcase-item--description">
                             <h4>{source[i].title}</h4>
                             <p className="project-item--description small--text">

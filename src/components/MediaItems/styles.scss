@@ -3,27 +3,28 @@
 .body--showcase-item {
     &.video {
         padding: $magicNumber * 2;
-        .frame--top {
-            height: $magicNumber / 1.5;
-            width: 100%;
-            border-radius: 10px 10px 0 0;
-            border: 1px solid $c-white;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            .dot {
-                width: $magicNumber / 4;
-                height: $magicNumber / 4;
-                border-radius: 50%;
-                border: 1px solid $c-white;
-                margin-right: $magicNumber / 6;
-                &:first-child {
-                    margin-left: $magicNumber / 4;
-                }
-            }
+    }
+}
+.frame--top {
+    height: $magicNumber / 1.5;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    border: 1px solid $c-white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .dot {
+        width: $magicNumber / 4;
+        height: $magicNumber / 4;
+        border-radius: 50%;
+        border: 1px solid $c-white;
+        margin-right: $magicNumber / 6;
+        &:first-child {
+            margin-left: $magicNumber / 4;
         }
     }
 }
+
 .video--wrapper {
     overflow: hidden;
     border-radius: 0 0 10px 10px;
@@ -32,6 +33,13 @@
         height: auto;
         object-fit: cover;
     }
+    &.hasFrame {
+        border: 1px solid $c-white;
+        // margin: $magicNumber * 2;
+    }
+}
+
+.image--wrapper {
     &.hasFrame {
         border: 1px solid $c-white;
         // margin: $magicNumber * 2;
