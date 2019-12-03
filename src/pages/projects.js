@@ -25,6 +25,11 @@ export default ProjectIndex;
 
 export const pageQuery = graphql`
     query ProjectIndexQuery {
+        site {
+            siteMetadata {
+                title
+            }
+        }
         allContentfulProjectPosts(sort: { fields: order, order: ASC }, limit: 5) {
             edges {
                 node {
@@ -35,7 +40,6 @@ export const pageQuery = graphql`
                         fluid {
                             ...GatsbyContentfulFluid_noBase64
                         }
-                        description
                     }
                     slug
                     title

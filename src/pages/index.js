@@ -39,6 +39,11 @@ export default RootIndex;
 
 export const HomepageQuery = graphql`
     query HomepageQuery {
+        site {
+            siteMetadata {
+                title
+            }
+        }
         contentfulAbout {
             shortDescription {
                 json
