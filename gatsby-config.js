@@ -26,6 +26,7 @@ module.exports = {
         "gatsby-plugin-sass",
         "gatsby-plugin-use-dark-mode",
         "gatsby-plugin-offline",
+        "gatsby-plugin-transition-link",
         {
             resolve: `gatsby-plugin-google-analytics`,
             options: {
