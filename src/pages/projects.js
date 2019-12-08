@@ -12,7 +12,7 @@ class ProjectIndex extends React.Component {
         const posts = get(this, "props.data.allContentfulProjectPosts.edges");
 
         return (
-            <Layout location={this.props.location} showNav={true} showHome={true} stickyNav={true}>
+            <Layout location={this.props.location} showNav={true} showHome={true} pageName={"projects"}>
                 <Helmet title={siteTitle} />
                 <ProjectsRoll items={posts} />
                 <Footer mode={"ghost"} showInternalLinks={false} />
@@ -25,18 +25,13 @@ export default ProjectIndex;
 
 export const pageQuery = graphql`
     query ProjectIndexQuery {
-        site {
-            siteMetadata {
-                title
-            }
-        }
         allContentfulProjectPosts(sort: { fields: order, order: ASC }, limit: 5) {
             edges {
                 node {
                     client
                     color
                     darkText
-                    featuredImage {
+                    heroImage {
                         fluid {
                             ...GatsbyContentfulFluid_noBase64
                         }

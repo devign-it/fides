@@ -20,18 +20,21 @@ const ProjectPreview = ({ project }) => {
                     className={`project-post--preview project-post--preview__${project.slug}`}
                     style={{ backgroundColor: project.color }}
                 >
-                    <div className={classInfo}>
-                        <h4 className="item--name">{project.client}</h4>
-                        <h3 className="item--title">{project.title}</h3>
-                        <div className="item--tags">
+                    {/* <h4 className="item--name typography__medium">{project.client} -- {project.title}</h4>
+                        <h3 className="item--title">{project.title}</h3> */}
+                    {/* <div className="item--tags">
                             <TagsList showTagsBlack={project.darkText} tagSource={project.categoryTags} />
-                        </div>
-                        {/* <span className="project-item--button">Check project</span> */}
-                    </div>
+                        </div> */}
+                    {/* <span className="project-item--button">Check project</span> */}
                     <div className="image">
-                        <Img alt={project.featuredImage.description} fluid={project.featuredImage.fluid} />
+                        <Img fluid={project.heroImage.fluid} />
                     </div>
                 </article>
+                <div className="project-post--info">
+                    <h3 className="item--name typography__large">
+                        {project.client} — {project.title}
+                    </h3>
+                </div>
             </div>
         </Link>
     );

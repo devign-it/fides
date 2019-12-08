@@ -1,0 +1,7 @@
+@import "../../styles/variables/variables";
+
+.main-navigation--item__new {
+    &.isActive {
+        text-decoration: underline;
+    }
+}

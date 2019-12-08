@@ -17,9 +17,19 @@ const MediaItems = ({ source }) => {
                     )}
                     {source[i].isVideo ? (
                         <div className={source[i].needFrameDesktop ? "video--wrapper hasFrame" : "video--wrapper"}>
-                            <video autoPlay>
-                                <source src={source[i].media.file.url} type="video/mp4" />
-                            </video>
+                            {source[i].videoURL ? (
+                                <iframe
+                                    src={source[i].videoURL}
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullscreen
+                                    title={source[i].title}
+                                ></iframe>
+                            ) : (
+                                <video autoPlay>
+                                    <source src={source[i].media.file.url} type="video/mp4" />
+                                </video>
+                            )}
                         </div>
                     ) : (
                         <div className={source[i].needFrameDesktop ? "image--wrapper hasFrame" : "image--wrapper"}>
@@ -31,11 +41,11 @@ const MediaItems = ({ source }) => {
                             />
                         </div>
                     )}
-                    {source[i].title && source[i].extensiveDiscription ? (
+                    {source[i].title && source[i].extensiveDescription ? (
                         <div className="showcase-item--description">
                             <h4>{source[i].title}</h4>
                             <p className="project-item--description small--text">
-                                {documentToReactComponents(source[i].mediaDescription.json)}
+                                {source[i].extensiveDescription.extensiveDescription}
                             </p>
                         </div>
                     ) : null}

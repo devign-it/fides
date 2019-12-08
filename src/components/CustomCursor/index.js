@@ -1,8 +1,8 @@
 import React from "react";
-import "./styles.scss";
 import { TweenMax, Power3 } from "gsap";
+import "./styles.scss";
 
-export class Demo3 {
+export class CursorDevign {
     constructor() {
         // initPageTransitions();
         this.initCursor();
@@ -10,12 +10,12 @@ export class Demo3 {
     }
 
     initCursor() {
-        console.log("initCursor");
         // const { Back } = window;
         this.outerCursor = document.querySelector(".circle-cursor--outer");
         this.innerCursor = document.querySelector(".circle-cursor--inner");
         this.outerCursorBox = this.outerCursor.getBoundingClientRect();
         this.outerCursorSpeed = 0;
+
         // this.easing = window.easeOut.Power1;
         this.clientX = -100;
         this.clientY = -100;
@@ -35,6 +35,7 @@ export class Demo3 {
             }, 100);
             this.showCursor = true;
         };
+
         document.addEventListener("mousemove", unveilCursor);
 
         document.addEventListener("mousemove", (e) => {
@@ -71,11 +72,12 @@ export class Demo3 {
                 width: this.outerCursorBox.width,
                 height: this.outerCursorBox.height,
             };
+
             TweenMax.to(this.outerCursor, 0.2, {
                 x: box.left,
                 y: box.top,
-                width: this.outerCursorOriginals.width * 1.5,
-                height: this.outerCursorOriginals.height * 1.5,
+                width: this.outerCursorBox.width * 1.5,
+                height: this.outerCursorBox.height * 1.5,
             });
         };
 
@@ -90,6 +92,7 @@ export class Demo3 {
         };
 
         const linkItems = document.querySelectorAll("a");
+
         linkItems.forEach((item) => {
             item.addEventListener("mouseenter", handleMouseEnter);
             item.addEventListener("mouseleave", handleMouseLeave);
@@ -126,7 +129,6 @@ export const CustomCursor = () => {
         <>
             <div className="circle-cursor circle-cursor--inner"></div>
             <div className="circle-cursor circle-cursor--outer"></div>
-            {/* <canvas className="cursor cursor--canvas" resize></canvas> */}
         </>
     );
 };

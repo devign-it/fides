@@ -27,7 +27,7 @@ const Footer = ({ mode, showInternalLinks }) => {
                 <SiteMeta darkMode={darkMode} direction="column" />
             </div>
             <div className="col__right">
-                <SocialLinks enableInternal={showInternalLinks} />
+                <SocialLinks darkMode={darkMode} enableInternal={showInternalLinks} />
             </div>
         </footer>
     );

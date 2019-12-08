@@ -7,7 +7,7 @@ import ProjectsRoll from "../components/ProjectsRoll";
 import Footer from "../components/Footer";
 import AboutPreview from "../components/AboutPreview";
 
-import "../styles/styles.scss";
+import "../styles/pages/index.scss";
 
 class RootIndex extends React.Component {
     render() {
@@ -26,7 +26,13 @@ class RootIndex extends React.Component {
                     showResume={false}
                     location={this.props.location}
                 >
-                    <ProjectsRoll items={posts} />
+                    <section className="section--selected-projects">
+                        <div className="section--heading">
+                            <h2 className="typography__large">Selected projects</h2>
+                            <p className="typography__large subtitle">Portfolio 2020</p>
+                        </div>
+                        <ProjectsRoll items={posts} />
+                    </section>
                     <AboutPreview source={aboutContent} />
                     <Footer mode={"ghost"} showInternalLinks={false} />
                 </Layout>
@@ -65,7 +71,7 @@ export const HomepageQuery = graphql`
                     client
                     color
                     darkText
-                    featuredImage {
+                    heroImage {
                         fluid {
                             ...GatsbyContentfulFluid_noBase64
                         }

@@ -10,7 +10,9 @@ footer.page--footer {
     position: relative;
     min-height: 50vh;
     padding: $magicNumber / 2;
-
+    @media screen and (min-width: $desktop-large-breakpoint) {
+        margin: 0 auto;
+    }
     &.ghost {
         border: 1px solid $c-white;
         background-color: transparent;
@@ -32,29 +34,13 @@ footer.page--footer {
         margin-bottom: -$magicNumber / 4;
     }
     @media screen and (min-width: $tablet-breakpoint) {
-        margin: 0;
-        width: calc(100% - #{$magicNumber} * 2);
-        left: $magicNumber;
+        margin: $magicNumber / 2 0;
+        width: calc(100% - #{$magicNumber});
+        left: $magicNumber / 2;
         min-height: 50vh;
 
         &.ghost {
-            border: 1px solid $c-white;
-        }
-    }
-
-    // @media screen and (min-width: $desktop-large-breakpoint) {
-    //     margin: 0 auto;
-    // }
-}
-
-body.light-mode {
-    footer.page--footer {
-        background-color: $c-black;
-        color: $c-white;
-        &.ghost {
-            border-color: $c-black;
-            // background-color: $c-white;
-            // color: $c-black;
+            border: 3px solid $c-white;
         }
     }
 }

@@ -1,0 +1,32 @@
+@import "../../styles/variables/variables";
+
+.section--selected-projects {
+    padding: $magicNumber / 2;
+
+    @media screen and (min-width: $desktop-breakpoint) {
+        padding: $magicNumber;
+    }
+    .section--heading {
+        display: flex;
+        justify-content: space-between;
+        h2,
+        p {
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+        }
+        p {
+            color: $c-grey__dark;
+        }
+    }
+}
+
+body.light-mode {
+    .section--selected-projects {
+        .section--heading {
+            p {
+                color: $c-grey__medium;
+            }
+        }
+    }
+}

@@ -33,11 +33,64 @@ main {
     }
 }
 
-// Theming
+// Main layout
 
-body {
-    transition: background-color 360ms $t-smooth_one;
+.main-container {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-color: $c-black;
+    color: $c-white;
+    padding-bottom: 30px;
+
+    .main-container--text-container {
+        text-align: left;
+        hyphens: auto;
+        display: flex;
+        flex-direction: column;
+
+        .text-container--projects {
+            p {
+                margin-top: $magicNumber / 2;
+            }
+            .text-container__links {
+                margin: 0;
+                padding: 0;
+                columns: 2;
+                column-gap: $magicNumber / 2;
+                list-style: none;
+                width: fit-content;
+            }
+        }
+    }
+
+    .main-container--button {
+        background-color: $c-black;
+        width: $magicNumber / 2;
+        height: $magicNumber;
+        position: absolute;
+        bottom: $magicNumber / 2;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+
+        a,
+        span {
+            text-decoration: none;
+            color: $c-white;
+            //transform: rotate(90deg);
+            margin: 0 auto;
+            line-height: initial;
+        }
+    }
+    @media screen and (min-width: $desktop-breakpoint) {
+        margin-top: 0;
+    }
 }
+
+// Theming
 
 body.light-mode {
     background-color: $c-grey__light;
@@ -66,6 +119,7 @@ body.light-mode {
         }
     }
 }
+
 body.dark-mode {
     // $c-black: $c-white;
     // $c-white: $c-black;
@@ -73,7 +127,7 @@ body.dark-mode {
     background-color: $c-black;
 
     .header--container {
-        background-color: $c-black;
+        background-color: $c-grey__blackish;
         color: $c-white;
         .author a {
             color: $c-white;

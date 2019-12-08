@@ -147,20 +147,20 @@ body {
         }
     }
 
-    .item--name {
-        font-size: ms(1);
-        font-family: $font--sans;
-        margin-top: $magicNumber / 3;
-        @include margin-bottom(1);
-        @include line-height(1.25);
-        @media screen and (min-width: $tablet-breakpoint) {
-            font-size: ms(1);
-        }
-        @media screen and (min-width: $desktop-breakpoint) {
-            font-size: ms(2);
-            @include margin-bottom(2);
-        }
-    }
+    // .item--name {
+    //     font-size: ms(1);
+    //     font-family: $font--sans;
+    //     margin-top: $magicNumber / 3;
+    //     @include margin-bottom(1);
+    //     @include line-height(1.25);
+    //     @media screen and (min-width: $tablet-breakpoint) {
+    //         font-size: ms(1);
+    //     }
+    //     @media screen and (min-width: $desktop-breakpoint) {
+    //         font-size: ms(2);
+    //         @include margin-bottom(2);
+    //     }
+    // }
 
     .item--title {
         font-size: ms(1.5);
@@ -198,4 +198,23 @@ body {
 .blurryboy {
     -webkit-filter: blur(5px);
     filter: blur(5px);
+}
+
+// 2020 Typography rules
+
+.typography__medium {
+    font-family: $font--sans;
+    font-size: 18px;
+    @media screen and (min-width: $tablet-breakpoint) {
+        font-size: 24px;
+    }
+}
+
+.typography__large {
+    font-family: $font--sans;
+    font-weight: initial;
+    font-size: 24px;
+    @media screen and (min-width: $tablet-breakpoint) {
+        font-size: 40px;
+    }
 }

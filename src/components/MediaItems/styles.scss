@@ -28,13 +28,19 @@
 .video--wrapper {
     overflow: hidden;
     border-radius: 0 0 10px 10px;
-    video {
+    video,
+    iframe {
         width: 100%;
         height: auto;
         object-fit: cover;
+        margin-bottom: -2px;
+    }
+    iframe {
+        min-height: 75vh;
     }
     &.hasFrame {
         border: 1px solid $c-white;
+        border-top: none;
         // margin: $magicNumber * 2;
     }
 }

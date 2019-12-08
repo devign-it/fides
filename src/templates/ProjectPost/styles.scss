@@ -37,7 +37,6 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
     flex-wrap: wrap;
     height: auto;
     transform: none;
-    // z-index: 21;
 
     .metadata--item {
         min-height: $magicNumber * 1.5;
@@ -52,8 +51,10 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
         h5 {
             margin: 0 0 $magicNumber / 12 0;
             font-family: $font--sans;
-            font-size: 1rem;
-            color: $c-grey__medium;
+            font-size: 12px;
+            color: $c-grey__medium !important;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             & + p {
                 line-height: 1.25;
             }
@@ -80,6 +81,10 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
     @media screen and (max-width: $small-phone-breakpoint) {
         flex-direction: column;
     }
+    @media screen and (min-width: $desktop-large-breakpoint) {
+        margin: 0 auto;
+        width: 100%;
+    }
 }
 
 .project--content {
@@ -95,14 +100,14 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
 
 .content--head {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: stretch;
     flex-wrap: wrap;
     height: 100%;
 
     .head--title {
         margin: $magicNumber / 2;
-        width: 100%;
+        width: $widthRightCol;
 
         h1 {
             margin-bottom: $magicNumber / 2;
@@ -149,7 +154,7 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
 
             .sidebar--sticky-content {
                 position: sticky;
-                top: $magicNumber / 2;
+                top: $magicNumber * 2;
                 text-align: left;
             }
         }
@@ -215,6 +220,20 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
             &:not(:first-child) {
                 margin-top: 0;
             }
+        }
+    }
+}
+
+body.light-mode {
+    .project--wrapper {
+        background-color: $c-white;
+    }
+    .project--metadata {
+        // border: 1px solid black;
+        background-color: $c-black;
+        color: $c-white;
+        .metadata--item h5 {
+            color: $c-grey__medium !important;
         }
     }
 }

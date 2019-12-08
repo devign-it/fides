@@ -17,12 +17,9 @@ export default class ProjectPostTemplate extends React.Component {
         const { next, previous } = this.props.pageContext;
         const post = get(this.props, "data.contentfulProjectPosts");
         const siteTitle = get(this.props, "data.site.siteMetadata.title");
-        // console.log("next", next);
-        // console.log("previous", previous);
-        // let sourceMedia = post.showcaseImages;
 
         return (
-            <Layout showNav={true} stickyNav={true} showHome={true} location={this.props.location}>
+            <Layout showNav={true} showHome={true} location={this.props.location}>
                 <div className="project--wrapper">
                     <Helmet title={`${post.client} | ${siteTitle}`} />
                     <header className="project--hero" style={{ backgroundColor: `${post.color}` }}>
@@ -63,7 +60,7 @@ export default class ProjectPostTemplate extends React.Component {
                                 </div>
                             </aside>
                             <article className="head--description">
-                                {documentToReactComponents(post.extensiveDescription.json)}
+                                {post.extensiveDescription && documentToReactComponents(post.extensiveDescription.json)}
                             </article>
                         </section>
                         <section className="content--body">
@@ -144,10 +141,11 @@ export const ProjectPostQuery = graphql`
                     }
                 }
                 isVideo
+                videoURL
                 needFrameDesktop
                 title
-                mediaDescription {
-                    json
+                extensiveDescription {
+                    extensiveDescription
                 }
             }
         }

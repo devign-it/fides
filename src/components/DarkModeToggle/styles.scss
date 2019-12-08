@@ -1,0 +1,52 @@
+@import "../../styles/variables/variables";
+$s-toggle: $magicNumber / 2;
+$offSetIcon: $s-toggle / 10;
+
+$c-dark: $c-black;
+$c-light: $c-white;
+
+.toggle__theme {
+    position: relative;
+    user-select: none;
+    align-self: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2px;
+    &__switch {
+        background-color: $c-grey__light;
+        position: relative;
+        display: inline-block;
+        width: $s-toggle * 1.5;
+        height: $s-toggle / 1.5 + $offSetIcon;
+        // height: ($s-toggle / 2) + 1px;
+        border-radius: $s-toggle / 2;
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: $offSetIcon;
+            top: $offSetIcon;
+
+            width: $s-toggle / 1.5 - $offSetIcon;
+            height: $s-toggle / 1.5 - $offSetIcon;
+            border-radius: 50%;
+            transition: left 240ms $t-smooth_one, border-color 240ms $t-smooth_one;
+            background-color: $c-dark;
+        }
+    }
+}
+
+body.dark-mode {
+    .toggle__theme {
+        color: $c-light;
+        .toggle__theme__switch {
+            background-color: rgba($c-light, 0.2);
+            &:after {
+                left: $s-toggle - $offSetIcon * 2;
+                background-color: $c-light;
+            }
+        }
+    }
+}

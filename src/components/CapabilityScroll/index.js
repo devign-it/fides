@@ -21,22 +21,34 @@ class CapabilityScroll extends React.Component {
     }
     render() {
         return (
-            <div className={`scroll--container__vertical ${this.props.name.toLowerCase()}`}>
+            <div className={`${this.props.name.toLowerCase()}`}>
                 <h3>{this.props.name}</h3>
 
-                <div className="swiper-container swiper-container__vertical">
-                    <ul className="list--capabilities swiper-wrapper vertical">
-                        {this.props.dataSource.map(({ node }, i) => {
-                            return (
-                                <li className="swiper-slide vertical" key={i}>
-                                    {this.props.dataSource[i]}
-                                </li>
-                            );
-                        })}
-                    </ul>
-                    {/* <div class="swiper-pagination"></div> */}
-                </div>
+                <ul className="list--capabilities">
+                    {this.props.dataSource.map(({ node }, i) => {
+                        return (
+                            <li className="typography__medium" key={i}>
+                                {this.props.dataSource[i]}
+                            </li>
+                        );
+                    })}
+                </ul>
             </div>
+            // <div className={`scroll--container__vertical ${this.props.name.toLowerCase()}`}>
+
+            //     <div className="swiper-container swiper-container__vertical">
+            //         <ul className="list--capabilities swiper-wrapper vertical">
+            //             {this.props.dataSource.map(({ node }, i) => {
+            //                 return (
+            //                     <li className="swiper-slide vertical" key={i}>
+            //                         {this.props.dataSource[i]}
+            //                     </li>
+            //                 );
+            //             })}
+            //         </ul>
+            //         {/* <div class="swiper-pagination"></div> */}
+            //     </div>
+            // </div>
         );
     }
 }

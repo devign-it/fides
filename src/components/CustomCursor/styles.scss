@@ -1,18 +1,11 @@
 @import "../../styles/variables/variables";
 
 body {
-    --color-text: #fff;
-    --color-bg: #171717;
-    --color-line: #292929;
-    --color-link: #ff0000;
-    --color-link-hover: #ff0000;
-    --color-info: #ff0000;
     &,
     a {
         cursor: none;
     }
 }
-
 .circle-cursor {
     position: fixed;
     left: 0;

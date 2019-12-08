@@ -19,18 +19,13 @@
     }
     .author,
     .subtitle {
-        font-size: 18px;
         margin: 0;
     }
     .subtitle {
-        color: $c-grey__medium;
+        color: $c-grey__dark;
     }
     @media screen and (min-width: $tablet-breakpoint) {
         flex-direction: row;
-        .author,
-        .subtitle {
-            font-size: 24px;
-        }
     }
 }
 
