@@ -1,7 +1,6 @@
 import React from "react";
 import anime from "animejs/lib/anime.es.js";
-import SiteMeta from "../../components/SiteMeta";
-// import DarkModeToggle from "../../components/DarkModeToggle";
+import FlowMapTypography from "./flowquote";
 import "./styles.scss";
 
 class AnimatedQuote extends React.Component {
@@ -10,8 +9,7 @@ class AnimatedQuote extends React.Component {
         this.quoteContainer = React.createRef();
         this.animatedQuote = React.createRef();
     }
-
-    componentDidMount() {
+    initMouseText() {
         const header = this.quoteContainer.current;
 
         header.addEventListener("mousemove", (event) => {
@@ -33,14 +31,16 @@ class AnimatedQuote extends React.Component {
         });
     }
 
+    componentDidMount() {
+        FlowMapTypography(this.quoteContainer.current);
+    }
+
     render() {
         return (
             <header ref={this.quoteContainer} className="header--container">
-                <SiteMeta color="white" />
                 <h1 ref={this.animatedQuote} className="quote">
                     {this.props.children}
                 </h1>
-                {/* <DarkModeToggle /> */}
             </header>
         );
     }
