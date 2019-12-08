@@ -91,7 +91,6 @@ class AboutIndex extends React.Component {
                     <ExperienceScroll dataSource={teachingExperience} name="Teaching" />
                     <ExperienceScroll dataSource={educationExperience} name="Education" />
                 </section>
-                {/* <Footer mode={checkDarkMode() ? "light" : "dark"} showInternalLinks={true} /> */}
                 <Footer mode={"light"} showInternalLinks={true} />
             </Layout>
         );
