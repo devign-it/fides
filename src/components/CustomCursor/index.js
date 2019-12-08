@@ -123,14 +123,17 @@ export class CursorDevign {
         });
     }
 }
-
-export const CustomCursor = () => {
-    return (
-        <>
-            <div className="circle-cursor circle-cursor--inner"></div>
-            <div className="circle-cursor circle-cursor--outer"></div>
-        </>
-    );
-};
-
+class CustomCursor extends React.Component {
+    componentDidMount() {
+        new CursorDevign();
+    }
+    render() {
+        return (
+            <>
+                <div className="circle-cursor circle-cursor--inner"></div>
+                <div className="circle-cursor circle-cursor--outer"></div>
+            </>
+        );
+    }
+}
 export default CustomCursor;

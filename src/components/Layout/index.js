@@ -4,7 +4,7 @@ import PageContent from "../PageContent";
 import NavigationNew from "../NavigationNew";
 import Helmet from "react-helmet";
 
-import { CursorDevign, CustomCursor } from "../CustomCursor";
+import CustomCursor from "../CustomCursor";
 // import { CustomCursor } from "../CustomCursor";
 
 // import { changeDocumentTitle } from "../SiteTitle";
@@ -20,7 +20,6 @@ function sayHello() {
 class Layout extends React.Component {
     componentDidMount() {
         // changeDocumentTitle();
-        new CursorDevign();
         sayHello();
     }
 
@@ -28,19 +27,16 @@ class Layout extends React.Component {
         return (
             <>
                 <Helmet title={siteTitle} />
-                <PageContent pageName={this.props.pageName}>
-                    {this.props.showNav && (
-                        <NavigationNew
-                            isSticky={this.props.stickyNav}
-                            showHome={this.props.showHome}
-                            showGoBack={this.props.showGoBack}
-                            showResume={this.props.showResume}
-                        />
-                    )}
-
-                    {this.props.children}
-                    <CustomCursor />
-                </PageContent>
+                {this.props.showNav && (
+                    <NavigationNew
+                        isSticky={this.props.stickyNav}
+                        showHome={this.props.showHome}
+                        showGoBack={this.props.showGoBack}
+                        showResume={this.props.showResume}
+                    />
+                )}
+                <PageContent pageName={this.props.pageName}>{this.props.children}</PageContent>
+                <CustomCursor />
             </>
         );
     }
