@@ -1,4 +1,5 @@
 .main-container.projects {
+    margin-top: $magicNumber;
 }
 .project-list {
     margin-bottom: $magicNumber;
@@ -79,5 +80,11 @@
                 background-color: $c-black;
             }
         }
+    }
+}
+
+body.light-mode {
+    .main-container.projects {
+        background-color: $c-grey__light;
     }
 }

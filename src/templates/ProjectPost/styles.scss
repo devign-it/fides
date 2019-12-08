@@ -169,6 +169,7 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
             width: $widthRightCol;
             padding: $magicNumber / 2;
             background: transparent;
+            padding-right: $magicNumber * 2;
         }
 
         h3:nth-child(1) {
@@ -235,5 +236,11 @@ body.light-mode {
         .metadata--item h5 {
             color: $c-grey__medium !important;
         }
+    }
+}
+
+body.light-mode {
+    .project--wrapper {
+        background-color: $c-grey__light;
     }
 }
