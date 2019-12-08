@@ -2,6 +2,7 @@
 
 .main-navigation--item__new {
     &.isActive {
-        text-decoration: underline;
+        // text-decoration: underline;
+        color: #55ff00;
     }
 }

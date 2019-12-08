@@ -2,6 +2,8 @@
 
 .preview-wrapper {
     position: relative;
+    margin-bottom: $magicNumber;
+
     @media screen and (min-width: $tablet-breakpoint) {
         margin-bottom: $magicNumber * 2;
 
@@ -45,7 +47,6 @@
     justify-content: space-between;
     align-items: center;
     background-color: rgba($c-white, 0.5);
-    padding: $magicNumber / 4 0 0 $magicNumber / 4;
     transition: all 420ms $t-smooth_one;
     overflow: hidden;
 

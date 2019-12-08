@@ -1,8 +1,12 @@
 .main-container.projects {
-    padding: $magicNumber;
 }
 .project-list {
     margin-bottom: $magicNumber;
+    padding: $magicNumber / 2;
+
+    @media screen and (min-width: $tablet-breakpoint) {
+        padding: $magicNumber;
+    }
 }
 
 .project-item--wrapper {

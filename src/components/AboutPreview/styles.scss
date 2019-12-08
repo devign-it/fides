@@ -4,7 +4,7 @@
     // width: 100%;
     display: flex;
     flex-direction: column-reverse;
-    margin: $magicNumber;
+    margin: $magicNumber / 2;
 
     .col__left,
     .col__right {
@@ -89,6 +89,8 @@
     }
     @media screen and (min-width: $desktop-small-breakpoint) {
         flex-direction: row;
+        margin: $magicNumber;
+
         .col__left,
         .col__right {
             width: 50%;
