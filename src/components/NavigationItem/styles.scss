@@ -15,7 +15,7 @@
         height: $heightNavigation;
         padding: 0;
         background-color: inherit;
-        border-right: 3px solid $c-white;
+        border-right: 1px solid $c-white;
     }
 
     h2 {
@@ -24,10 +24,7 @@
         text-align: center;
         transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) rotateZ(0);
         transform-style: preserve-3d;
-        font-size: 20px;
-        @media screen and (min-width: $tablet-breakpoint) {
-            font-size: 30px;
-        }
+        @include typography__block-large;
         a {
             text-decoration: none;
             color: $c-white;

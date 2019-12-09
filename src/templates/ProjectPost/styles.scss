@@ -50,11 +50,8 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
         }
         h5 {
             margin: 0 0 $magicNumber / 12 0;
-            font-family: $font--sans;
-            font-size: 12px;
-            color: $c-grey__medium !important;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            @include typography__block;
+
             & + p {
                 line-height: 1.25;
             }
