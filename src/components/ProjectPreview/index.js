@@ -34,6 +34,9 @@ const ProjectPreview = ({ project }) => {
                     <h3 className="item--name typography__large">
                         {project.client} — {project.title}
                     </h3>
+                    <div className="item--tags">
+                        <TagsList showTagsBlack={project.darkText} tagSource={project.categoryTags} />
+                    </div>
                 </div>
             </div>
         </Link>

@@ -10,8 +10,10 @@ const TagsList = ({ tagSource, showTagsBlack }) => {
 
     return (
         <div className="tags--wrapper">
-            {tagSource.map(({ node }, i) => {
+            {tagSource.slice(0, 6).map(({ node }, i) => {
                 let tag = tagSource[i];
+                let hashtag = tag.category.replace(/\s+/g, "-").toLowerCase();
+
                 return (
                     // <Link key={tag.slug} className="categoryTag" to={`/tags/${_.kebabCase(tag.slug)}`}>
                     //     <span>
@@ -20,7 +22,8 @@ const TagsList = ({ tagSource, showTagsBlack }) => {
                     // </Link>
                     <div key={tag.slug} className={classNames}>
                         <span>
-                            <p>{tag.category}</p>
+                            {console.log(hashtag)}
+                            <p className="typography__block">{hashtag}</p>
                         </span>
                     </div>
                 );

@@ -14,13 +14,19 @@
             .project-post--info {
                 .item--name {
                     background-size: 100% 2px;
-                    transition: background 820ms $t-smooth_one;
+                    transition: background 320ms $t-smooth_one;
                 }
             }
 
             .project-post--preview {
                 .info {
                     left: $magicNumber / 2;
+                }
+            }
+            .categoryTag {
+                p {
+                    color: $c-white;
+                    transition: color 320ms $t-smooth_one;
                 }
             }
         }
@@ -34,7 +40,7 @@
             background-position: 0 90%;
             background-size: 0 2px;
             text-shadow: -3px 1px $c-black, 3px 1px $c-black;
-            transition: background 620ms $t-smooth_one;
+            transition: background 480ms $t-smooth_one;
         }
     }
 }
@@ -83,6 +89,15 @@ body.light-mode {
             color: $c-black;
             background-image: linear-gradient($c-black, $c-black);
             text-shadow: -3px 1px $c-white, 3px 1px $c-white;
+        }
+    }
+    .preview-wrapper {
+        &:hover {
+            .categoryTag {
+                p {
+                    color: $c-black;
+                }
+            }
         }
     }
 }
