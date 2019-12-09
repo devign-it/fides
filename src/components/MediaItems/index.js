@@ -10,9 +10,9 @@ const MediaItems = ({ source }) => {
                 <div className={source[i].isVideo ? "body--showcase-item video" : "body--showcase-item"} key={i}>
                     {source[i].needFrameDesktop && (
                         <div className="frame--top">
-                            <div className="dot"></div>
-                            <div className="dot"></div>
-                            <div className="dot"></div>
+                            <div className="dot" />
+                            <div className="dot" />
+                            <div className="dot" />
                         </div>
                     )}
                     {source[i].isVideo ? (
@@ -24,7 +24,7 @@ const MediaItems = ({ source }) => {
                                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullscreen
                                     title={source[i].title}
-                                ></iframe>
+                                />
                             ) : (
                                 <video autoPlay>
                                     <source src={source[i].media.file.url} type="video/mp4" />

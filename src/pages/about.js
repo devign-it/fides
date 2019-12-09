@@ -41,7 +41,7 @@ class AboutIndex extends React.Component {
                                 showTopImage={true}
                                 topImage={aboutContent.topImage.fluid}
                                 bottomImage={aboutContent.bottomImage.fluid}
-                            ></AboutImage>
+                            />
                         </div>
 
                         <div className="introduction--text">

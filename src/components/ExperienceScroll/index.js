@@ -57,7 +57,7 @@ class ExperienceScroll extends React.Component {
                     <div
                         className="swiper-pagination"
                         style={{ display: this.props.dataSource.length < 3 && "none" }}
-                    ></div>
+                    />
                 </div>
             </div>
         );

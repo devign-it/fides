@@ -158,8 +158,8 @@ class CustomCursor extends React.Component {
     render() {
         return (
             <>
-                <div className="circle-cursor circle-cursor--inner"></div>
-                <div className="circle-cursor circle-cursor--outer"></div>
+                <div className="circle-cursor circle-cursor--inner" />
+                <div className="circle-cursor circle-cursor--outer" />
             </>
         );
     }

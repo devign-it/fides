@@ -10,7 +10,7 @@ const DarkModeToggle = () => {
 
     return (
         <div className="toggle__theme" onClick={darkMode.toggle}>
-            <span className="toggle__theme__switch"></span>
+            <span className="toggle__theme__switch" />
         </div>
     );
 };
