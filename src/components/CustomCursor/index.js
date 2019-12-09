@@ -1,7 +1,6 @@
 import React from "react";
-import { TweenMax, Power3, Power4 } from "gsap";
+import { TweenMax, Power3 } from "gsap";
 import "./styles.scss";
-import useDarkMode from "use-dark-mode";
 
 export class CursorDevign {
     constructor() {
@@ -65,10 +64,8 @@ export class CursorDevign {
     }
 
     initHovers() {
-        const handleMouseEnter = (e) => {
+        const handleMouseEnter = () => {
             this.isStuck = false;
-            const target = e.currentTarget;
-            const box = target.getBoundingClientRect();
 
             this.outerCursorOriginals = {
                 width: this.outerCursorBox.width,

@@ -20,7 +20,6 @@ class ExperienceScroll extends React.Component {
             breakpoints: {
                 // when window width is >= 320px
                 768: {
-                    slidesOffsetBefore: -60,
                     slidesPerView: "auto",
                     grabCursor: true,
                     centeredSlides: true,

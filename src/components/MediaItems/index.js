@@ -1,7 +1,6 @@
 import React from "react";
 import Img from "gatsby-image";
 import "./styles.scss";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 const MediaItems = ({ source }) => {
     return (
