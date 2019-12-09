@@ -1,14 +1,12 @@
 import React from "react";
 import useDarkMode from "use-dark-mode";
 import styled from "styled-components";
-import { colors, sizes } from "../../config/variable";
-// import { isDarkMode } from "../../config/helpers";
 import "./styles.scss";
 
 export const ThemeToggle = styled.div``;
 
 const DarkModeToggle = () => {
-    const darkMode = useDarkMode(false);
+    const darkMode = useDarkMode(true);
 
     return (
         <div className="toggle__theme" onClick={darkMode.toggle}>
