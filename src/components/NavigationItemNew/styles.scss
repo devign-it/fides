@@ -2,7 +2,14 @@
 
 .main-navigation--item__new {
     &.isActive {
-        text-decoration: underline;
-        // color: #55ff00;
+        color: $c-green;
+    }
+}
+
+body.light-mode {
+    .main-navigation--item__new {
+        &.isActive {
+            color: $c-blue;
+        }
     }
 }
