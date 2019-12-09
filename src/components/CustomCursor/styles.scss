@@ -13,14 +13,17 @@ body {
     pointer-events: none;
     border-radius: 50%;
     z-index: 20;
-    mix-blend-mode: exclusion;
+    // mix-blend-mode: exclusion;
 
     &--outer {
         width: $magicNumber / 1.5;
         height: $magicNumber / 1.5;
-        border: 1px solid $c-white;
+        border: 1px solid $c-green;
         z-index: 12000;
         opacity: 0.2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     &--inner {
         width: $magicNumber / 8;
@@ -29,5 +32,16 @@ body {
         top: -$magicNumber / 16;
         z-index: 11000;
         background: $c-white;
+    }
+}
+
+body.light-mode {
+    .circle-cursor {
+        &--inner {
+            background: $c-blue !important;
+        }
+        &--outer {
+            border-color: $c-blue;
+        }
     }
 }

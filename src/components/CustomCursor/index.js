@@ -1,10 +1,10 @@
 import React from "react";
-import { TweenMax, Power3 } from "gsap";
+import { TweenMax, Power3, Power4 } from "gsap";
 import "./styles.scss";
+import useDarkMode from "use-dark-mode";
 
 export class CursorDevign {
     constructor() {
-        // initPageTransitions();
         this.initCursor();
         this.initHovers();
     }
@@ -14,9 +14,11 @@ export class CursorDevign {
         this.outerCursor = document.querySelector(".circle-cursor--outer");
         this.innerCursor = document.querySelector(".circle-cursor--inner");
         this.outerCursorBox = this.outerCursor.getBoundingClientRect();
+        this.innerCursorBox = this.innerCursor.getBoundingClientRect();
+
         this.outerCursorSpeed = 0;
 
-        // this.easing = window.easeOut.Power1;
+        // this.easing = Back.Power3;
         this.clientX = -100;
         this.clientY = -100;
         this.showCursor = false;
@@ -73,11 +75,30 @@ export class CursorDevign {
                 height: this.outerCursorBox.height,
             };
 
+            this.innerCursorOriginals = {
+                width: this.innerCursorBox.width,
+                height: this.innerCursorBox.height,
+            };
+
             TweenMax.to(this.outerCursor, 0.2, {
-                x: box.left,
-                y: box.top,
-                width: this.outerCursorBox.width * 1.5,
-                height: this.outerCursorBox.height * 1.5,
+                // x: box.left,
+                // y: box.top,
+                // width: this.outerCursorOriginals.width * 1.5,
+                // height: this.outerCursorOriginals.height * 1.5,
+                x: this.clientX,
+                y: this.clientY,
+                opacity: 0.5,
+            });
+            TweenMax.to(this.innerCursor, 0.2, {
+                // x: this.clientX - this.outerCursorBox.width / 2,
+                // y: this.clientY - this.outerCursorBox.height / 2,
+                x: this.clientX - this.outerCursorBox.width * 2,
+                y: this.clientY - this.outerCursorBox.height * 2,
+                left: (this.outerCursorOriginals.width / 2) * -1,
+                top: (this.outerCursorOriginals.height / 2) * -1,
+                width: this.outerCursorBox.width,
+                height: this.outerCursorBox.height,
+                background: "#55ff00",
             });
         };
 
@@ -86,8 +107,16 @@ export class CursorDevign {
             TweenMax.to(this.outerCursor, 0.2, {
                 width: this.outerCursorOriginals.width,
                 height: this.outerCursorOriginals.height,
-                opacity: 0.2,
-                borderColor: "#ffffff",
+                opacity: 1,
+            });
+            TweenMax.to(this.innerCursor, 0.2, {
+                width: this.innerCursorOriginals.width,
+                height: this.innerCursorOriginals.height,
+                left: (this.innerCursorOriginals.width / 2) * -1,
+                top: (this.innerCursorOriginals.height / 2) * -1,
+                x: this.clientX,
+                y: this.clientY,
+                background: "#fff",
             });
         };
 
@@ -99,8 +128,7 @@ export class CursorDevign {
         });
 
         const mainNavHoverTween = TweenMax.to(this.outerCursor, 0.3, {
-            backgroundColor: "#ffffff",
-            ease: Power3.easeIn,
+            ease: Power3.easeOut,
             paused: true,
         });
 
@@ -125,7 +153,7 @@ export class CursorDevign {
 }
 class CustomCursor extends React.Component {
     componentDidMount() {
-        new CursorDevign();
+        window.addEventListener("load", new CursorDevign());
     }
     render() {
         return (
