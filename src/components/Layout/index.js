@@ -5,9 +5,6 @@ import NavigationNew from "../NavigationNew";
 import Helmet from "react-helmet";
 
 import CustomCursor from "../CustomCursor";
-// import { CustomCursor } from "../CustomCursor";
-
-// import { changeDocumentTitle } from "../SiteTitle";
 
 const siteTitle = get(this, "props.data.site.siteMetadata.title");
 
