@@ -17,6 +17,7 @@ class ExperienceScroll extends React.Component {
                 el: ".swiper-pagination",
                 type: "progressbar",
             },
+
             breakpoints: {
                 // when window width is >= 320px
                 768: {
