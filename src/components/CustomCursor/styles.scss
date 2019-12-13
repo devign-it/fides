@@ -1,11 +1,16 @@
 @import "../../styles/variables/variables";
 
 body {
-    &,
-    a {
+    @media screen and (min-width: $desktop-breakpoint) {
         cursor: none;
+
+        &,
+        a {
+            cursor: none;
+        }
     }
 }
+
 .circle-cursor {
     position: fixed;
     left: 0;
