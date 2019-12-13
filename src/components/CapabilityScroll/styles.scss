@@ -1,9 +1,32 @@
 @import "../../styles/variables/variables";
 
-.list--capabilities {
-    columns: 2;
+.list--title {
+    @include typography__block-xlarge;
+    display: inline;
+    margin: 0;
+    padding: 0;
+    margin-right: 12px;
+    color: $c-green;
+}
+.list--capabilities__horizontal {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     list-style: none;
     padding: 0;
     margin: 0;
     column-fill: auto;
+    li {
+        @include typography__block-xlarge;
+        padding-right: 12px;
+        @media screen and (min-width: $tablet-breakpoint) {
+            padding-right: 18px;
+        }
+    }
+}
+
+body.light-mode {
+    .list--title {
+        color: $c-blue;
+    }
 }
