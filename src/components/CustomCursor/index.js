@@ -21,13 +21,11 @@ export class CursorDevign {
         this.clientX = -100;
         this.clientY = -100;
         this.showCursor = false;
-        let x = 0;
-        let y = 0;
 
         const unveilCursor = () => {
             TweenMax.set(this.innerCursor, {
-                x: this.clientX,
-                y: this.clientY,
+                x: [0, this.clientX],
+                y: [0, this.clientY],
             });
             TweenMax.set(this.outerCursor, {
                 x: this.clientX - this.outerCursorBox.width / 2,
@@ -150,9 +148,15 @@ export class CursorDevign {
         });
     }
 }
+function loadCursor() {
+    setTimeout(function() {
+        new CursorDevign();
+    }, 120);
+}
+
 class CustomCursor extends React.Component {
     componentDidMount() {
-        window.addEventListener("load", new CursorDevign());
+        window.addEventListener("load", loadCursor());
     }
     render() {
         return (
