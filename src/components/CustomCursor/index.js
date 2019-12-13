@@ -1,6 +1,10 @@
 import React from "react";
-import { TweenMax, Power3 } from "gsap";
+import { TweenMax, Power3 } from "gsap/all";
+import CSSPlugin from "gsap/CSSPlugin";
+
 import "./styles.scss";
+
+const C = CSSPlugin;
 
 export class CursorDevign {
     constructor(inner, outer) {
