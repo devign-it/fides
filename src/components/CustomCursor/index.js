@@ -3,21 +3,19 @@ import { TweenMax, Power3 } from "gsap";
 import "./styles.scss";
 
 export class CursorDevign {
-    constructor() {
+    constructor(inner, outer) {
+        this.outerCursor = outer || document.querySelector(".circle-cursor--outer");
+        this.innerCursor = inner || document.querySelector(".circle-cursor--inner");
         this.initCursor();
         this.initHovers();
     }
 
     initCursor() {
-        // const { Back } = window;
-        this.outerCursor = document.querySelector(".circle-cursor--outer");
-        this.innerCursor = document.querySelector(".circle-cursor--inner");
         this.outerCursorBox = this.outerCursor.getBoundingClientRect();
         this.innerCursorBox = this.innerCursor.getBoundingClientRect();
 
         this.outerCursorSpeed = 0;
 
-        // this.easing = Back.Power3;
         this.clientX = -100;
         this.clientY = -100;
         this.showCursor = false;
@@ -148,21 +146,25 @@ export class CursorDevign {
         });
     }
 }
-function loadCursor() {
-    setTimeout(function() {
-        new CursorDevign();
-    }, 120);
-}
 
 class CustomCursor extends React.Component {
+    constructor(props) {
+        super(props);
+        this.cursorInner = React.createRef();
+        this.cursorOuter = React.createRef();
+    }
+
     componentDidMount() {
-        window.addEventListener("load", loadCursor());
+        new CursorDevign(this.cursorInner.current, this.cursorOuter.current);
+    }
+    componentDidUpdate() {
+        new CursorDevign(this.cursorInner.current, this.cursorOuter.current);
     }
     render() {
         return (
             <>
-                <div className="circle-cursor circle-cursor--inner" />
-                <div className="circle-cursor circle-cursor--outer" />
+                <div ref={this.cursorInner} className="circle-cursor circle-cursor--inner" />
+                <div ref={this.cursorOuter} className="circle-cursor circle-cursor--outer" />
             </>
         );
     }
