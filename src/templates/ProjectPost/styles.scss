@@ -50,6 +50,7 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
         }
         h5 {
             margin: 0 0 $magicNumber / 12 0;
+            color: $c-grey__medium;
             @include typography__block;
 
             & + p {
@@ -91,7 +92,7 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
     width: 100%;
     position: relative;
     @media screen and (min-width: $tablet-breakpoint) {
-        padding: $magicNumber;
+        padding: 0 $magicNumber $magicNumber $magicNumber;
     }
 }
 
@@ -103,8 +104,8 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
     height: 100%;
 
     .head--title {
-        margin: $magicNumber / 2;
-        width: $widthRightCol;
+        // margin: $magicNumber / 2;
+        // width: $widthRightCol;
 
         h1 {
             margin-bottom: $magicNumber / 2;
@@ -113,18 +114,16 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
             margin-left: $magicNumber / 2;
 
             h1 {
-                margin-bottom: $magicNumber;
+                margin-bottom: $magicNumber / 4;
             }
         }
     }
     .head--tags {
         width: 100%;
-        // padding: 0 $magicNumber / 2;
         margin-bottom: $magicNumber;
-
+        color: $c-blue;
         @media screen and (min-width: $tablet-breakpoint) {
             margin-bottom: $magicNumber * 2;
-
             padding: $magicNumber / 2;
         }
     }
@@ -138,10 +137,7 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
 
         .sidebar--sticky-content {
             position: relative;
-            mix-blend-mode: difference;
             text-align: center;
-
-            // top: $magicNumber / 2;
         }
         @media screen and (min-width: $tablet-breakpoint) {
             border: 0;

@@ -29,19 +29,19 @@ export default class ProjectPostTemplate extends React.Component {
                     </header>
                     <div className="project--metadata">
                         <div className="metadata--item">
-                            <h5 style={{ color: `${post.color}` }}>Project</h5>
+                            <h5>Project</h5>
                             <p>{post.client}</p>
                         </div>
                         <div className="metadata--item">
-                            <h5 style={{ color: `${post.color}` }}>Type</h5>
+                            <h5>Type</h5>
                             <p>{post.type}</p>
                         </div>
                         <div className="metadata--item">
-                            <h5 style={{ color: `${post.color}` }}>Year</h5>
+                            <h5>Year</h5>
                             <p>{post.year}</p>
                         </div>
                         <div className="metadata--item">
-                            <h5 style={{ color: `${post.color}` }}>Role</h5>
+                            <h5>Role</h5>
                             <p>{post.role}</p>
                         </div>
                     </div>
