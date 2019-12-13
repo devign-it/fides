@@ -77,15 +77,15 @@ class AboutIndex extends React.Component {
                             </div>
                         </div>
                     </aside>
-                    <section className="capabilities--wrapper">
-                        <div className="capabilities__services">
-                            <CapabilityScroll dataSource={aboutContent.capabilitiesServices} name="Services" />
-                        </div>
-                        <div className="capabilities__technologies">
-                            <CapabilityScroll dataSource={aboutContent.capabilitiesTechnologies} name="Technologies" />
-                        </div>
-                    </section>
                 </div>
+                <section className="capabilities--wrapper">
+                    <CapabilityScroll
+                        dataSourceFirst={aboutContent.capabilitiesServices}
+                        dataSourceSecond={aboutContent.capabilitiesTechnologies}
+                        nameFirst="Services"
+                        nameSecond="Technologies"
+                    />
+                </section>
                 <section className="experiences--wrapper">
                     <ExperienceScroll dataSource={workExperience} name="Work" />
                     <ExperienceScroll dataSource={teachingExperience} name="Teaching" />
