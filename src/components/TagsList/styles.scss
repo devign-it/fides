@@ -5,7 +5,7 @@
     flex-wrap: wrap;
     margin-top: $magicNumber / 3;
     @media screen and (min-width: $tablet-breakpoint) {
-        margin: $magicNumber / 2 $magicNumber / 2 $magicNumber / 2 0;
+        margin-top: $magicNumber / 3;
     }
 }
 .categoryTag {
@@ -18,7 +18,7 @@
     @media screen and (min-width: $tablet-breakpoint) {
         margin: 0 $magicNumber / 4 $magicNumber / 4 0;
         p {
-            color: $c-grey__dark;
+            color: $c-green;
             transition: color 480ms $t-smooth_one;
         }
     }
@@ -33,7 +33,7 @@
 body.light-mode {
     .categoryTag {
         p {
-            color: $c-grey__medium;
+            color: $c-blue;
         }
     }
 }

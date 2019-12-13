@@ -22,8 +22,7 @@ const TagsList = ({ tagSource, showTagsBlack }) => {
                     // </Link>
                     <div key={tag.slug} className={classNames}>
                         <span>
-                            {console.log(hashtag)}
-                            <p className="typography__block">{hashtag}</p>
+                            <p className="typography__block-small">#{hashtag}</p>
                         </span>
                     </div>
                 );
