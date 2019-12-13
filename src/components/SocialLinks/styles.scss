@@ -11,7 +11,14 @@
     }
 
     &.inverted {
-        mix-blend-mode: difference;
+        color: $c-black;
+
+        .external--links,
+        .internal--links {
+            a {
+                color: $c-black;
+            }
+        }
     }
     .internal--links {
         display: none;

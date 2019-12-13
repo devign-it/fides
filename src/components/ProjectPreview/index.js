@@ -3,44 +3,42 @@ import { Link } from "gatsby";
 import Img from "gatsby-image";
 import "./styles.scss";
 import TagsList from "../TagsList";
+import posed from "react-pose";
 
-const ProjectPreview = ({ project }) => {
-    let darkText = project.darkText;
-    let classInfo = "info";
+const FadingContent = posed.div({
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+});
 
-    if (darkText) {
-        classInfo += " dark-text";
+class ProjectPreview extends React.Component {
+    render() {
+        let project = this.props.project;
+
+        return (
+            <FadingContent>
+                <Link className="preview-link" to={`/projects/${project.slug}`}>
+                    <div className="preview-wrapper">
+                        <article
+                            className={`project-post--preview project-post--preview__${project.slug}`}
+                            style={{ backgroundColor: project.color }}
+                        >
+                            <div className="image">
+                                <Img fluid={project.heroImage.fluid} />
+                            </div>
+                        </article>
+                        <div className="project-post--info">
+                            <h3 className="item--name typography__medium">
+                                {project.client} — {project.title}
+                            </h3>
+                            <div className="item--tags">
+                                <TagsList showTagsBlack={project.darkText} tagSource={project.categoryTags} />
+                            </div>
+                        </div>
+                    </div>
+                </Link>
+            </FadingContent>
+        );
     }
-
-    return (
-        <Link to={`/projects/${project.slug}`}>
-            {/* <div ref={ref} className={`review-wrapper__${project.slug}`}> */}
-            <div className={`preview-wrapper`}>
-                <article
-                    className={`project-post--preview project-post--preview__${project.slug}`}
-                    style={{ backgroundColor: project.color }}
-                >
-                    {/* <h4 className="item--name typography__medium">{project.client} -- {project.title}</h4>
-                        <h3 className="item--title">{project.title}</h3> */}
-                    {/* <div className="item--tags">
-                            <TagsList showTagsBlack={project.darkText} tagSource={project.categoryTags} />
-                        </div> */}
-                    {/* <span className="project-item--button">Check project</span> */}
-                    <div className="image">
-                        <Img fluid={project.heroImage.fluid} />
-                    </div>
-                </article>
-                <div className="project-post--info">
-                    <h3 className="item--name typography__large">
-                        {project.client} — {project.title}
-                    </h3>
-                    <div className="item--tags">
-                        <TagsList showTagsBlack={project.darkText} tagSource={project.categoryTags} />
-                    </div>
-                </div>
-            </div>
-        </Link>
-    );
-};
+}
 
 export default ProjectPreview;

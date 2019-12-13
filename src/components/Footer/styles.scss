@@ -13,14 +13,26 @@ footer.page--footer {
 
     &.ghost {
         border: 1px solid $c-white;
-        background-color: transparent;
         margin: 0 $magicNumber / 2 $magicNumber / 2 $magicNumber / 2;
+        background-color: transparent;
         @media screen and (min-width: $tablet-breakpoint) {
             margin: 0 0 $magicNumber / 2 0;
         }
-    }
-    &.dark {
-        background-color: $c-black;
+        .information.inverted {
+            .author {
+                a {
+                    color: $c-white;
+                }
+            }
+            .subtitle {
+                color: $c-grey__dark;
+            }
+        }
+        .col__right {
+            a.link-button__inline {
+                color: $c-white;
+            }
+        }
     }
 
     .col__left,
@@ -30,7 +42,11 @@ footer.page--footer {
     }
     .col__right {
         margin-bottom: -$magicNumber / 4;
+        a.link-button__inline {
+            color: $c-black;
+        }
     }
+
     @media screen and (min-width: $tablet-breakpoint) {
         margin: 0;
         width: calc(100% - #{$magicNumber} * 2);
@@ -41,20 +57,51 @@ footer.page--footer {
             border: 1px solid $c-white;
         }
     }
-
-    // @media screen and (min-width: $desktop-large-breakpoint) {
-    //     margin: 0 auto;
-    // }
 }
 
 body.light-mode {
     footer.page--footer {
         background-color: $c-black;
         color: $c-white;
+
+        .col__right {
+            a.link-button__inline {
+                color: $c-white;
+            }
+        }
+        .col__left {
+            .author {
+                a {
+                    color: $c-white;
+                }
+            }
+            .subtitle {
+                color: $c-grey__dark;
+            }
+        }
+
         &.ghost {
             border-color: $c-black;
-            // background-color: $c-white;
-            // color: $c-black;
+            background-color: transparent;
+
+            .col__left {
+                background-color: transparent;
+            }
+            .col__right {
+                a.link-button__inline {
+                    color: $c-black;
+                }
+            }
+            .inverted {
+                .author {
+                    a {
+                        color: $c-black;
+                    }
+                }
+                .subtitle {
+                    color: rgba($c-black, 0.1);
+                }
+            }
         }
     }
 }

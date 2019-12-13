@@ -1,9 +1,15 @@
 @import "../../styles/variables/variables";
 
+a.link-button__inline {
+    margin-bottom: $magicNumber / 8;
+}
 .social-link--wrapper {
     display: flex;
     flex-direction: column;
-    .link-button__inline {
-        margin-bottom: $magicNumber / 8;
+}
+
+body.light-mode {
+    a.link-button__inline {
+        color: $c-black;
     }
 }

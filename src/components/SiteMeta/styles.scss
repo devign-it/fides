@@ -6,9 +6,13 @@
     flex-direction: column;
     justify-content: space-between;
     &.inverted {
-        mix-blend-mode: difference;
+        .author {
+            a {
+                color: $c-black;
+            }
+        }
         .subtitle {
-            color: $c-grey__dark;
+            color: $c-grey__light;
         }
     }
     &.column {
@@ -20,6 +24,9 @@
     .author,
     .subtitle {
         margin: 0;
+    }
+    .author {
+        color: $c-black;
     }
     .subtitle {
         color: $c-grey__dark;
@@ -34,6 +41,7 @@
     margin: 0;
     z-index: 9;
 }
+
 .author {
     a {
         color: $c-white;
