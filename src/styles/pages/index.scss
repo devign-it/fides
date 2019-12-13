@@ -1,12 +1,15 @@
 @import "../../styles/variables/variables";
 
 .section--selected-projects {
-    padding: $magicNumber / 2;
-
     .section--heading {
         display: flex;
         justify-content: space-between;
-        margin-bottom: $magicNumber / 2;
+        padding: $magicNumber / 2 $magicNumber / 2 0 $magicNumber / 2;
+
+        @media screen and (min-width: $desktop-breakpoint) {
+            padding: $magicNumber $magicNumber 0 $magicNumber;
+        }
+
         h2,
         p {
             margin: 0;
@@ -16,10 +19,6 @@
         p {
             color: $c-grey__dark;
         }
-    }
-
-    @media screen and (min-width: $desktop-breakpoint) {
-        padding: $magicNumber;
     }
 }
 
