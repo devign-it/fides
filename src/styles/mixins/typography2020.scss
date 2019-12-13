@@ -1,5 +1,16 @@
 // 2020 Typography rules
 
+@mixin typography__block-small {
+    font-family: $font--sans;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    @media screen and (min-width: $tablet-breakpoint) {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+}
+
 @mixin typography__block {
     font-family: $font--sans;
     font-size: 12px;
@@ -23,6 +34,19 @@
     }
 }
 
+@mixin typography__block-xlarge {
+    font-family: $font--sans;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    @media screen and (min-width: $tablet-breakpoint) {
+        font-size: 24px;
+        line-height: 1.5;
+        // letter-spacing: 1px;
+    }
+}
+
 @mixin typography__medium {
     font-family: $font--sans;
     font-size: 18px;
@@ -41,13 +65,19 @@
 }
 
 // Assign classed to mixins as fallback
+.typography__block-small {
+    @include typography__block;
+}
+.typography__block {
+    @include typography__block;
+}
 
 .typography__block-large {
     @include typography__block-large;
 }
 
-.typography__block {
-    @include typography__block;
+.typography__block-xlarge {
+    @include typography__block-xlarge;
 }
 
 .typography__medium {
