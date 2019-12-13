@@ -1,6 +1,5 @@
 import React from "react";
 import "./styles.scss";
-import Swiper from "swiper";
 
 class CapabilityScroll extends React.Component {
     render() {

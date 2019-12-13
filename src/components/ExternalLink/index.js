@@ -1,6 +1,5 @@
 import React from "react";
 import "./styles.scss";
-import useDarkMode from "use-dark-mode";
 import arrowIconUpWhite from "../../assets/images/icon-arrow_small_up.svg";
 import arrowIconUpBlack from "../../assets/images/icon-arrow_small_up-black.svg";
 import arrowIconDownWhite from "../../assets/images/icon-arrow_small_down.svg";
@@ -23,7 +22,7 @@ const ExternalLink = ({ URL, text, alignRight, internalPage, darkMode }) => {
         } else {
             arrowIcon = arrowIconUpWhite;
             if (darkMode) {
-                arrowIcon = arrowIconDownBlack;
+                arrowIcon = arrowIconUpBlack;
             }
         }
     }
@@ -38,7 +37,7 @@ const ExternalLink = ({ URL, text, alignRight, internalPage, darkMode }) => {
         <a className={classNames} href={URL} target="_blank" rel="noopener noreferrer">
             {text}
             <span className="icon">
-                <img src={arrowIcon}></img>
+                <img alt="arrow icon" src={arrowIcon}></img>
             </span>
         </a>
     );
