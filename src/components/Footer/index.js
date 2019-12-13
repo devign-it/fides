@@ -2,6 +2,7 @@ import React from "react";
 import "./styles.scss";
 import SiteMeta from "../SiteMeta";
 import SocialLinks from "../SocialLinks";
+import useDarkMode from "use-dark-mode";
 
 const Footer = ({ mode, showInternalLinks }) => {
     let classNames = "page--footer";
@@ -15,11 +16,9 @@ const Footer = ({ mode, showInternalLinks }) => {
         darkMode = false;
     }
 
-    // function checkDarkMode() {
-    //     if (document.body.classList.contains("dark-mode")) {
-    //         return true;
-    //     }
-    // }
+    if (useDarkMode) {
+        darkMode = true;
+    }
 
     return (
         <footer className={classNames}>
@@ -27,7 +26,7 @@ const Footer = ({ mode, showInternalLinks }) => {
                 <SiteMeta darkMode={darkMode} direction="column" />
             </div>
             <div className="col__right">
-                <SocialLinks enableInternal={showInternalLinks} />
+                <SocialLinks darkMode={darkMode} enableInternal={showInternalLinks} />
             </div>
         </footer>
     );
