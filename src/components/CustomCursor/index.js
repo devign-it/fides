@@ -21,6 +21,8 @@ export class CursorDevign {
         this.clientX = -100;
         this.clientY = -100;
         this.showCursor = false;
+        let x = 0;
+        let y = 0;
 
         const unveilCursor = () => {
             TweenMax.set(this.innerCursor, {
