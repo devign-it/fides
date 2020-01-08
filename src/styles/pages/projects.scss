@@ -1,3 +1,5 @@
+@import "../variables/variables";
+
 .main-container.projects {
     margin-top: $magicNumber;
 }
@@ -19,13 +21,10 @@
     flex-direction: column;
     flex-wrap: wrap;
     width: 100%;
-    // width: calc(100% + #{$magicNumber} / 2);
-    // margin-left: -$magicNumber / 4;
+
     margin-top: $magicNumber / 3;
 
     @media screen and (min-width: $tablet-breakpoint) {
-        // width: calc(100% + #{$magicNumber} * 2);
-        // margin-left: -$magicNumber;
         margin-top: $magicNumber;
     }
 }

@@ -4,20 +4,32 @@
     .section--heading {
         display: flex;
         justify-content: space-between;
-        padding: $magicNumber / 2 $magicNumber / 2 0 $magicNumber / 2;
+        padding: $magicNumber $magicNumber / 2 $magicNumber / 2 $magicNumber / 2;
+        flex-direction: column;
+
+        .title,
+        .subtitle {
+            @include typography__large;
+            margin: 0;
+            padding: 0;
+        }
+
+        .subtitle {
+            color: $c-grey__dark;
+            margin-top: $magicNumber / 8;
+        }
 
         @media screen and (min-width: $desktop-breakpoint) {
             padding: $magicNumber $magicNumber 0 $magicNumber;
-        }
+            flex-direction: row;
 
-        h2,
-        p {
-            margin: 0;
-            padding: 0;
-            line-height: 1;
-        }
-        p {
-            color: $c-grey__dark;
+            .title,
+            .subtitle {
+                @include typography__large;
+            }
+            .subtitle {
+                margin-top: 0;
+            }
         }
     }
 }

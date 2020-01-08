@@ -21,8 +21,15 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-height: calc(100vh - ((#{$heightMetadatarow} / 2) + (#{$magicNumber} / 2)));
+    height: calc(100vh - ((#{$heightMetadatarow} / 2) + (#{$magicNumber})));
     overflow: hidden;
+    .background-image {
+        height: 100%;
+        width: auto;
+        .gatsby-image-wrapper {
+            height: 100%;
+        }
+    }
 }
 
 .project--metadata {
@@ -104,17 +111,21 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
     height: 100%;
 
     .head--title {
-        // margin: $magicNumber / 2;
-        // width: $widthRightCol;
+        width: 100%;
+        padding: $magicNumber / 2;
 
         h1 {
             margin-bottom: $magicNumber / 2;
+            @include typography__title-large;
         }
+
         @media screen and (min-width: $tablet-breakpoint) {
             margin-left: $magicNumber / 2;
+            padding: 0;
 
             h1 {
                 margin-bottom: $magicNumber / 4;
+                margin-right: $widthLeftCol;
             }
         }
     }
@@ -123,7 +134,7 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
         margin-bottom: $magicNumber;
         color: $c-blue;
         @media screen and (min-width: $tablet-breakpoint) {
-            margin-bottom: $magicNumber * 2;
+            margin-bottom: $magicNumber;
             padding: $magicNumber / 2;
         }
     }

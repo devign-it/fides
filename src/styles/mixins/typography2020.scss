@@ -50,6 +50,7 @@
 @mixin typography__medium {
     font-family: $font--sans;
     font-size: 18px;
+    line-height: 1.5;
     @media screen and (min-width: $tablet-breakpoint) {
         font-size: 24px;
     }
@@ -59,8 +60,17 @@
     font-family: $font--sans;
     font-weight: initial;
     font-size: 24px;
+    line-height: 1.25;
     @media screen and (min-width: $tablet-breakpoint) {
         font-size: 40px;
+    }
+}
+
+@mixin typography__title-large {
+    font-family: $font--serif;
+    font-size: calc(42px + 0.2vw);
+    @media screen and (min-width: $tablet-breakpoint) {
+        font-size: calc(100px + 0.2vw);
     }
 }
 

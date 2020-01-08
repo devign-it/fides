@@ -84,13 +84,10 @@ $widthLeftCol: calc(100% - #{$widthRightCol});
         max-width: $s-maxWidthColumn;
         margin: 0 auto;
     }
-    @media screen and (min-width: $mobile-breakpoint) {
-        padding: $magicNumber;
-    }
+
     @media screen and (min-width: $tablet-breakpoint) {
         margin: $magicNumber * 2 0;
         padding: $magicNumber * 2;
-
         flex-direction: row;
     }
 }
