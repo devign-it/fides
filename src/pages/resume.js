@@ -2,7 +2,6 @@ import React from "react";
 import Layout from "../components/Layout";
 
 import "../styles/styles.scss";
-import "../styles/layouts/about.scss";
 
 import styled from "styled-components";
 

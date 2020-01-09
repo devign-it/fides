@@ -10,19 +10,12 @@ import ExperienceScroll from "../components/ExperienceScroll";
 import Footer from "../components/Footer";
 import ExternalLink from "../components/ExternalLink";
 
-import "../styles/layouts/about.scss";
+import "../styles/pages/about.scss";
 import "../templates/ProjectPost/styles.scss";
 
 import AboutImage from "../components/AboutImage";
 
 class AboutIndex extends React.Component {
-    componentDidMount() {
-        //  function checkDarkMode() {
-        //     if (document.body.classList.contains("dark-mode")) {
-        //         return true;
-        //     }
-        // };
-    }
     render() {
         const aboutContent = get(this, "props.data.contentfulAbout");
         const workExperience = get(this, "props.data.allContentfulWorkExperiences.edges");

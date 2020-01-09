@@ -1,11 +1,4 @@
-let messagesGone = [
-    "Drinking beer, brb 🍺",
-    "Downloading virus ⏳",
-    "Open window alert 💨",
-    "Bye then 😌",
-    "Launch me again 🚀",
-    "See ya later 👋",
-];
+let messagesGone = ["Open window alert 💨", "Bye then 😌", "Launch me again 🚀", "See ya later 👋"];
 let original;
 
 export function changeDocumentTitle() {
