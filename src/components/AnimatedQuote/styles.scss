@@ -7,30 +7,39 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 100vh;
-    // min-height: calc(100vh - #{$magicNumber} + 1px);
+    min-height: calc(100vh - #{$magicNumber} * 2);
     z-index: 100;
     position: relative;
 
     canvas {
         width: 100%;
-        height: 100%;
+        height: calc(100% - #{$magicNumber});
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
-        bottom: 0;
         display: none;
     }
 
     .quote {
-        margin-bottom: $magicNumber / 2;
-        font-size: calc(26px + 0.1vw);
+        margin-bottom: $magicNumber;
+        font-size: calc(52px + 0.1vw);
+    }
+    .header--bottom-bar {
+        background-color: $c-green;
+        height: $magicNumber;
+        width: 100%;
+        z-index: 10;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
     }
 
     @media screen and (min-width: $tablet-breakpoint) {
         min-height: 100vh;
         padding: $magicNumber;
+
         canvas {
             display: block;
         }

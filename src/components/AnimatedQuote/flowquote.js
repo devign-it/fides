@@ -41,13 +41,15 @@ export default function FlowMapTypography(elementToAppend) {
             premultipliedAlpha: true,
         });
         const gl = renderer.gl;
-        gl.canvas.classList.add("demo3");
         elementToAppend.appendChild(gl.canvas);
+
         const isTouchCapable = "ontouchstart" in window;
+
         // Variable inputs to control flowmap
         let aspect = 1;
         const mouse = new Vec2(-1);
         const velocity = new Vec2();
+
         function resize() {
             let a1, a2;
             var imageAspect = imgSize[1] / imgSize[0];
