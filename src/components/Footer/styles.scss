@@ -8,8 +8,14 @@ footer.page--footer {
     justify-content: space-between;
     max-width: $s-maxWidthColumn;
     position: relative;
+    padding: $magicNumber / 3;
     min-height: 50vh;
-    padding: $magicNumber / 2;
+
+    @media screen and (min-width: $mobile-breakpoint) {
+        min-height: 50vh;
+
+        padding: $magicNumber / 2;
+    }
 
     &.ghost {
         border: 1px solid $c-white;
