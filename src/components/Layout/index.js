@@ -3,7 +3,7 @@ import get from "lodash/get";
 import PageContent from "../PageContent";
 import NavigationNew from "../NavigationNew";
 import Helmet from "react-helmet";
-
+// import changeDocumentTitle from "../SiteTitle";
 import CustomCursor from "../CustomCursor";
 
 const siteTitle = get(this, "props.data.site.siteMetadata.title");
@@ -14,10 +14,32 @@ function sayHello() {
         "color:#fff; background-color:#000;",
     );
 }
+function changeDocumentTitle() {
+    let messagesGone = ["Open window alert 💨", "Bye then 😌", "Launch me again 🚀", "See ya later 👋"];
+    let windowIsFocused = document.hasFocus();
+    let original;
+
+    console.log("siteTitle", siteTitle);
+
+    if (windowIsFocused) {
+        document.title = siteTitle || "Daan van der Zwaag | Portfolio 2020";
+    } else {
+        let title = document.title;
+        let choosenMessage = messagesGone[Math.floor(Math.random() * messagesGone.length)];
+        if (title !== choosenMessage) {
+            original = title;
+        }
+        document.title = choosenMessage;
+    }
+}
+
 class Layout extends React.Component {
     componentDidMount() {
-        // changeDocumentTitle();
+        changeDocumentTitle();
         sayHello();
+    }
+    componentDidUpdate() {
+        changeDocumentTitle();
     }
 
     render() {
