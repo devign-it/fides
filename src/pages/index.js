@@ -28,10 +28,10 @@ class RootIndex extends React.Component {
                 >
                     <section className="section--selected-projects">
                         <div className="section--heading">
-                            <h2 className="typography__large">Selected projects</h2>
-                            <p className="typography__large subtitle">Portfolio 2020</p>
+                            <h2 className="title">Selected projects</h2>
+                            <p className="subtitle">Portfolio 2020</p>
                         </div>
-                        <ProjectsRoll items={posts} />
+                        <ProjectsRoll items={posts} showButton={true} />
                     </section>
                     <AboutPreview source={aboutContent} />
                     <Footer mode={"ghost"} showInternalLinks={false} />
@@ -65,7 +65,7 @@ export const HomepageQuery = graphql`
                 }
             }
         }
-        allContentfulProjectPosts(sort: { fields: order, order: ASC }, limit: 5) {
+        allContentfulProjectPosts(sort: { fields: order, order: ASC }) {
             edges {
                 node {
                     client
