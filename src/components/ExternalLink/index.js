@@ -16,12 +16,12 @@ const ExternalLink = ({ URL, text, alignRight, internalPage, darkMode }) => {
     function switchArrow() {
         if (internalPage) {
             arrowIcon = arrowIconDownWhite;
-            if (darkMode) {
+            if (!darkMode) {
                 arrowIcon = arrowIconDownBlack;
             }
         } else {
             arrowIcon = arrowIconUpWhite;
-            if (darkMode) {
+            if (!darkMode) {
                 arrowIcon = arrowIconUpBlack;
             }
         }

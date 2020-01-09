@@ -2,6 +2,14 @@
 
 a.link-button__inline {
     margin-bottom: $magicNumber / 8;
+
+    .icon {
+        display: none;
+    }
+
+    @media screen and (min-width: $desktop-breakpoint) {
+        display: inline-block;
+    }
 }
 .social-link--wrapper {
     display: flex;
