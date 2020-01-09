@@ -1,0 +1,31 @@
+@import "../../styles/variables/variables";
+
+.button__wide {
+    height: $magicNumber;
+    border: 1px solid $c-white;
+    color: $c-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: $c-black;
+
+    @media screen and (min-width: $desktop-breakpoint) {
+        height: $magicNumber * 1.5;
+    }
+
+    @include typography__block-large;
+
+    &:hover {
+        background-color: rgba($c-white, 0.1);
+    }
+
+    &.inverted {
+        color: $c-black;
+        background-color: $c-white;
+
+        &:hover {
+            background-color: rgba($c-black, 0.8);
+        }
+    }
+}
