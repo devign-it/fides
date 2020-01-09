@@ -1,6 +1,7 @@
 import React from "react";
 import { TweenMax, Power3 } from "gsap/all";
 import CSSPlugin from "gsap/CSSPlugin";
+import throttle from "lodash.throttle";
 
 import "./styles.scss";
 
@@ -86,27 +87,31 @@ export class CursorDevign {
                 // height: this.outerCursorOriginals.height * 1.5,
                 x: this.clientX,
                 y: this.clientY,
-                opacity: 0.5,
+                opacity: 1,
+                borderWidth: 2,
             });
             TweenMax.to(this.innerCursor, 0.2, {
-                // x: this.clientX - this.outerCursorBox.width / 2,
-                // y: this.clientY - this.outerCursorBox.height / 2,
-                x: this.clientX - this.outerCursorBox.width * 2,
-                y: this.clientY - this.outerCursorBox.height * 2,
-                left: (this.outerCursorOriginals.width / 2) * -1,
-                top: (this.outerCursorOriginals.height / 2) * -1,
-                width: this.outerCursorBox.width,
-                height: this.outerCursorBox.height,
+                // x: this.clientX - this.outerCursorBox.width * 2,
+                // y: this.clientY - this.outerCursorBox.height * 2,
+                // left: (this.outerCursorOriginals.width / 2) * -1,
+                // top: (this.outerCursorOriginals.height / 2) * -1,
+                // width: this.outerCursorBox.width,
+                // height: this.outerCursorBox.height,
                 background: "#55ff00",
             });
         };
 
         const handleMouseLeave = () => {
+            if (!this.outerCursorOriginals) {
+                return;
+            }
+
             this.isStuck = false;
             TweenMax.to(this.outerCursor, 0.2, {
                 width: this.outerCursorOriginals.width,
                 height: this.outerCursorOriginals.height,
-                opacity: 1,
+                opacity: 0.5,
+                borderWidth: 1,
             });
             TweenMax.to(this.innerCursor, 0.2, {
                 width: this.innerCursorOriginals.width,

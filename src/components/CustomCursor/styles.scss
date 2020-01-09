@@ -1,12 +1,26 @@
 @import "../../styles/variables/variables";
 
 body {
+    @media screen and (max-width: $desktop-breakpoint) {
+        .circle-cursor {
+            &--outer,
+            &--inner {
+                display: none;
+            }
+        }
+    }
     @media screen and (min-width: $desktop-breakpoint) {
         cursor: none;
 
         &,
         a {
             cursor: none;
+        }
+        .circle-cursor {
+            &--outer,
+            &--inner {
+                display: initial;
+            }
         }
     }
 }
