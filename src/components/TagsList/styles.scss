@@ -3,9 +3,9 @@
 .tags--wrapper {
     display: flex;
     flex-wrap: wrap;
-    margin-top: $magicNumber / 3;
+    margin-top: $magicNumber / 4;
     @media screen and (min-width: $tablet-breakpoint) {
-        margin-top: $magicNumber / 3;
+        margin-top: $magicNumber / 6;
     }
 }
 .categoryTag {

@@ -24,7 +24,7 @@
         }
     }
     .project-post--info {
-        margin-top: $magicNumber / 2;
+        margin-top: $magicNumber / 3;
         transition: all 320ms $t-smooth_one;
         position: relative;
         top: 0;
@@ -32,6 +32,10 @@
 
         .item--name {
             margin: 0;
+            @include typography__medium;
+        }
+        @media screen and (min-width: $tablet-breakpoint) {
+            margin-top: $magicNumber / 2;
         }
     }
 }
@@ -52,7 +56,7 @@
     transition: all 420ms $t-smooth_one;
     overflow: hidden;
 
-    height: calc(100vw - #{$magicNumber} * 4);
+    height: calc(100vw - #{$magicNumber} * 3);
     max-height: $magicNumber * 4;
 
     clip-path: inset(0);
@@ -64,7 +68,7 @@
         flex-wrap: wrap;
         align-items: flex-end;
         max-height: initial;
-        height: calc(100vh - #{$magicNumber} * 4);
+        height: calc(100vh - #{$magicNumber} * 3.5);
         padding: 0;
     }
 

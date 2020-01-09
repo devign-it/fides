@@ -33,11 +33,11 @@
                 }
                 @media screen and (min-width: $desktop-small-breakpoint) {
                     // font grows 1px for every 100px of viewport width
-                    font-size: calc(24px + 1vw);
+                    font-size: calc(28px + 1vw);
                 }
                 @media screen and (min-width: $desktop-large-breakpoint) {
                     // font grows 1px for every 100px of viewport width
-                    font-size: calc(28px + 1vw);
+                    font-size: calc(32px + 1vw);
                 }
             }
             a {
@@ -65,7 +65,7 @@
         }
     }
     .button__wide {
-        height: $magicNumber * 1.5;
+        height: $magicNumber;
         border: 1px solid $c-white;
         color: $c-white;
         display: flex;
@@ -73,7 +73,10 @@
         align-items: center;
         text-align: center;
         background-color: $c-black;
-        min-height: $magicNumber * 1.5;
+
+        @media screen and (min-width: $desktop-breakpoint) {
+            height: $magicNumber * 1.5;
+        }
 
         @include typography__block-large;
 
@@ -98,6 +101,7 @@
         .col__right {
             .button__wide {
                 display: inline-flex;
+                min-height: $magicNumber * 1.5;
             }
         }
         .button__wide {

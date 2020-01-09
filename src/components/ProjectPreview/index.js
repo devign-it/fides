@@ -27,7 +27,7 @@ class ProjectPreview extends React.Component {
                             </div>
                         </article>
                         <div className="project-post--info">
-                            <h3 className="item--name typography__medium">
+                            <h3 className="item--name">
                                 {project.client} — {project.title}
                             </h3>
                             <div className="item--tags">
