@@ -51,3 +51,11 @@
         // margin: $magicNumber * 2;
     }
 }
+body.light-mode {
+    .video--wrapper.hasFrame,
+    .image--wrapper.hasFrame,
+    .frame--top,
+    .frame--top .dot {
+        border-color: $c-black;
+    }
+}
