@@ -25,8 +25,11 @@ const MediaItems = ({ source }) => {
                                     title={source[i].title}
                                 />
                             ) : (
-                                <video autoPlay>
+                                <video playsInline loop controls autoPlay muted>
                                     <source src={source[i].media.file.url} type="video/mp4" />
+                                    <p>
+                                        Video could not be found. <a href="mailto:daan@devign.it">Please let me know</a>
+                                    </p>
                                 </video>
                             )}
                         </div>
