@@ -7,8 +7,8 @@ $link-color-active: lighten($c-black, 90%);
 $link-underline-color: $link-color;
 $link-underline-color-active: $link-color-active;
 
-$link-underline-width: 2px;
-$link-underline-offset: 6px;
+$link-underline-width: 1px;
+$link-underline-offset: 3px;
 
 a {
     color: $link-color;
@@ -96,6 +96,18 @@ p a {
         img {
             width: $magicNumber / 4;
             height: auto;
+        }
+    }
+}
+
+body.light-mode {
+    li a,
+    p:not(.author) a,
+    .link.doPopup {
+        color: inherit;
+        &:before,
+        &:after {
+            background-color: $c-black;
         }
     }
 }
