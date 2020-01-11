@@ -14,6 +14,9 @@ $c-light: $c-white;
     justify-content: center;
     align-items: center;
     margin-top: 2px;
+    &:focus {
+        outline: none;
+    }
     &__switch {
         background-color: $c-grey__light;
         position: relative;
