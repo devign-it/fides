@@ -1,12 +1,8 @@
 import React from "react";
 import "./styles.scss";
 
-const TagsList = ({ tagSource, showTagsBlack }) => {
+const TagsList = ({ tagSource }) => {
     let classNames = "categoryTag";
-
-    if (showTagsBlack) {
-        classNames += " black";
-    }
 
     return (
         <div className="tags--wrapper">

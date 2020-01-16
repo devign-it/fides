@@ -31,7 +31,6 @@ export const pageQuery = graphql`
                 node {
                     client
                     color
-                    darkText
                     heroImage {
                         fluid {
                             ...GatsbyContentfulFluid_noBase64

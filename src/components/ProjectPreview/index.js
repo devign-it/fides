@@ -31,7 +31,7 @@ class ProjectPreview extends React.Component {
                                 {project.client} — {project.title}
                             </h3>
                             <div className="item--tags">
-                                <TagsList showTagsBlack={project.darkText} tagSource={project.categoryTags} />
+                                <TagsList tagSource={project.categoryTags} />
                             </div>
                         </div>
                     </div>
