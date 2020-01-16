@@ -35,8 +35,10 @@ Personally, I’ve learnt the most by recreating beautiful digital experiences m
 -   Clear the Gatsby.js /cache directory: `nom run clear-cache`
 -   Push and merge to the production branch: `npm run live`
 
----
-
 ## Personal data
 
 > 👀 Be aware, since the data is pulled from a personal Contentful setup, you’ll need to create an own data flow to access the complete project. Send me a message if you would live to have my data as an example.
+
+# License
+
+This repo uses the [MIT license](https://github.com/danoszz/daan-van-der-zwaag/blob/master/LICENSE.md)
