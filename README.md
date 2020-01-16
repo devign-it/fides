@@ -1,33 +1,41 @@
-# Academic resume 2020 build w/ Gatsby.js
+![](https://daanvanderzwaag.com/screenrec-header_repo.gif)
 
-Transition to a dynamic website with the SSR Gatsby. Learning React.js, Serverless deployments and CI. Still the old portfolio, just with new content and fire elements.
+# Personal Portfolio 2020
 
-## Get started
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7ec1dd00-30a0-4187-8a5b-3453a22e544f/deploy-status)](https://app.netlify.com/sites/daanvanderzwaag/deploys)
 
--   You'll need [Node](https://nodejs.org/) (which includes NPM).
--   Install Gulp using `npm install -g gulp`. This installs Gulp globally and is needed later.
+To highlight personal works from the past years, I’ve created a dynamic website to showcase projects. Next to displaying work, this project taught me more about Gatsby.js, React.js, Serverless Deployments and Continuous Integrations.
 
-### Local setup
+## Use this project
 
-```shell
-git clone https://github.com/danoszz/devign_resume && cd devign_resume && npm i
-```
+Personally, I’ve learnt the most by recreating beautiful digital experiences made by others. That’s why you can use this repo to play around and to learn about the used tools.
+
+-   [React.js](https://reactjs.org/) Javascript framework for building the User Interface (UI)
+-   [Gatsby.js](https://www.gatsbyjs.org/) Static Site Generator (SSR) for speed optimisation
+-   [Contentful](https://www.contentful.com/) API based CMS for managing the content
+-   [OGL](https://github.com/oframe/ogl) Library for WebGL interactions
+-   [Anime.js](https://animejs.com/) Javascript animation library for the UI
+
+### Get started
+
+1. You’ll need [Node](_https://nodejs.org/_) (which includes NPM).
+2. Clone this repo `git clone https://github.com/danoszz/daan-van-der-zwaag`
+3. Navigate to directory `cd daan-van-der-zwaag`
+4. Install dependencies with `npm install` or `yarn`
 
 ### Run the project
 
-Based on the [Gatsby Contentful Starter](https://github.com/contentful-userland/gatsby-contentful-starter)
-
 -   Run project locally: `yarn run dev`
-
 -   Run a production build into ./public: `yarn run build`
 
--   Removes all dependencies, scripts and data from the installation script: `yarn run cleanup-repository`
+### Other commands
 
-## To do
+-   Lint all the files: `npm run prettier`
+-   Clear the Gatsby.js /cache directory: `nom run clear-cache`
+-   Push and merge to the production branch: `npm run live`
 
--   Make page transitions w/ [this plugin](https://gatsby-plugin-transition-link.netlify.com/)
--   Add custom cursor
+---
 
-## License
+## Personal data
 
-MIT
+> 👀 Be aware, since the data is pulled from a personal Contentful setup, you’ll need to create an own data flow to access the complete project. Send me a message if you would live to have my data as an example.
