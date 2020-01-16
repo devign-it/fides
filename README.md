@@ -3,7 +3,7 @@
 # Personal Portfolio 2020
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7ec1dd00-30a0-4187-8a5b-3453a22e544f/deploy-status)](https://app.netlify.com/sites/daanvanderzwaag/deploys)
-![GitHub file size in bytes](https://img.shields.io/github/size/danoszz/daan-van-der-zwaag/public?label=production%20size)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/danoszz/daan-van-der-zwaag)
 
 To highlight personal works from the past years, I’ve created a dynamic website to showcase projects. Next to displaying work, this project taught me more about Gatsby.js, React.js, Serverless Deployments and Continuous Integrations.
 
