@@ -9,7 +9,7 @@ const AboutPreview = ({ source }) => {
         <div className="about-preview--wrapper">
             <div className="col__left">
                 <div className="introduction--text">{documentToReactComponents(source.shortDescription.json)}</div>
-                <ButtonWide inverted={false} text="Read More" to="/about" internal></ButtonWide>
+                <ButtonWide inverted={true} text="Read More" to="/about" internal></ButtonWide>
             </div>
             <div className="col__right">
                 <div className="about-image--preview">
@@ -20,7 +20,7 @@ const AboutPreview = ({ source }) => {
                     />
                 </div>
                 <ButtonWide
-                    inverted={true}
+                    inverted={false}
                     text="Download Resume"
                     to="./resume-daanvanderzwaag_2019-2020.pdf"
                     internal={false}
