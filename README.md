@@ -37,7 +37,9 @@ Personally, I’ve learnt the most by recreating beautiful digital experiences m
 
 ## Personal data
 
-> 👀 Be aware, since the data is pulled from a personal Contentful setup, you’ll need to create an own data flow to access the complete project. Send me a message if you would live to have my data as an example.
+Be aware, since the data is pulled from a personal Contentful setup, you’ll need to create an own data flow to access the complete project. Without access to our Contentful API key, the project will fail running.
+
+> 👀 Please send me a message if you would like to have acces to our data for example practises.
 
 # License
 
