@@ -64,26 +64,25 @@ export default class ProjectPostTemplate extends React.Component {
                             </article>
                         </section>
                         <section className="content--body">
-                            {post.showcaseImages
-                                ? post.showcaseImages.map(({ node }, i) => (
-                                      <div className="body--showcase-item" key={post.showcaseImages[i].title}>
-                                          <Img
-                                              key={i}
-                                              className="showcase-item-image"
-                                              alt={post.showcaseImages.description}
-                                              fluid={post.showcaseImages[i].fluid}
-                                          />
-                                          {post.showcaseImages[i].title && post.showcaseImages[i].description ? (
-                                              <div className="showcase-item--description">
-                                                  <h4>{post.showcaseImages[i].title}</h4>
-                                                  <p className="project-item--description small--text">
-                                                      {post.showcaseImages[i].description}
-                                                  </p>
-                                              </div>
-                                          ) : null}
-                                      </div>
-                                  ))
-                                : ``}
+                            {post.showcaseImages &&
+                                post.showcaseImages.map(({ node }, i) => (
+                                    <div className="body--showcase-item" key={post.showcaseImages[i].title}>
+                                        <Img
+                                            key={i}
+                                            className="showcase-item-image"
+                                            alt={post.showcaseImages.description}
+                                            fluid={post.showcaseImages[i].fluid}
+                                        />
+                                        {post.showcaseImages[i].title && post.showcaseImages[i].description ? (
+                                            <div className="showcase-item--description">
+                                                <h4>{post.showcaseImages[i].title}</h4>
+                                                <p className="project-item--description small--text">
+                                                    {post.showcaseImages[i].description}
+                                                </p>
+                                            </div>
+                                        ) : null}
+                                    </div>
+                                ))}
                             {post.showcaseMedia && <MediaItems source={post.showcaseMedia} />}
                         </section>
                     </div>
@@ -126,7 +125,7 @@ export const ProjectPostQuery = graphql`
             showcaseImages {
                 title
                 description
-                fluid(maxWidth: 1280) {
+                fluid(maxWidth: 1440) {
                     ...GatsbyContentfulFluid_noBase64
                 }
             }
@@ -136,7 +135,7 @@ export const ProjectPostQuery = graphql`
                         contentType
                         url
                     }
-                    fluid {
+                    fluid(maxWidth: 1440) {
                         ...GatsbyContentfulFluid_noBase64
                     }
                 }
@@ -151,5 +150,3 @@ export const ProjectPostQuery = graphql`
         }
     }
 `;
-
-//                     ...GatsbyContentfulFluid_noBase64
