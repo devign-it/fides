@@ -48,7 +48,7 @@ module.exports = {
                 short_name: `Daan van der Zwaag`,
                 start_url: `/`,
                 background_color: `#fff`,
-                theme_color: `#000`,
+                theme_color: `#fff`,
                 display: `standalone`,
                 icon: `src/assets/images/favicons/favicon.png`,
             },
