@@ -9,6 +9,7 @@
     align-items: center;
     text-align: center;
     background-color: $c-black;
+    text-decoration: none;
 
     @media screen and (min-width: $desktop-breakpoint) {
         height: $magicNumber * 1.5;
@@ -26,6 +27,7 @@
 
         &:hover {
             background-color: rgba($c-black, 0.8);
+            color: $c-white;
         }
     }
 }

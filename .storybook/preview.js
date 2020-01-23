@@ -9,6 +9,14 @@ import { action } from "@storybook/addon-actions";
 // system wide decorator that all of the stories will use
 addParameters({
     options: { panelPosition: "bottom" },
+    backgrounds: [
+        { name: "Black", value: "#000", default: true },
+        { name: "Dark", value: "#0d0d0d" },
+        { name: "Light", value: "#f9f9f9" },
+        { name: "White", value: "#ffffff" },
+        { name: "Green", value: "#5f0" },
+        { name: "Blue", value: "#0000ED" },
+    ],
     viewport: {
         viewports: [
             {
