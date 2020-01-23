@@ -28,6 +28,7 @@ class ProjectsRoll extends React.Component {
                         inverted={false}
                         text={"See all " + orginalProjects.length + " projects"}
                         to="/projects"
+                        internal
                     ></ButtonWide>
                 )}
             </section>
