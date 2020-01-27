@@ -1,6 +1,6 @@
-![](https://daanvanderzwaag.com/screenrec-header_repo.gif)
+# Devign.it - Digital Agency
 
-# Personal Portfolio 2020
+> ⚠️This website is currently a clone of daanvanderzwaag.com
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7ec1dd00-30a0-4187-8a5b-3453a22e544f/deploy-status)](https://app.netlify.com/sites/daanvanderzwaag/deploys)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/danoszz/daan-van-der-zwaag)

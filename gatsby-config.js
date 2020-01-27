@@ -16,7 +16,7 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
     siteMetadata: {
-        title: "Daan van der Zwaag | Portfolio 2020",
+        title: "Devign.it — Digital Agecny",
     },
     plugins: [
         "gatsby-transformer-remark",
@@ -30,7 +30,7 @@ module.exports = {
         {
             resolve: `gatsby-plugin-google-analytics`,
             options: {
-                trackingId: "UA-59635505-3",
+                trackingId: "UA-59635505-2",
             },
         },
         {
@@ -43,8 +43,8 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `Daan van der Zwaag - Portfolio 2020`,
-                short_name: `Daan van der Zwaag`,
+                name: `Devign.it — Digital Agency`,
+                short_name: `Devign.it`,
                 start_url: `/`,
                 background_color: `#fff`,
                 theme_color: `#fff`,

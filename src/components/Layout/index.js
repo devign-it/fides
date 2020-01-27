@@ -19,10 +19,8 @@ function changeDocumentTitle() {
     let windowIsFocused = document.hasFocus();
     let original;
 
-    console.log("siteTitle", siteTitle);
-
     if (windowIsFocused) {
-        document.title = siteTitle || "Daan van der Zwaag | Portfolio 2020";
+        document.title = siteTitle || "Devign.it";
     } else {
         let title = document.title;
         let choosenMessage = messagesGone[Math.floor(Math.random() * messagesGone.length)];

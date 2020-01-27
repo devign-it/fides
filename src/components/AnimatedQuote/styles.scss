@@ -1,4 +1,5 @@
 @import "../../styles/variables/variables";
+$column--width: $magicNumber;
 
 .header--container {
     background-color: $c-white;
@@ -53,6 +54,32 @@ body.light-mode {
     .header--container {
         canvas {
             mix-blend-mode: difference;
+        }
+    }
+}
+
+/* Canvas Background */
+.canvas--background {
+    width: 100vw;
+    height: 100vh;
+    background-color: $c-black;
+    position: relative;
+
+    @media screen and (min-width: $phablet-breakpoint) and (min-aspect-ratio: 1/1) and (min-height: $column--width * 8) {
+        position: absolute;
+        z-index: 0;
+        left: 0;
+        width: 80vw;
+        height: 100vh;
+
+        &:before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            z-index: 2;
+            background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 80%, $c-black 100%);
         }
     }
 }
