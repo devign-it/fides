@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/404.js"],"names":["fourOfour"],"mappings":"2FAAA,gCAIeA,UAFG,kBAAM","file":"component---src-pages-404-js-b590f0bfebb925e950e0.js","sourcesContent":["import React from \"react\";\n\nconst fourOfour = () => <div>Temporary 404 page</div>;\n\nexport default fourOfour;\n"],"sourceRoot":""}
