@@ -1,6 +1,6 @@
-# Devign.it - Digital Agency
+> ⚠️This website is currently a clone of daanvanderzwaag.com. In the future it will become standalone and based on shared packages.
 
-> ⚠️This website is currently a clone of daanvanderzwaag.com
+# Devign.it - Digital Agency
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7ec1dd00-30a0-4187-8a5b-3453a22e544f/deploy-status)](https://app.netlify.com/sites/daanvanderzwaag/deploys)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/danoszz/daan-van-der-zwaag)
