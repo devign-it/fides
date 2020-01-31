@@ -23,7 +23,7 @@ class AboutIndex extends React.Component {
         const educationExperience = get(this, "props.data.allContentfulEducationExperiences.edges");
 
         return (
-            <Layout location={this.props.location} showNav={true} stickyNav={true} showHome={true}>
+            <Layout location={this.props.location} showNav={true} showHome={true}>
                 <div className="about-page--wrapper">
                     <Helmet title={`About | Daan van der Zwaag`} />
 

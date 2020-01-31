@@ -1,0 +1,97 @@
+@import "../../styles/variables/variables";
+$column--width: $magicNumber;
+
+.header--container {
+    background-color: $c-white;
+    color: $c-black;
+    padding: $magicNumber / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    min-height: calc(100vh - #{$magicNumber});
+    position: relative;
+    z-index: 1;
+
+    // .quote {
+    //     margin-bottom: $magicNumber;
+    //     font-size: calc(52px + 0.1vw);
+    // }
+    // .header--bottom-bar {
+    //     background-color: $c-green;
+    //     height: $magicNumber;
+    //     width: 100%;
+    //     z-index: 10;
+    //     position: absolute;
+    //     bottom: 0;
+    //     right: 0;
+    //     left: 0;
+    // }
+
+    @media screen and (min-width: $tablet-breakpoint) {
+        min-height: 100vh;
+        padding: $magicNumber;
+
+        canvas {
+            display: block;
+        }
+        .quote {
+            display: none;
+            margin-bottom: $magicNumber / 2;
+        }
+    }
+}
+
+/* Canvas Background */
+.canvas--background {
+    // width: 100vw;
+    // height: 100vh;
+    height: 100%;
+    width: 100%;
+    background-color: $c-black;
+    position: relative;
+    // overflow: hidden;
+    canvas {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        // display: none;
+    }
+
+    @media screen and (min-width: $phablet-breakpoint) and (min-aspect-ratio: 1/1) and (min-height: $column--width * 8) {
+        position: absolute;
+        z-index: 0;
+        left: 0;
+        top: 0;
+        width: 80vw;
+        // height: calc(100% - #{$magicNumber} * 2);
+
+        &:before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            z-index: 2;
+            background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 80%, $c-black 100%);
+        }
+    }
+}
+
+body.light-mode {
+    .header--container {
+        .canvas--background {
+            background-color: $c-white;
+            canvas {
+                mix-blend-mode: difference;
+            }
+            &:before {
+                background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 80%, #f3f3f3 100%);
+            }
+        }
+    }
+}

@@ -73,6 +73,26 @@
         font-size: calc(100px + 0.2vw);
     }
 }
+@mixin typography__title-large {
+    font-family: $font--serif;
+    font-size: calc(42px + 0.2vw);
+    @media screen and (min-width: $tablet-breakpoint) {
+        font-size: calc(100px + 0.2vw);
+    }
+}
+
+@mixin title__xl {
+    font-family: $font--sans;
+    font-size: calc(24px + 0.2vw);
+    margin: 0;
+    line-height: 1.4;
+
+    @media screen and (min-width: $tablet-breakpoint) {
+        font-size: calc(40px + 0.2vw);
+    }
+}
+
+// title__xl
 
 // Assign classed to mixins as fallback
 .typography__block-small {

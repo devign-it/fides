@@ -46,7 +46,6 @@ class Layout extends React.Component {
                 <Helmet title={siteTitle} />
                 {this.props.showNav && (
                     <NavigationNew
-                        isSticky={this.props.stickyNav}
                         showHome={this.props.showHome}
                         showGoBack={this.props.showGoBack}
                         showResume={this.props.showResume}
