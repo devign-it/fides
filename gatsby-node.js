@@ -5,7 +5,6 @@ exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions;
 
     return new Promise((resolve, reject) => {
-        const blogPost = path.resolve("./src/templates/BlogPost/index.js");
         const projectPost = path.resolve("./src/templates/ProjectPost/index.js");
         const tagPage = path.resolve(`./src/templates/TagPage/index.js`);
 
@@ -13,14 +12,6 @@ exports.createPages = ({ graphql, actions }) => {
             graphql(
                 `
                     {
-                        allContentfulBlogPost {
-                            edges {
-                                node {
-                                    title
-                                    slug
-                                }
-                            }
-                        }
                         allContentfulProjectPosts(sort: { order: DESC, fields: year }) {
                             edges {
                                 node {
@@ -46,7 +37,6 @@ exports.createPages = ({ graphql, actions }) => {
                 }
 
                 const projectPosts = result.data.allContentfulProjectPosts.edges;
-                const blogPosts = result.data.allContentfulBlogPost.edges;
                 const projectTags = result.data.allContentfulProjectTags.edges;
 
                 // Create project pages
@@ -61,17 +51,6 @@ exports.createPages = ({ graphql, actions }) => {
                             slug: post.node.slug,
                             previous,
                             next,
-                        },
-                    });
-                });
-
-                // Create blog pages
-                blogPosts.forEach((post, index) => {
-                    createPage({
-                        path: `/blog/${post.node.slug}/`,
-                        component: blogPost,
-                        context: {
-                            slug: post.node.slug,
                         },
                     });
                 });
