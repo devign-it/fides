@@ -1,43 +1,51 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphq, Link } from "gatsby";
 import get from "lodash/get";
 import Layout from "../components/Layout";
 import Img from "gatsby-image";
+import { ButtonInline } from "../components/Buttons";
 
 import HomeVisual from "../components/HomeVisual";
 import ProjectsRoll from "../components/ProjectsRoll";
+import ServicesRoll from "../components/ServicesRoll";
 import Footer from "../components/Footer";
-import AboutPreview from "../components/AboutPreview";
+import Navigation from "../components/Navigation";
 import HomeModal from "../components/HomeModal";
-import logoDevignBlack from "../assets/images/devign-logo_horizontal_white.svg";
 
 import "../styles/pages/index.scss";
 
 class RootIndex extends React.Component {
     render() {
         const posts = get(this, "props.data.allContentfulProjectPosts.edges");
+        const services = get(this, "props.data.allContentfulServices.edges");
         const aboutContent = get(this, "props.data.contentfulAbout");
 
         return (
             <>
                 <Layout showHome={true} showNav={false} location={this.props.location}>
+                    <Navigation />
                     <header className="header--container">
-                        <div className="logo--home">
-                            <img src={logoDevignBlack} alt="Devign.it" />
-                        </div>
                         <HomeModal />
                         <HomeVisual />
                     </header>
-
+                    <section className="section--about">
+                        <div className="about--info">
+                            <h2>
+                                We create digital products that are both functional and beautiful. We strive to make
+                                technology more human and humans more technological.
+                            </h2>
+                            <ButtonInline internal text="Learn more about us" to="/about" />
+                        </div>
+                    </section>
                     <section className="section--selected-projects">
                         <div className="section--heading">
                             <h2 className="title">Selected projects</h2>
-                            <p className="subtitle">Portfolio 2020</p>
                         </div>
                         <ProjectsRoll items={posts} showButton={true} />
                     </section>
-
-                    <AboutPreview source={aboutContent} />
+                    <section className="section--services">
+                        <ServicesRoll items={services} />
+                    </section>
                     <Footer mode={"ghost"} showInternalLinks={false} />
                 </Layout>
             </>
@@ -84,6 +92,21 @@ export const HomepageQuery = graphql`
                     categoryTags {
                         category
                         slug
+                    }
+                }
+            }
+        }
+        allContentfulServices(sort: { fields: order, order: ASC }) {
+            edges {
+                node {
+                    title
+                    text {
+                        text
+                    }
+                    icon {
+                        file {
+                            url
+                        }
                     }
                 }
             }

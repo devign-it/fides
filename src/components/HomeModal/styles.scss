@@ -4,11 +4,10 @@
     position: relative;
     height: 100vh;
     width: 100%;
-    padding: $column--width;
+    padding: $magicNumber;
     background-color: $c-white;
     color: $c-black;
     z-index: 1;
-    margin-right: $magicNumber;
     h1 {
         @include title__xl;
     }
@@ -98,9 +97,11 @@
     }
     @media screen and (min-width: $phablet-breakpoint) and (min-aspect-ratio: 1/1) and (min-height: $column--width * 8) {
         // position: absolute;
-        width: $column--width * 9;
-        height: $column--width * 9;
+        width: $column--width * 9.5;
+        height: $column--width * 9.5;
         padding: $column--width;
+        margin-bottom: -$magicNumber;
+        margin-right: $magicNumber;
         // right: $column--width * 2;
         // bottom: 0;
 
@@ -110,7 +111,7 @@
         }
     }
     @media screen and (min-width: $tablet-breakpoint) and (min-height: $tablet-breakpoint) {
-        padding: $column--width;
+        padding: $magicNumber;
         //height: 50vh;
     }
 }

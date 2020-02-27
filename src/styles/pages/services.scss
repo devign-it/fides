@@ -1,0 +1,52 @@
+@import "../variables/variables";
+
+$widthRightCol: 35%;
+$widthLeftCol: calc(100% - #{$widthRightCol});
+
+.service-page--wrapper {
+    // max-width: $s-maxWidthColumnSmall;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: $c-black;
+    // padding: $magicNumber / 4;
+    // margin: $magicNumber auto;
+
+    // @media screen and (min-width: $tablet-breakpoint) {
+    //     padding: $magicNumber;
+    //     flex-direction: row;
+    // }
+    .section--services {
+        .services--heading {
+            margin-top: $magicNumber * 3.5;
+        }
+    }
+}
+
+.capabilities--wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: $magicNumber;
+    background-color: $c-grey__blackish;
+    padding: $magicNumber / 2;
+    align-items: center;
+    justify-content: center;
+
+    .list--capabilities__horizontal {
+        max-width: $s-maxWidthColumn;
+        margin: 0 auto;
+    }
+
+    @media screen and (min-width: $tablet-breakpoint) {
+        margin: $magicNumber * 2 0;
+        padding: $magicNumber * 2;
+        flex-direction: row;
+    }
+}
+
+body.light-mode {
+    .capabilities--wrapper {
+        background-color: $c-grey__light;
+    }
+}

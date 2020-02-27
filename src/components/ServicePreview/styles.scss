@@ -1,0 +1,62 @@
+@import "../../styles/variables/variables";
+
+.service--row {
+    display: flex;
+    flex-direction: row;
+    margin: $magicNumber / 2;
+    // padding: $magicNumber;
+    border: 1px solid transparent;
+    transition: all 600ms $ease2020;
+    background-color: $c-grey__blackish;
+    .row--icon {
+        min-width: $magicNumber * 2;
+        display: none;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .row--text {
+        h3 {
+            @include typography__extralarge;
+            margin: 0;
+        }
+        p {
+            @include typography__medium;
+            margin-top: $magicNumber / 2;
+        }
+    }
+    @media screen and (min-width: $tablet-breakpoint) {
+        margin: $magicNumber / 2;
+        padding: $magicNumber;
+        .row--icon {
+            display: block;
+            width: $magicNumber * 2;
+            margin: 0 $magicNumber * 2 0 $magicNumber;
+        }
+    }
+    @media screen and (min-width: $desktop-breakpoint) {
+        margin: $magicNumber;
+        padding: $magicNumber * 2;
+
+        &:hover {
+            border: 1px solid $c-white;
+            transform: scale(1.01);
+            transition: transform 900ms $ease2020;
+            background-color: $c-grey__blackish;
+
+            box-shadow: 0 20px 20px 20px rgba(0, 0, 0, 0.18);
+            // Neomorphism
+            // box-shadow: 9px 9px 16px rgba($c-black, 0.6), -9px -9px 16px rgba(white, 0.04);
+        }
+        .row--text {
+            margin-left: 0;
+        }
+        .row--icon {
+            display: block;
+            width: $magicNumber * 3;
+            margin: 0 $magicNumber * 3 0 $magicNumber;
+        }
+    }
+}

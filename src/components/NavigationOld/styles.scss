@@ -1,0 +1,444 @@
+@import "../../styles/variables/variables";
+
+$heightNav: calc((#{$magicNumber} * 1.5) - 6px);
+$widthNav_out: calc(100% - #{$magicNumber});
+$translateXText: -30vw;
+// $ratio: 1.68;
+// $delay__main: 168ms;
+
+// Set local animaton variables
+$increaseRatio: 1.24;
+$decreaseRatio: 0.86;
+
+$totalTimeIn: 1280ms;
+$totalTimeOut: $totalTimeIn * $decreaseRatio;
+
+$timeItemIn: $totalTimeIn * $decreaseRatio;
+$timeItemOut: $totalTimeOut * $decreaseRatio;
+
+$timeTextIn: $timeItemIn;
+$timeTextOut: $timeItemOut;
+
+$timing_out: $delay--total / 1.5;
+
+$delayText_in: $delay--total;
+$delay_out: $delay--total;
+
+$delayTextOut: 240ms;
+
+$delayNavIn: 560ms;
+$delayItemIn: 280ms;
+$delayTextIn: 160ms;
+
+$delayNavOut: 160ms;
+$delayItemOut: 280ms;
+$delayTextOut: 560ms;
+
+// Set animation shorthands
+
+$navCollapse_in: $totalTimeIn menuCollapse__in $delayNavIn $t-smooth_one 1 forwards;
+$navItemCollapse_in: $timeItemIn menuItemCollapse__in $delayItemOut $t-smooth_one 1 forwards;
+$textCollapse_in: $timeTextIn menuItemTextCollapse__in $delayTextIn $t-smooth_one 1 forwards;
+
+$navCollapse_out: $totalTimeOut menuCollapse__out $delayNavOut $t-smooth_one 1 forwards;
+$navItemCollapse_out: $timeItemOut menuItemCollapse__out $delayItemOut $t-smooth_one 1 forwards;
+$textCollapse_out: $timeTextOut menuItemTextCollapse__out $delayTextOut $t-smooth_one 1 forwards;
+
+.main-navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 15;
+    border-radius: inherit;
+    position: sticky;
+    height: $magicNumber;
+    overflow: hidden;
+    margin: 0;
+    border: 0;
+    width: 100%;
+    top: -1px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    clip: auto;
+    background-color: rgba($c-black, 0.2);
+    left: 15px;
+    right: 15px;
+
+    &:before,
+    &:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        position: absolute;
+    }
+
+    &:before {
+        background-color: rgba($c-black, 0);
+        z-index: -1;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+    &:after {
+        // z-index: 2;
+        z-index: -2;
+        background-color: rgba($c-black, 0);
+    }
+
+    // &.isSticky {
+    //     animation: menuCollapse__out__mobile $delay--total / 2 $t-smooth_one 1 forwards;
+    //     .main-navigation--item {
+    //         animation: menuItemCollapse__out__mobile $delay--total / 2 $t-smooth_one 1 forwards;
+    //     }
+    // }
+    // &.isStatic {
+    //     animation: menuCollapse__in__mobile $delay--total / 2 $t-smooth_one 1 forwards;
+    //     .main-navigation--item {
+    //         animation: menuItemCollapse__in__mobile $delay--total / 2 $t-smooth_one 1 forwards;
+    //     }
+    // }
+
+    // @keyframes menuCollapse__out__mobile {
+    //     0% {
+    //         width: 100%;
+    //         margin-left: 0;
+    //     }
+    //     100% {
+    //         width: 100vw;
+    //         margin-left: calc(-#{$magicNumber} / 4);
+    //     }
+    // }
+
+    // @keyframes menuItemCollapse__out__mobile {
+    //     0% {
+    //         height: calc(#{$magicNumber} / 1.5);
+    //     }
+    //     100% {
+    //         height: calc(#{$magicNumber} / 2);
+    //     }
+    // }
+
+    // @keyframes menuCollapse__in__mobile {
+    //     0% {
+    //         width: 100vw;
+    //         margin-left: calc(-#{$magicNumber} / 4);
+    //     }
+    //     100% {
+    //         width: 100%;
+    //         margin-left: 0;
+    //     }
+    // }
+
+    // @keyframes menuItemCollapse__in__mobile {
+    //     0% {
+    //         height: calc(#{$magicNumber} / 2);
+    //     }
+    //     100% {
+    //         height: calc(#{$magicNumber} / 1.5);
+    //     }
+    // }
+
+    @media screen and (min-width: $tablet-breakpoint) {
+        top: $magicNumber / 2;
+        border: 3px solid $c-white;
+        height: $heightNav;
+        width: $widthNav_out;
+        margin: $magicNumber / 2;
+
+        // .main-navigation--item {
+        //     animation: $navItemCollapse_out;
+
+        //     h2 {
+        //         animation: $textCollapse_out;
+        //     }
+        // }
+
+        // &.isStatic {
+        //     animation: $navCollapse_out;
+
+        //     .main-navigation--item {
+        //         animation: $navItemCollapse_out;
+
+        //         h2 {
+        //             animation: $textCollapse_out;
+        //         }
+        //     }
+        // }
+
+        // &.isSticky {
+        //     // animation: $navCollapse_in;
+
+        //     // .main-navigation--item {
+        //     //     animation: $navItemCollapse_in;
+
+        //     //     h2 {
+        //     //         animation: $textCollapse_in;
+        //     //     }
+        //     // }
+
+        //     &.isOpen {
+        //         animation: $navCollapse_out;
+        //         &:after {
+        //             z-index: -2;
+        //         }
+        //         .main-navigation--item {
+        //             animation: $navItemCollapse_out;
+
+        //             h2 {
+        //                 animation: $textCollapse_out;
+        //             }
+        //         }
+        //     }
+
+        //     &.isClosed {
+        //         animation: $navCollapse_in;
+
+        //         .main-navigation--item {
+        //             animation: $navItemCollapse_in;
+
+        //             h2 {
+        //                 animation: $textCollapse_in;
+        //             }
+        //         }
+        //     }
+        // }
+
+        // Set nonclickable pseudo element
+        &.isOpen {
+            &:after {
+                animation: 120ms moveZIndexDown 1 forwards;
+            }
+        }
+        &.isClosed {
+            &:after {
+                animation: 120ms moveZIndexUp 1 forwards;
+            }
+        }
+
+        // Set delay for each menu item
+        &.isClosed,
+        &.isOpen,
+        &.isStatic,
+        &.isSticky {
+            .main-navigation--item {
+                h2 {
+                    animation-delay: calc(#{$delay--total}/ 6);
+                }
+
+                &:nth-child(1) h2 {
+                    animation-delay: calc(#{$delay--total} / 6 + #{$delay--total} / 4);
+                }
+
+                &:nth-child(2) h2 {
+                    animation-delay: calc(#{$delay--total} / 6 + #{$delay--total} / 5);
+                }
+
+                &:nth-child(3) h2 {
+                    animation-delay: calc(#{$delay--total} / 6 + #{$delay--total} / 6);
+                }
+
+                &:nth-child(4) h2 {
+                    animation-delay: calc(#{$delay--total} / 6 + #{$delay--total} / 6);
+                }
+            }
+        }
+    }
+}
+
+// Psuedo element animations
+
+@keyframes moveZIndexDown {
+    100% {
+        z-index: -2;
+    }
+}
+@keyframes moveZIndexUp {
+    100% {
+        z-index: 2;
+    }
+}
+@keyframes doBorderRadiusPsuedo {
+    75% {
+        border-radius: 50%;
+    }
+    100% {
+        border-radius: 50%;
+    }
+}
+@keyframes removeBorderRadiusPsuedo {
+    0% {
+        border-radius: 50%;
+    }
+    75% {
+        border-radius: 0;
+    }
+    100% {
+        border-radius: 0;
+    }
+}
+
+// Navigation animations
+
+@keyframes menuCollapse__in {
+    0% {
+        width: $widthNav_out;
+        pointer-events: none;
+    }
+
+    50% {
+        top: calc(#{$magicNumber} / 2);
+        height: $heightNav;
+        width: $heightNav;
+        border-radius: 0;
+    }
+
+    65% {
+        top: calc(#{$magicNumber} / 2);
+        height: $heightNav;
+        width: $heightNav;
+        // overflow: hidden;
+    }
+
+    75% {
+        top: calc(#{$magicNumber} / 2);
+        height: $heightNav;
+        width: $heightNav;
+        // overflow: hidden;
+        border-radius: 50%;
+    }
+
+    80% {
+        top: calc(#{$magicNumber} / 2);
+        height: $heightNav;
+        width: $heightNav;
+        // margin: 0;
+        border-radius: 50%;
+    }
+
+    100% {
+        top: calc(#{$magicNumber} / 2);
+        /* margin: calc(#{$magicNumber} / 4) calc(#{$magicNumber} / 4) calc(#{$magicNumber} / 4) 0; */
+        height: $heightNav;
+        width: $heightNav;
+        // overflow: hidden;
+        border-radius: 50%;
+    }
+}
+
+@keyframes menuItemCollapse__in {
+    // 0% {
+    //     opacity: 1;
+    //     background-color: rgba($c-white, 0);
+    //     color: white;
+    //     display: block;
+    // }
+
+    // 25% {
+    //     opacity: 1;
+    //     background-color: rgba($c-white, 0);
+
+    //     display: block;
+    // }
+    // 0% {
+    // }
+    // 25% {
+    // }
+    10% {
+        border-width: 0px;
+    }
+
+    25% {
+        background-color: rgba($c-white, 0);
+    }
+
+    75% {
+        opacity: 1;
+
+        padding: 0;
+        display: none;
+    }
+
+    100% {
+        opacity: 0;
+        background-color: rgba($c-white, 0);
+
+        padding: 0;
+        display: none;
+    }
+}
+@keyframes menuItemTextCollapse__in {
+    20% {
+        color: $c-white;
+    }
+    100% {
+        transform: translate3d($translateXText, 0, 0) rotateX(-10deg) rotateY(10deg) rotateZ(15deg);
+    }
+}
+
+@keyframes menuCollapse__out {
+    0% {
+        // top: calc(#{$magicNumber} / 1.5);
+        height: $heightNav;
+        width: $heightNav;
+        // margin: calc(#{$magicNumber} / 4) calc(#{$magicNumber} / 4) calc(#{$magicNumber} / 4) 0;
+        // overflow: hidden;
+        border-radius: 50%;
+    }
+
+    20% {
+        // top: calc(#{$magicNumber} / 2);
+        height: $heightNav;
+        width: $heightNav;
+        // overflow: hidden;
+        // margin: 0;
+        border-radius: 50%;
+    }
+
+    25% {
+        // top: calc(#{$magicNumber} / 2);
+        height: $heightNav;
+        width: $heightNav;
+        // overflow: hidden;
+        border-radius: 50%;
+    }
+
+    45% {
+        // top: calc(#{$magicNumber} / 2);
+        height: $heightNav;
+        width: $heightNav;
+        // overflow: hidden;
+        border-radius: 0;
+    }
+
+    50% {
+        // top: calc(#{$magicNumber} / 2);
+        height: $heightNav;
+        width: $heightNav;
+        // overflow: hidden;
+        border-radius: inherit;
+    }
+
+    100% {
+        width: $widthNav_out;
+        pointer-events: all;
+    }
+}
+@keyframes menuItemCollapse__out {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes menuItemTextCollapse__out {
+    25% {
+        transform: translate3d($translateXText, 0, 0) rotateX(-10deg) rotateY(10deg) rotateZ(15deg);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) rotateZ(0);
+    }
+}

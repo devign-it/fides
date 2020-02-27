@@ -1,7 +1,7 @@
 import React from "react";
 import get from "lodash/get";
 import PageContent from "../PageContent";
-import NavigationNew from "../NavigationNew";
+import NavigationNew from "../Navigation";
 import Helmet from "react-helmet";
 // import changeDocumentTitle from "../SiteTitle";
 import CustomCursor from "../CustomCursor";

@@ -1,75 +1,73 @@
-// Credits go to Matej from Better Web Tyopgraphy
+// // Credits go to Matej from Better Web Tyopgraphy
 
-// pow and ms functions
-@function pow($number, $exponent) {
-  $value: 1;
+// // pow and ms functions
+// @function pow($number, $exponent) {
+//   $value: 1;
 
-  @if $exponent > 0 {
-    @for $i from 1 through $exponent {
-      $value: $value * $number; //Multiply by $number if exponent less than zero
-    }
-  } @else if $exponent < 0 {
-    @for $i from 1 through -$exponent {
-      $value: $value / $number; //Divide by $number if exponent less than zero
-    }
-  }
+//   @if $exponent > 0 {
+//     @for $i from 1 through $exponent {
+//       $value: $value * $number; //Multiply by $number if exponent less than zero
+//     }
+//   } @else if $exponent < 0 {
+//     @for $i from 1 through -$exponent {
+//       $value: $value / $number; //Divide by $number if exponent less than zero
+//     }
+//   }
 
-  @return $value;
-}
+//   @return $value;
+// }
 
-@function ms($value, $ms-ratio: $ratio, $ms-base: $base){
-  $size: pow($ms-ratio, $value) * $ms-base;
-  @return #{ $size + "rem" };
-}
+// @function ms($value, $ms-ratio: $ratio, $ms-base: $base){
+//   $size: pow($ms-ratio, $value) * $ms-base;
+//   @return #{ $size + "rem" };
+// }
 
-// Vertical rhythm mixins
-@mixin line-height($number) {
-  line-height: #{ $number * $line-height + 'rem'};
+// // Vertical rhythm mixins
+// @mixin line-height($number) {
+//   line-height: #{ $number * $line-height + 'rem'};
 
-  @media screen and (min-width: $tablet-breakpoint){
-    line-height: #{ $number * $line-height-desktop + 'rem'};
-  }
-}
+//   @media screen and (min-width: $tablet-breakpoint){
+//     line-height: #{ $number * $line-height-desktop + 'rem'};
+//   }
+// }
 
-@mixin margin-top($number) {
-  margin-top: #{ $number * $line-height + 'rem'};
+// @mixin margin-top($number) {
+//   margin-top: #{ $number * $line-height + 'rem'};
 
-  @media screen and (min-width: $tablet-breakpoint){
-    margin-top: #{ $number * $line-height-desktop + 'rem'};
-  }
-}
+//   @media screen and (min-width: $tablet-breakpoint){
+//     margin-top: #{ $number * $line-height-desktop + 'rem'};
+//   }
+// }
 
-@mixin margin-bottom($number) {
-  margin-bottom: #{ $number * $line-height + 'rem'};
+// @mixin margin-bottom($number) {
+//   margin-bottom: #{ $number * $line-height + 'rem'};
 
-  @media screen and (min-width: $tablet-breakpoint){
-    margin-bottom: #{ $number * $line-height-desktop + 'rem'};
-  }
-}
+//   @media screen and (min-width: $tablet-breakpoint){
+//     margin-bottom: #{ $number * $line-height-desktop + 'rem'};
+//   }
+// }
 
-html {
-  font-size: #{$base-font-size + '%'}; // = 16 pixels
+// html {
+//   font-size: #{$base-font-size + '%'}; // = 16 pixels
 
-  @media screen and (min-width: $tablet-breakpoint){
-    font-size: #{$base-font-size-desktop + '%'}; // 112.5% = 18 pixels
-  }
-}
+//   @media screen and (min-width: $tablet-breakpoint){
+//     font-size: #{$base-font-size-desktop + '%'}; // 112.5% = 18 pixels
+//   }
+// }
 
-// Set line-height and margins for some typography elements
-h1, h2, h3, h4, h5, p, a, blockquote {
-  @include line-height(1);
-  @include margin-bottom(1);
-  @include margin-top(0);
-}
+// // Set line-height and margins for some typography elements
+// h1, h2, h3, h4, h5, p, a, blockquote {
+//   @include line-height(1);
+//   @include margin-bottom(1);
+//   @include margin-top(0);
+// }
 
-
-
-// Set line-heights and margins for headings
-@each $heading, $properties in $headings {
-  #{$heading} {
-    font-size: ms(nth($properties, 2));
-    @include line-height(nth($properties, 2));
-    @include margin-top(nth($properties, 2));
-    @include margin-bottom(nth($properties, 2));
-  }
-}
+// // Set line-heights and margins for headings
+// @each $heading, $properties in $headings {
+//   #{$heading} {
+//     font-size: ms(nth($properties, 2));
+//     @include line-height(nth($properties, 2));
+//     @include margin-top(nth($properties, 2));
+//     @include margin-bottom(nth($properties, 2));
+//   }
+// }

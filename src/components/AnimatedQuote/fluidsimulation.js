@@ -14,7 +14,6 @@ export default function FluidSimulation(elementToAppend) {
 
             // let windowHalfX = window.innerWidth / 2;
             // let windowHalfY = window.innerHeight / 2;
-            container = document.querySelector(".canvas--background");
 
             function onResize() {
                 const { offsetWidth: width, offsetHeight: height } = container;
@@ -25,6 +24,7 @@ export default function FluidSimulation(elementToAppend) {
             }
 
             function setup() {
+                container = document.querySelector(".canvas--background");
                 scene = new THREE.Scene();
 
                 const { offsetWidth: width, offsetHeight: height } = container;
@@ -178,8 +178,8 @@ export default function FluidSimulation(elementToAppend) {
                 mouseX = event.clientX;
                 mouseY = event.clientY;
 
-                material.uniforms.uMultiplier.value += (mouseY / 100) * 0.0008;
-                material.uniforms.uTime.value += (mouseX / 100) * 0.0008;
+                material.uniforms.uMultiplier.value += (mouseY / 100) * 0.001;
+                material.uniforms.uTime.value += (mouseX / 100) * 0.001;
             }
 
             function draw() {

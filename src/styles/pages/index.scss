@@ -1,5 +1,19 @@
 @import "../../styles/variables/variables";
 
+.section--about {
+    display: flex;
+    justify-content: space-between;
+    padding: $magicNumber;
+    flex-direction: column;
+    background-color: $c-black;
+    min-height: 100vh;
+    .about--info {
+        @media screen and (min-width: $desktop-breakpoint) {
+            max-width: calc(100% - #{$magicNumber} * 6);
+            margin: $magicNumber * 3 $magicNumber;
+        }
+    }
+}
 .section--selected-projects {
     .section--heading {
         display: flex;
@@ -44,16 +58,17 @@ body.light-mode {
     }
 }
 
-.header--container {
-    .logo--home {
-        position: fixed;
-        top: $magicNumber;
-        left: $magicNumber;
-        z-index: 3;
-        height: $magicNumber / 2;
+.section--services {
+    background-color: $c-grey__blackish;
+    padding: 0;
+    .services--heading {
+        width: 100%;
         img {
-            height: 100%;
-            width: auto;
+            width: 100%;
+            height: auto;
         }
     }
+}
+
+.header--container {
 }

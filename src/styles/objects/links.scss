@@ -89,6 +89,9 @@ p a {
     &.align-right {
         text-align: right;
     }
+    &:hover {
+        color: $c-green;
+    }
     .icon {
         margin-left: $magicNumber / 4;
         width: $magicNumber / 4;

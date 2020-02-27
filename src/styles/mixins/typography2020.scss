@@ -1,4 +1,4 @@
-// 2020 Typography rules
+/* 2020 Typography */
 
 @mixin typography__block-small {
     font-family: $font--sans;
@@ -60,19 +60,22 @@
     font-family: $font--sans;
     font-weight: initial;
     font-size: 24px;
-    line-height: 1.25;
+    line-height: 1.4;
     @media screen and (min-width: $tablet-breakpoint) {
         font-size: 40px;
     }
 }
 
-@mixin typography__title-large {
-    font-family: $font--serif;
-    font-size: calc(42px + 0.2vw);
+@mixin typography__extralarge {
+    font-family: $font--sans;
+    font-weight: initial;
+    font-size: 24px;
+    line-height: 1.4;
     @media screen and (min-width: $tablet-breakpoint) {
-        font-size: calc(100px + 0.2vw);
+        font-size: 54px;
     }
 }
+
 @mixin typography__title-large {
     font-family: $font--serif;
     font-size: calc(42px + 0.2vw);
@@ -90,30 +93,4 @@
     @media screen and (min-width: $tablet-breakpoint) {
         font-size: calc(40px + 0.2vw);
     }
-}
-
-// title__xl
-
-// Assign classed to mixins as fallback
-.typography__block-small {
-    @include typography__block;
-}
-.typography__block {
-    @include typography__block;
-}
-
-.typography__block-large {
-    @include typography__block-large;
-}
-
-.typography__block-xlarge {
-    @include typography__block-xlarge;
-}
-
-.typography__medium {
-    @include typography__medium;
-}
-
-.typography__large {
-    @include typography__large;
 }

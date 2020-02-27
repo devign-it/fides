@@ -1,17 +1,5 @@
 $fontPath: "../assets/fonts/";
 
-// @font-face {
-//     font-family: "AmerigoBT-BoldA";
-//     src: url("#{$fontPath}AmerigoBT-BoldA.eot");
-//     src: url("#{$fontPath}AmerigoBT-BoldA.woff2") format("woff2"),
-//         url("#{$fontPath}AmerigoBT-BoldA.woff") format("woff"),
-//         url("#{$fontPath}AmerigoBT-BoldA.ttf") format("truetype"),
-//         url("#{$fontPath}AmerigoBT-BoldA.svg#AmerigoBT-BoldA") format("svg"),
-//         url("#{$fontPath}AmerigoBT-BoldA.eot?#iefix") format("embedded-opentype");
-//     font-weight: normal;
-//     font-style: normal;
-// }
-
 @font-face {
     font-family: "AmerigoBT-Medium";
     src: url("#{$fontPath}AmerigoBT-Medium.eot");
@@ -37,12 +25,17 @@ $fontPath: "../assets/fonts/";
     font-style: normal;
 }
 
-// Fallback to system font incase of bad loading, thanks to @wooorm
+$font--sans: "Formular", "Helvetica", sans-serif;
+$font--serif: "AmerigoBT-Medium", "Georgia", serif;
+
+/* Fallback to system font incase of bad loading, thanks to @wooorm */
+
 html {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",
         sans-serif;
 }
-// Custom Adjustments
+
+/* General definitions */
 
 body {
     text-rendering: geometricPrecision;
@@ -59,127 +52,46 @@ body {
     h5,
     h6 {
         font-variant-ligatures: discretionary-ligatures;
-        font-family: $font--serif;
+        font-family: $font--sans;
         font-weight: initial;
         text-align: left;
         hyphens: none;
     }
 
     h1 {
-        font-size: calc(24px + 0.2vw);
-        line-height: 1.05;
-
-        span {
-            padding: 10px 0;
-            font-size: 3rem;
-        }
-        @media screen and (min-width: $tablet-breakpoint) {
-            font-size: calc(100px + 0.1vw);
-        }
-    }
-
-    li a,
-    p,
-    p a {
-        font-size: 20px;
-        line-height: 1.75;
-        // @include line-height(1.5);
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-
-        @media screen and (min-width: $tablet-breakpoint) {
-            // @include line-height(1.75);
-            // font-size: ms(1);
-            font-size: 24px;
-        }
-    }
-
-    p {
-        @include margin-bottom(1);
-        &:last-child {
-            @include margin-bottom(0);
-        }
-    }
-
-    h3 {
-        // font-size: ms(2);
-        // @include margin-bottom(1);
-        // @include margin-top(2);
-        font-size: 36px;
-        line-height: 1.1;
-        @media screen and (min-width: $tablet-breakpoint) {
-            // font-size: ms(3);
-            // @include margin-bottom(2);
-            // @include margin-top(3);
-            font-size: 40px;
-        }
+        @include typography__large;
     }
 
     h2 {
-        font-family: $font--sans;
-        font-weight: initial;
-        font-size: 24px;
-        @media screen and (min-width: $tablet-breakpoint) {
-            font-size: 40px;
-        }
-    }
-    // .main-navigation h2 {
-    //     font-size: 1.24rem;
-
-    //     @media screen and (min-width: $desktop-breakpoint) {
-    //         font-size: 40px;
-    //     }
-    // }
-    blockquote {
-        font-size: ms(1);
-        font-family: $font--sans;
-        @include line-height(1.5);
-        @media screen and (min-width: $tablet-breakpoint) {
-            font-size: ms(2);
-            @include line-height(2.5);
-        }
-        @media screen and (min-width: $desktop-breakpoint) {
-            font-size: ms(3);
-            @include line-height(4);
-        }
+        @include typography__large;
     }
 
-    .item--title {
-        font-size: ms(1.5);
-        @include margin-top(0);
-        @include margin-bottom(1.5);
-        @include line-height(2);
-        @media screen and (min-width: $tablet-breakpoint) {
-            font-size: ms(2);
-            @include line-height(2.25);
-        }
-        @media screen and (min-width: $desktop-breakpoint) {
-            font-size: ms(3);
-            @include line-height(3.25);
-        }
-    }
-
-    .resume--item__year {
-        font-size: ms(1);
-        font-family: $font--serif;
-        @media screen and (min-width: $tablet-breakpoint) {
-            @include line-height(1.75);
-            font-size: ms(2);
-        }
-    }
-
-    li {
-        @include margin-bottom(0.5);
-    }
-    .small--text {
-        font-size: 1rem;
-        line-height: 1.5;
+    h3 {
+        @include typography__medium;
     }
 }
 
-.blurryboy {
-    -webkit-filter: blur(5px);
-    filter: blur(5px);
+// Assign classes to mixins as fallback
+
+.typography__block-small {
+    @include typography__block;
+}
+.typography__block {
+    @include typography__block;
+}
+
+.typography__block-large {
+    @include typography__block-large;
+}
+
+.typography__block-xlarge {
+    @include typography__block-xlarge;
+}
+
+.typography__medium {
+    @include typography__medium;
+}
+
+.typography__large {
+    @include typography__large;
 }

@@ -1,0 +1,13 @@
+@import "../../styles/variables/variables";
+
+.logo--wrapper {
+    // position: fixed;
+    // top: $magicNumber;
+    // left: $magicNumber;
+    // z-index: 3;
+    height: $magicNumber / 2;
+    img {
+        height: 100%;
+        width: auto;
+    }
+}
