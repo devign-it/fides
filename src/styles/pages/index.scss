@@ -1,5 +1,7 @@
 @import "../../styles/variables/variables";
 
+$column--width: $magicNumber;
+
 .section--about {
     display: flex;
     justify-content: space-between;
@@ -71,4 +73,63 @@ body.light-mode {
 }
 
 .header--container {
+    background-color: $c-red;
+    color: $c-black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: calc(100vh - #{$magicNumber});
+    position: relative;
+    z-index: 1;
+
+    .information {
+        color: $c-white;
+        padding: $magicNumber;
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        z-index: 1;
+        @media screen and (max-width: $tablet-breakpoint) {
+            width: 100%;
+        }
+        h1 {
+            margin-bottom: $magicNumber / 2;
+        }
+        p {
+            margin-right: $magicNumber * 2;
+        }
+    }
+    .mockup {
+        height: 100%;
+        width: 60%;
+        overflow: hidden;
+        // top: 0;
+        // left: 0;
+        // right: 0;
+        // bottom: 0;
+        // padding: $magicNumber;
+        // display: flex;
+        // justify-content: flex-end;
+        // position: absolute;
+        // z-index: 0;
+        img {
+            height: 100%;
+            width: auto;
+            transform: rotate(-20deg) translate(0, 25%) scale(1);
+        }
+    }
+    @media screen and (min-width: $tablet-breakpoint) {
+        height: 100vh;
+    }
+}
+
+body.light-mode {
+    .header--container {
+        background-color: #031926;
+        .information {
+        }
+        .canvas--background {
+            background-color: $c-white;
+        }
+    }
 }

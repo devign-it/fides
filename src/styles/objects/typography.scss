@@ -59,14 +59,13 @@ body {
     }
 
     h1 {
-        @include typography__large;
-    }
+        font-size: calc(40px + 1vw);
 
-    h2 {
-        @include typography__large;
+        @media screen and (min-width: $tablet-breakpoint) {
+            font-size: calc(80px + 1vw);
+        }
     }
-
-    h3 {
+    p {
         @include typography__medium;
     }
 }

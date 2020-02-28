@@ -4,7 +4,7 @@ import PageContent from "../PageContent";
 import NavigationNew from "../Navigation";
 import Helmet from "react-helmet";
 // import changeDocumentTitle from "../SiteTitle";
-import CustomCursor from "../CustomCursor";
+// import CustomCursor from "../CustomCursor";
 
 const siteTitle = get(this, "props.data.site.siteMetadata.title");
 
@@ -52,7 +52,6 @@ class Layout extends React.Component {
                     />
                 )}
                 <PageContent pageName={this.props.pageName}>{this.props.children}</PageContent>
-                <CustomCursor />
             </>
         );
     }
