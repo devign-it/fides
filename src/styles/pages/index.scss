@@ -78,10 +78,9 @@ body.light-mode {
     display: flex;
     flex-direction: row;
     align-items: center;
-    min-height: calc(100vh - #{$magicNumber});
     position: relative;
     z-index: 1;
-
+    height: 100vh;
     .information {
         color: $c-white;
         padding: $magicNumber;
@@ -89,37 +88,61 @@ body.light-mode {
         flex-direction: column;
         width: 60%;
         z-index: 1;
-        @media screen and (max-width: $tablet-breakpoint) {
-            width: 100%;
-        }
+
         h1 {
             margin-bottom: $magicNumber / 2;
         }
         p {
             margin-right: $magicNumber * 2;
         }
+
+        @media screen and (max-width: $tablet-breakpoint) {
+            width: 100%;
+            padding: 10vw;
+            p {
+                margin-right: 0;
+            }
+        }
     }
     .mockup {
         height: 100%;
-        width: 60%;
         overflow: hidden;
-        // top: 0;
-        // left: 0;
-        // right: 0;
-        // bottom: 0;
-        // padding: $magicNumber;
-        // display: flex;
-        // justify-content: flex-end;
-        // position: absolute;
-        // z-index: 0;
+        width: 60%;
+
         img {
             height: 100%;
             width: auto;
             transform: rotate(-20deg) translate(0, 25%) scale(1);
+            transition: all 620ms $t-smooth_one;
+        }
+
+        &:hover {
+            img {
+                transform: rotate(0) translate(0, 5%) scale(0.8);
+                transition: all 820ms $t-smooth_one;
+            }
         }
     }
-    @media screen and (min-width: $tablet-breakpoint) {
-        height: 100vh;
+    @media screen and (max-width: $tablet-breakpoint) {
+        height: initial;
+        flex-direction: column-reverse;
+        padding-top: $magicNumber;
+        .mockup {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: $magicNumber $magicNumber 0 $magicNumber;
+            &:hover {
+                img {
+                    transform: none;
+                }
+            }
+            img {
+                transform: none;
+                width: 100%;
+            }
+        }
     }
 }
 

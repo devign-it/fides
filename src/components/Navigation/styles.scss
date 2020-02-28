@@ -10,12 +10,12 @@
     right: 0;
     left: 0;
     z-index: 100;
-
+    padding: 5vw;
     .col__right {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        width: 100%;
+        // width: 100%;
     }
 
     .navigation--links {

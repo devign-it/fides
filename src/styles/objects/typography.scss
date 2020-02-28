@@ -59,7 +59,7 @@ body {
     }
 
     h1 {
-        font-size: calc(40px + 1vw);
+        font-size: calc(40px + 4vw);
 
         @media screen and (min-width: $tablet-breakpoint) {
             font-size: calc(80px + 1vw);
