@@ -16,7 +16,7 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
     siteMetadata: {
-        title: "Devign.it — Digital Agecny",
+        title: "Fides — Fighting incorrect medical data with Blockchain",
     },
     plugins: [
         "gatsby-transformer-remark",
@@ -43,8 +43,8 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `Devign.it — Digital Agency`,
-                short_name: `Devign.it`,
+                name: `Fides — Fighting incorrect medical data with Blockchain`,
+                short_name: `Fides Health`,
                 start_url: `/`,
                 background_color: `#fff`,
                 theme_color: `#fff`,

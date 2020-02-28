@@ -20,7 +20,7 @@ function changeDocumentTitle() {
     let original;
 
     if (windowIsFocused) {
-        document.title = siteTitle || "Devign.it";
+        document.title = siteTitle || "Fides — Fighting incorrect medical data with Blockchain";
     } else {
         let title = document.title;
         let choosenMessage = messagesGone[Math.floor(Math.random() * messagesGone.length)];
