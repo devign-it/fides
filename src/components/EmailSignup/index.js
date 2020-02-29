@@ -55,8 +55,6 @@ export default class EmailSignup extends React.Component {
 
         addToMailchimp(this.state.email, this.state)
             .then(({ msg, result }) => {
-                console.log("msg", `${result}: ${msg}`);
-
                 if (result !== "success") {
                     this.showMessage(msg);
                 }
@@ -64,7 +62,6 @@ export default class EmailSignup extends React.Component {
                 this.showMessage(msg);
             })
             .catch((err, result) => {
-                console.log("err", err);
                 this.showMessage(err, result);
             });
     };

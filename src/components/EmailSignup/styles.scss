@@ -96,9 +96,9 @@
             }
         }
     }
-    @media screen and (max-width: $mobile-breakpoint) {
-    }
+
     @media screen and (max-width: $tablet-breakpoint) {
+        padding: 10vw;
         form {
             flex-direction: column;
             input {
