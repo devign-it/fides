@@ -10,8 +10,8 @@ const siteTitle = get(this, "props.data.site.siteMetadata.title");
 
 function sayHello() {
     console.log(
-        "%c 👋 You are probably interested in the used technologies? So am I, for this project I've used React, Gatsby, Anime, OGL and Contentful to create this website. You can checkout the repo on my Github. Found any mistakes? Let me know and I'll buy you a coffee or beer. Happy hacking!",
-        "color:#fff; background-color:#000;",
+        "%c 👋 You are probably interested in the used technologies? So are we, for this project we've used React, Gatsby, Anime, OGL and Contentful. You can checkout the repo on our Github. Found any mistakes? Let us know and we'll buy you a drink. Happy hacking!",
+        "color:#ff1053; background-color:#081925;",
     );
 }
 
