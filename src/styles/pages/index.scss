@@ -80,7 +80,7 @@ body.light-mode {
     align-items: center;
     position: relative;
     z-index: 1;
-    height: 100vh;
+    height: calc(100vh - #{$magicNumber} / 6);
     .information {
         color: $c-white;
         padding: $magicNumber;
