@@ -14,30 +14,10 @@ function sayHello() {
         "color:#fff; background-color:#000;",
     );
 }
-function changeDocumentTitle() {
-    let messagesGone = ["Open window alert 💨", "Bye then 😌", "Launch me again 🚀", "See ya later 👋"];
-    let windowIsFocused = document.hasFocus();
-    let original;
-
-    if (windowIsFocused) {
-        document.title = siteTitle || "Fides — Fighting incorrect medical data with Blockchain";
-    } else {
-        let title = document.title;
-        let choosenMessage = messagesGone[Math.floor(Math.random() * messagesGone.length)];
-        if (title !== choosenMessage) {
-            original = title;
-        }
-        document.title = choosenMessage;
-    }
-}
 
 class Layout extends React.Component {
     componentDidMount() {
-        changeDocumentTitle();
         sayHello();
-    }
-    componentDidUpdate() {
-        changeDocumentTitle();
     }
 
     render() {

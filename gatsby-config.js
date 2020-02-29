@@ -41,6 +41,13 @@ module.exports = {
             },
         },
         {
+            resolve: "gatsby-plugin-mailchimp",
+            options: {
+                endpoint:
+                    "https://health.us19.list-manage.com/subscribe/post?u=5fa4943563677b48e28fce8b2&amp;id=cc53b8e8f8", // add your MC list endpoint here; see instructions below
+            },
+        },
+        {
             resolve: `gatsby-plugin-manifest`,
             options: {
                 name: `Fides — Fighting incorrect medical data with Blockchain`,

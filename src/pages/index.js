@@ -2,6 +2,8 @@ import React from "react";
 
 import Layout from "../components/Layout";
 import Navigation from "../components/Navigation";
+import EmailSignup from "../components/EmailSignup";
+
 import AppMockupImage from "../assets/images/mockup-app_2.png";
 // import Img from "gatsby-image";
 
@@ -27,6 +29,9 @@ class RootIndex extends React.Component {
                         <img alt="Fides Mockup V0.8" src={AppMockupImage} />
                     </div>
                 </header>
+                <footer className="header--footer">
+                    <EmailSignup />
+                </footer>
             </Layout>
         );
     }

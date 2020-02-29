@@ -1,5 +1,13 @@
 /* 2020 Typography */
 
+@mixin typography__small {
+    font-family: $font--sans;
+    font-size: 10px;
+    @media screen and (min-width: $tablet-breakpoint) {
+        font-size: 12px;
+    }
+}
+
 @mixin typography__block-small {
     font-family: $font--sans;
     font-size: 10px;

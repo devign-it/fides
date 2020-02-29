@@ -145,6 +145,10 @@ body.light-mode {
         }
     }
 }
+.header--footer {
+    // max-width: $magicNumber * 16;
+    width: 100vw;
+}
 
 body.light-mode {
     .header--container {

@@ -1,0 +1,144 @@
+@import "../../styles/variables/variables";
+
+.newsletter--wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: $c-grey__light;
+    padding: $magicNumber;
+    form {
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        ::selection {
+            color: $c-white;
+            background: $c-dark_blue;
+        }
+        input {
+            padding: $magicNumber / 4;
+            box-sizing: border-box;
+            width: 100%;
+            border: 0;
+            @include typography__medium;
+
+            &:focus {
+                outline: 2px solid $c-dark_blue;
+            }
+
+            &[type="text"] {
+                margin-right: $magicNumber / 8;
+            }
+            &[type="email"] {
+                margin-right: $magicNumber / 4;
+            }
+            &[type="submit"] {
+                background-color: $c-dark_blue;
+                color: $c-white;
+                max-width: $magicNumber * 3;
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+        .msg-succes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #6adc72;
+            display: flex;
+            align-items: center;
+            padding: $magicNumber / 4;
+            transform: translateY(100%);
+            transition: transform 300ms $t-smooth_one;
+
+            &.isShown {
+                transform: translateY(0);
+                &.isPositve {
+                    background-color: #6adc72;
+                }
+                &.isNegative {
+                    background-color: #081925;
+                }
+            }
+            &.isHidden {
+                transform: translateY(-100%);
+            }
+            p {
+                padding: 0;
+                margin: 0;
+                color: $c-white;
+            }
+        }
+    }
+
+    .disclaimer {
+        margin-top: $magicNumber / 2;
+        width: 50%;
+        p {
+            @include typography__small;
+            margin-bottom: 0;
+            padding-bottom: 0;
+            a {
+                opacity: 0.5;
+                color: $c-red;
+                &:before,
+                &:after {
+                    background-color: $c-red;
+                }
+                &:hover {
+                    color: $c-red;
+
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: $mobile-breakpoint) {
+    }
+    @media screen and (max-width: $tablet-breakpoint) {
+        form {
+            flex-direction: column;
+            input {
+                margin-bottom: $magicNumber / 6;
+                &[type="submit"] {
+                    max-width: initial;
+                    margin-top: $magicNumber / 3;
+                    margin-bottom: 0;
+                }
+            }
+            .msg-succes {
+                padding: $magicNumber / 2;
+                align-items: initial;
+            }
+        }
+        .disclaimer {
+            width: 100%;
+        }
+    }
+}
+
+body.light-mode {
+    .col__left {
+        background-color: $c-black;
+        color: $c-white;
+    }
+    .button__wide,
+    .button__wide.inverted {
+        background-color: $c-white;
+        color: $c-black;
+        border-color: $c-black;
+    }
+    .button__wide {
+        &:hover {
+            background-color: rgba($c-black, 0.05);
+        }
+    }
+    .button__wide.inverted {
+        &:hover {
+            background-color: rgba($c-white, 0.95);
+        }
+    }
+}
