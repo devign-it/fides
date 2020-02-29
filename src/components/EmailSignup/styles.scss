@@ -76,7 +76,8 @@
 
     .disclaimer {
         margin-top: $magicNumber / 2;
-        width: 50%;
+        width: calc(50% + #{$magicNumber} * 1.5);
+        margin-left: calc(50% - #{$magicNumber} * 1.5);
         p {
             @include typography__small;
             margin-bottom: 0;
@@ -116,6 +117,7 @@
         }
         .disclaimer {
             width: 100%;
+            margin-left: 0;
         }
     }
 }

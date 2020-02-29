@@ -146,7 +146,7 @@ body.light-mode {
     }
 }
 .header--footer {
-    // max-width: $magicNumber * 16;
+    border-top: solid $c-dark_blue $magicNumber / 6;
     width: 100vw;
 }
 
@@ -158,5 +158,8 @@ body.light-mode {
         .canvas--background {
             background-color: $c-white;
         }
+    }
+    .header--footer {
+        border-color: $c-red;
     }
 }
