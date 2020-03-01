@@ -17,6 +17,10 @@ if (!spaceId || !accessToken) {
 module.exports = {
     siteMetadata: {
         title: "Fides — Fighting incorrect medical data with Blockchain",
+        titleTemplate: "%s | Fides",
+        description: "An action-oriented research into the future of healthcare information systems",
+        url: "https://www.fides.health", // No trailing slash allowed!
+        image: "/og-image.jpg", // Path to your image you placed in the 'static' folder
     },
     plugins: [
         "gatsby-transformer-remark",
@@ -30,7 +34,7 @@ module.exports = {
         {
             resolve: `gatsby-plugin-google-analytics`,
             options: {
-                trackingId: "UA-59635505-2",
+                trackingId: "UA-59635505-4",
             },
         },
         {
