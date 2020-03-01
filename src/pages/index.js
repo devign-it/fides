@@ -7,6 +7,8 @@ import EmailSignup from "../components/EmailSignup";
 import AppMockupImage from "../assets/images/mockup-app_3.png";
 // import Img from "gatsby-image";
 
+import "../styles/styles.scss";
+
 import "../styles/pages/index.scss";
 
 class RootIndex extends React.Component {
