@@ -3,8 +3,6 @@
 .newsletter--wrapper {
     display: flex;
     flex-direction: column-reverse;
-    background-color: $c-grey__light;
-    padding: $magicNumber;
     form {
         display: flex;
         position: relative;
@@ -80,18 +78,18 @@
         margin-left: calc(50% - #{$magicNumber} * 1.5);
         p {
             @include typography__small;
+            color: $c-blue_light;
             margin-bottom: 0;
             padding-bottom: 0;
             a {
                 opacity: 0.5;
-                color: $c-red;
+                color: $c-dark_blue;
                 &:before,
                 &:after {
-                    background-color: $c-red;
+                    background-color: $c-dark_blue;
                 }
                 &:hover {
-                    color: $c-red;
-
+                    color: $c-dark_blue;
                     opacity: 1;
                 }
             }
@@ -99,7 +97,8 @@
     }
 
     @media screen and (max-width: $tablet-breakpoint) {
-        padding: 10vw;
+        // padding: 10vw;
+
         form {
             flex-direction: column;
             input {

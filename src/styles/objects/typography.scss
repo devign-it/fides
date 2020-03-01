@@ -1,32 +1,6 @@
-$fontPath: "../assets/fonts/";
+@import url("https://use.typekit.net/fwh5ewj.css");
 
-@font-face {
-    font-family: "AmerigoBT-Medium";
-    src: url("#{$fontPath}AmerigoBT-Medium.eot");
-    src: url("#{$fontPath}AmerigoBT-Medium.woff") format("woff"),
-        url("#{$fontPath}AmerigoBT-Medium.ttf") format("truetype"),
-        url("#{$fontPath}AmerigoBT-Medium.svg#AmerigoBT-Medium") format("svg"),
-        url("#{$fontPath}AmerigoBT-Medium.eot?#iefix") format("embedded-opentype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* Copyright (c) 2014-2016 by Vyacheslav Kirilenko, Gayane Bagdasaryan. All rights reserved. */
-
-@font-face {
-    font-family: "Formular";
-    src: url("#{$fontPath}formular-regular.eot");
-    src: url("#{$fontPath}formular-regular.eot?#iefix") format("embedded-opentype"),
-        url("#{$fontPath}formular-regular.woff2") format("woff2"),
-        url("#{$fontPath}formular-regular.woff") format("woff"),
-        url("#{$fontPath}formular-regular.ttf") format("truetype"),
-        url("#{$fontPath}formular-regular.svg#Formular") format("svg");
-    font-weight: normal;
-    font-style: normal;
-}
-
-$font--sans: "Formular", "Helvetica", sans-serif;
-$font--serif: "AmerigoBT-Medium", "Georgia", serif;
+$font--sans: "acumin-pro-wide", "Helvetica", sans-serif;
 
 /* Fallback to system font incase of bad loading, thanks to @wooorm */
 
@@ -59,10 +33,15 @@ body {
     }
 
     h1 {
-        font-size: calc(38px + 4vw);
-
+        font-size: calc(32px + 2vw);
         @media screen and (min-width: $tablet-breakpoint) {
-            font-size: calc(80px + 1vw);
+            font-size: calc(68px + 1vw);
+        }
+    }
+    h2 {
+        font-size: calc(22px + 2vw);
+        @media screen and (min-width: $tablet-breakpoint) {
+            font-size: calc(28px + 1vw);
         }
     }
     p {

@@ -80,7 +80,7 @@ body.light-mode {
     align-items: center;
     position: relative;
     z-index: 1;
-    height: calc(100vh - #{$magicNumber} / 6);
+    min-height: calc(100vh - #{$magicNumber} / 6);
     .information {
         color: $c-white;
         padding: $magicNumber;
@@ -99,6 +99,9 @@ body.light-mode {
         @media screen and (max-width: $tablet-breakpoint) {
             width: 100%;
             padding: 10vw;
+            h1 {
+                margin-bottom: $magicNumber / 4;
+            }
             p {
                 margin-right: 0;
             }
@@ -106,13 +109,12 @@ body.light-mode {
     }
     .mockup {
         height: 100%;
-        overflow: hidden;
-        width: 60%;
+        width: 40%;
 
         img {
-            height: 100%;
-            width: auto;
-            transform: rotate(-20deg) translate(0, 25%) scale(1);
+            width: 100%;
+            height: auto;
+            transform: rotate(-10deg) translate(0, 20%) scale(1);
             transition: all 620ms $t-smooth_one;
         }
 
@@ -148,6 +150,27 @@ body.light-mode {
 .header--footer {
     border-top: solid $c-dark_blue $magicNumber / 6;
     width: 100vw;
+    padding: $magicNumber;
+    background-color: $c-creme_light;
+    h2 {
+        padding: 0;
+        margin: $magicNumber 0 $magicNumber / 4 0;
+    }
+    h2 + p {
+        @include typography__medium;
+        padding: 0;
+        margin: 0 0 $magicNumber 0;
+        color: $c-blue_light;
+    }
+    @media screen and (max-width: $tablet-breakpoint) {
+        padding: 10vw;
+        h2 {
+            margin-top: $magicNumber / 4;
+        }
+        h2 + p {
+            margin-bottom: 10vw;
+        }
+    }
 }
 
 body.light-mode {

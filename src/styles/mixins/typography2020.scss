@@ -8,6 +8,14 @@
     }
 }
 
+@mixin typography__smedium {
+    font-family: $font--sans;
+    font-size: 14px;
+    @media screen and (min-width: $tablet-breakpoint) {
+        font-size: 18px;
+    }
+}
+
 @mixin typography__block-small {
     font-family: $font--sans;
     font-size: 10px;

@@ -3,8 +3,7 @@ import get from "lodash/get";
 import PageContent from "../PageContent";
 import NavigationNew from "../Navigation";
 import Helmet from "react-helmet";
-// import changeDocumentTitle from "../SiteTitle";
-// import CustomCursor from "../CustomCursor";
+import SEO from "../SEO";
 
 const siteTitle = get(this, "props.data.site.siteMetadata.title");
 
@@ -23,7 +22,9 @@ class Layout extends React.Component {
     render() {
         return (
             <>
-                <Helmet title={siteTitle} />
+                <SEO />
+
+                {/* <Helmet title={siteTitle} /> */}
                 {this.props.showNav && (
                     <NavigationNew
                         showHome={this.props.showHome}
