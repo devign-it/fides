@@ -33,7 +33,7 @@ body {
     }
 
     h1 {
-        font-size: calc(32px + 2vw);
+        font-size: calc(24px + #{$magicNumberFluid});
         line-height: 1.1;
         @media screen and (min-width: $tablet-breakpoint) {
             font-size: calc(68px + 1vw);

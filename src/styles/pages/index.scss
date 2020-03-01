@@ -98,7 +98,7 @@ body.light-mode {
 
         @media screen and (max-width: $tablet-breakpoint) {
             width: 100%;
-            padding: 10vw;
+            padding: $magicNumberFluid;
             h1 {
                 margin-bottom: $magicNumber / 4;
             }
@@ -163,12 +163,12 @@ body.light-mode {
         color: $c-blue_light;
     }
     @media screen and (max-width: $tablet-breakpoint) {
-        padding: 10vw;
+        padding: $magicNumberFluid;
         h2 {
             margin-top: $magicNumber / 4;
         }
         h2 + p {
-            margin-bottom: 10vw;
+            margin-bottom: $magicNumberFluid;
         }
     }
 }
