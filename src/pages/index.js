@@ -25,7 +25,7 @@ class RootIndex extends React.Component {
                             Every day, patients around the world get harmed due to false data. We believe blockchain and
                             human-designed interfaces can solve this problem. Your body, your data. Fides is an
                             action-oriented research into the future of healthcare information systems. Currently, we're
-                            developping our first prototype.
+                            developing our first prototype.
                         </p>
                     </div>
                     <div className="cta">
