@@ -75,7 +75,8 @@
         }
     }
 
-    .disclaimer {
+    .disclaimer,
+    .copyright {
         margin-top: $magicNumber / 2;
         width: calc(50% + #{$magicNumber} * 1.5);
         margin-left: calc(50% - #{$magicNumber} * 1.5);
@@ -117,7 +118,8 @@
                 align-items: initial;
             }
         }
-        .disclaimer {
+        .disclaimer,
+        .copyright {
             width: 100%;
             margin-left: 0;
         }

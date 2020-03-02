@@ -87,6 +87,15 @@ export default class EmailSignup extends React.Component {
                             </a>
                         </p>
                     </div>
+                    <div className="copyright">
+                        <p>
+                            © All rights reserved by{" "}
+                            <a href="https://devign.it" target="blank">
+                                Devign.it
+                            </a>{" "}
+                            - {new Date().getFullYear()}
+                        </p>
+                    </div>
                 </div>
             </div>
         );
