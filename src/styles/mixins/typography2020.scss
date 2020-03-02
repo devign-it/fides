@@ -65,10 +65,10 @@
 
 @mixin typography__medium {
     font-family: $font--sans;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.5;
     @media screen and (min-width: $tablet-breakpoint) {
-        font-size: 24px;
+        font-size: 19px;
     }
 }
 

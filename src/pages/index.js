@@ -5,6 +5,8 @@ import Navigation from "../components/Navigation";
 import EmailSignup from "../components/EmailSignup";
 
 import AppMockupImage from "../assets/images/mockup-app_3.png";
+import IconArrowLargeRed from "../assets/images/icon-arrow-large_red.svg";
+
 // import Img from "gatsby-image";
 
 import "../styles/styles.scss";
@@ -25,9 +27,16 @@ class RootIndex extends React.Component {
                             action-oriented research into the future of healthcare information systems. Currently, we're
                             developping our first prototype.
                         </p>
-                        {/* <a href="mailto:info@devign.it" className="info-modal--button">
-                            <span>Get in touch</span>
-                        </a> */}
+                    </div>
+                    <div className="cta">
+                        <a
+                            href="https://www.notion.so/devign/Design-Rationale-6ffc026342bb47e9898797d5b1905489"
+                            target="_blank"
+                            className="info-modal--button"
+                        >
+                            <img src={IconArrowLargeRed} alt="Icon Arrow Large Red" />
+                            Read research
+                        </a>
                     </div>
                     <div className="mockup">
                         <img alt="Fides Mockup V0.8" src={AppMockupImage} />
