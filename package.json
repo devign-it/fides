@@ -65,7 +65,7 @@
         "sharp": "^0.24.1",
         "styled-components": "^5.0.1",
         "swiper": "^5.3.6",
-        "three": "^0.114.0",
+        "three": "^0.137.0",
         "typescript": "^3.8.3",
         "use-dark-mode": "^2.3.1"
     },
