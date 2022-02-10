@@ -52,7 +52,7 @@
         "gsap": "^3.2.3",
         "intersection-observer": "^0.7.0",
         "lodash": "^4.17.15",
-        "node-sass": "^4.13.1",
+        "node-sass": "^7.0.0",
         "npm-check-updates": "^4.0.3",
         "ogl": "0.0.40",
         "react": "^16.13.0",
