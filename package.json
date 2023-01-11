@@ -47,7 +47,7 @@
         "gatsby-plugin-use-dark-mode": "^1.1.2",
         "gatsby-source-contentful": "2.1.89",
         "gatsby-source-filesystem": "^2.1.48",
-        "gatsby-transformer-remark": "^2.6.53",
+        "gatsby-transformer-remark": "^5.25.1",
         "gatsby-transformer-sharp": "^2.3.16",
         "gsap": "^3.2.3",
         "intersection-observer": "^0.7.0",
